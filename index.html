@@ -1,34 +1,156 @@
-﻿<!DOCTYPE html>
-<html>
-<head> 
-<meta charset="utf-8"> 
-<title>菜鸟教程(runoob.com)</title> 
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>刘文庆老师的个人主页</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="./css/demo.css" rel="stylesheet" type="text/css" />
+
+    <script src="./scripts/boot.js" type="text/javascript"></script> 
+
+    <style type="text/css">
+    body{
+        margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;
+    }    
+    .circle-image {
+        width: auto;
+      height: 100%;
+       border-radius: 50%;
+      overflow: hidden;
+      }
+      .circle-img {
+        width: 50px; /* 设置图片宽度 */
+        height: 50px; /* 设置图片高度 */
+        border-radius: 50%; /* 将图片设置为圆形 */
+        object-fit: cover; /* 确保图片内容填充整个容器，超出的部分会被裁剪 */
+    }
+    </style>
+     
 </head>
 <body>
- 
-<table width="500" border="0">
-<tr>
-<td colspan="2" style="background-color:#FFA500;">
-<h1>主要的网页标题</h1>
-</td>
-</tr>
- 
-<tr>
-<td style="background-color:#FFD700;width:100px;">
-<b>菜单</b><br>
-HTML<br>
-CSS<br>
-JavaScript
-</td>
-<td style="background-color:#eeeeee;height:200px;width:400px;">
-内容在这里</td>
-</tr>
- 
-<tr>
-<td colspan="2" style="background-color:#FFA500;text-align:center;">
-版权 © runoob.com</td>
-</tr>
-</table>
- 
+    
+<!--Layout-->
+<div id="layout1" class="mini-layout" style="width:100%;height:100%;">
+    <!-- Begin Header  -->
+     <!--
+    <div class="app-header" region="north" height="70" showSplit="false" showHeader="false">
+        <img src="./images/myself.jpg" alt="示例图片" class="circle-image" id="circleImage">
+        <div style="position:absolute;top:18px;left:300px;">
+            <h1 style="margin:0;padding:15px;cursor:default;font-family:微软雅黑,黑体,宋体;">刘文庆老师的个人主页 V2</h1>
+        </div>
+        
+        <div style="position:absolute;top:18px;right:10px;">
+            <a class="mini-button mini-button-iconTop" iconCls="icon-add" onclick="onQuickClick" plain="true">快捷</a>    
+            <a class="mini-button mini-button-iconTop" iconCls="icon-edit" onclick="onClick"  plain="true" >首页</a>        
+            <a class="mini-button mini-button-iconTop" iconCls="icon-date" onclick="onClick"  plain="true" >消息</a>        
+            <a class="mini-button mini-button-iconTop" iconCls="icon-edit" onclick="onClick"  plain="true" >设置</a>        
+            <a class="mini-button mini-button-iconTop" iconCls="icon-close" onclick="onClick"  plain="true" >关闭</a>        
+            
+        </div>
+        
+    </div>
+    -->
+    <!-- End Header  -->
+   <!-- Begin Center  -->
+    <div title="center" region="center" style="border:0;" bodyStyle="overflow:hidden;">
+        <!--Splitter-->
+        <div class="mini-splitter" style="width:100%;height:100%;" borderStyle="border:0;">
+            
+            <div size="180" maxSize="250" minSize="100" showCollapseButton="true" style="border:0;">
+               <!--
+                <div style="text-align: center;">
+                    <img src="./images/myself.jpg" alt="示例图片" class="circle-img" width="200" height="200">
+                   </div>
+                --> 
+                   <!--OutlookTree-->
+                <div id="leftTree" class="mini-outlooktree" url="./data/outlooktree.txt" onnodeclick="onNodeSelect"
+                    textField="text" idField="id" parentField="pid"             
+                >
+                </div>
+                
+            </div>
+            <div showCollapseButton="false" style="border:0;">
+                <!--Tabs-->
+                <div id="mainTabs" class="mini-tabs" activeIndex="0" style="width:100%;height:100%;"      
+                     plain="false" onactivechanged="onTabsActiveChanged"
+                >
+                    <div title="首页" url="./docs/mySelf.html" >        
+                    </div>
+
+                </div>
+            </div>        
+        </div>
+    </div>
+   <!-- End Center  -->
+   
+   <!-- Begin Bottom  -->
+    <!--
+    <div title="south" region="south" showSplit="false" showHeader="false" height="30" >
+        <div style="line-height:28px;text-align:center;cursor:default">版权所有 © 刘文庆于2024年完成于西双版纳 </div>
+    </div>
+    -->
+    <!-- End Bottom  -->
+</div>
+
+    
+
+    <script type="text/javascript">
+        mini.parse();
+
+        var tree = mini.get("leftTree");
+
+        function showTab(node) {
+            var tabs = mini.get("mainTabs");
+
+            var id = "tab$" + node.id;
+            var tab = tabs.getTab(id);
+            if (!tab) {
+                tab = {};
+                tab._nodeid = node.id;
+                tab.name = id;
+                tab.title = node.text;
+                tab.showCloseButton = true;
+
+                //这里拼接了url，实际项目，应该从后台直接获得完整的url地址
+               // tab.url = mini_JSPath + "./docs/" + node.text + ".html";
+               tab.url = "./docs/" + node.url;
+              // tab.url = "./docs/手撕一个AI深度神经网络.html";
+                tabs.addTab(tab);
+            }
+            tabs.activeTab(tab);
+        }
+
+        function onNodeSelect(e) {
+            var node = e.node;
+            var isLeaf = e.isLeaf;
+
+            if (isLeaf) {
+                showTab(node);
+            }
+        }
+
+        function onClick(e) {
+            var text = this.getText();
+            alert(text);
+        }
+        function onQuickClick(e) {
+            tree.expandPath("datagrid");
+            tree.selectNode("datagrid");
+        }
+
+        function onTabsActiveChanged(e) {
+            var tabs = e.sender;
+            var tab = tabs.getActiveTab();
+            if (tab && tab._nodeid) {
+                
+               // var node = tree.getNode(tab._nodeid);
+               var node = tree.getNode(tab.id);
+                if (node && !tree.isSelectedNode(node)) {
+                    tree.selectNode(node);
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
