@@ -1,0 +1,10 @@
+<h2 align="Center">  开源一个20年前的一个小项目</h2>
+
+<h3 align="Center">刘文庆</h3>
+
+​      这个小项目是20年前采用vc6.0开发的小型虚拟漫游项目，作者对OpenGVS进行的类封装，完成了鼠标和键盘的操作控制，对于对于初学三维程序开发的同学看看效果。
+
+<video src="../images/Video_2025-01-08_172434.mp4" autoplay="true" controls="controls" ></video>
+
+​       项目工程文件及源码：[VirtualGVS.zip](./VirtualGVS.zip)
+

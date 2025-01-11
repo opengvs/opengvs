@@ -1,0 +1,56 @@
+﻿[
+	{id: "cpp", text: "C++编程"},
+		
+	{id: "CPPBase", text: "C++基础编程",   pid: "cpp" },
+			
+	{id: "CPPBasic", text: "C++11学习之右值引用", url:"C++11学习之右值引用和移动语义详解.html",   pid: "CPPBase"},			
+        {id: "CPPRALL", text: "C++智能指针及其应用", url:"再次谈谈C++语言中的智能指针.html" ,  pid: "CPPBase"},
+
+	{id: "windowsAPI", text: "windowsAPI编程", pid: "cpp"},
+		
+	{id: "panel", text: "WindowsAPI函数编程C++封装", url:"WindowsAPI函数编程C++封装.html", pid: "windowsAPI"},
+	{id: "splitter", text: "常用基础控件的使用",  url:"windows窗口程序中基本控件的使用.html",pid: "windowsAPI"},
+        {id: "splitter1", text: "Qt系统中的事件处理机制详解", url:"Qt系统中的事件处理机制及信号与槽的关系.html",pid: "windowsAPI"},
+		
+	{ id: "OpenGL", text: "OpenGL三维图形学"},
+	
+        {id: "BaseOpenGL", text: "三维图形学原理",  pid: "OpenGL" },
+		
+	{id: "BaseOpenGL1", text: "三维图形学基本变换过程介绍", url:"三维图形学 openGLDiret3D中变换原理.html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL2", text: "四元数表示旋转公式推导过程", url:"四元数表示空间坐标旋转的公式证明 .html", pid: "BaseOpenGL" },	
+        {id: "BaseOpenGL3", text: "三维图形学中的透视投影公式", url:"再次推导三维图形学中的透视投影公式.html", pid: "BaseOpenGL" },	
+        {id: "BaseOpenGL4", text: "Shader中法向量计算的算法推导", url:"shader中计算法向量的公式详细推导过程 .html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL5", text: "一文读懂三维图形学中的光照模型", url:"一文读懂三维图形学中的光照模型(理论).html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL6", text: "三维图形学中相机变换矩阵的推导过程", url:"三维图形学中相机变换矩阵的推导过程(以OpenGL为例).html", pid: "BaseOpenGL" },
+
+
+		
+	{id: "CPPOpenGL", text: "C++版三维图形学原理(OpenGL示例)",  pid: "OpenGL" },
+        {id: "CPPOpenGL1", text: "基于windows窗口的OpenGL程序基本框架", url:"基于windows窗口的OpenGL程序基本框架.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL2", text: "二维平面物体平移、旋转、缩放过程演示", url:"二维平面平移、旋转、缩放演示.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL3", text: "三维空间物体变换过程演示", url:"三维控件变换过程演示.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL4", text: "相机控制程序演示", url:"相机控制程序演示.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL5", text: "纹理应用演示程序", url:"纹理应用演示程序.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL6", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL7", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CPPOpenGL" },
+
+		
+	{id: "CSharpOpenGL", text: "C#版三维图形学原理(OpenGL示例)", pid: "OpenGL"},
+				
+	{id: "CSharpOpenGL1", text: "基于OpenTK的C#程序框架", url:"基于OpenTK的C#程序框架.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL2", text: "二维平面物体平移、旋转、缩放过程演示", url:"二维平面物体平移、旋转、缩放过程演示.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL3", text: "三维空间物体变换过程演示", url:"三维空间物体变换过程演示.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL4", text: "相机控制程序演示", url:"相机控制程序演示.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL5", text: "纹理应用演示程序", url:"纹理应用演示程序.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL6", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CSharpOpenGL" },
+         {id: "CSharpOpenGL7", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CSharpOpenGL" },
+
+
+	{ id: "other", text: "人工智能算法"},
+	{id: "otherBase", text: "人工智能算法基础",   pid: "other" },
+
+	{id: "BPCnn", text: "手撕一个AI深度神经网络",url:"手撕一个AI深度神经网络.html", pid:  "otherBase"},
+	{id: "APCnn", text: "形象化和抽象化的理解卷积计算", url:"形象化和抽象化的理解卷积计算.html",pid: "otherBase"},				
+]
+
+
