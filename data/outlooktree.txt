@@ -37,7 +37,7 @@
 		
 	{id: "CSharpOpenGL", text: "C#版三维图形学原理(OpenGL示例)", pid: "OpenGL"},
 				
-	{id: "CSharpOpenGL1", text: "基于OpenTK的C#程序框架", url:"基于OpenTK的C#程序框架.html", pid: "CSharpOpenGL" },
+	    {id: "CSharpOpenGL1", text: "基于OpenTK的C#程序框架", url:"采用C#开发的基于OpenTK窗口应用程序框架.html", pid: "CSharpOpenGL" },
         {id: "CSharpOpenGL2", text: "二维平面物体平移、旋转、缩放过程演示", url:"二维平面物体平移、旋转、缩放过程演示.html", pid: "CSharpOpenGL" },
         {id: "CSharpOpenGL3", text: "三维空间物体变换过程演示", url:"三维空间物体变换过程演示.html", pid: "CSharpOpenGL" },
         {id: "CSharpOpenGL4", text: "相机控制程序演示", url:"相机控制程序演示.html", pid: "CSharpOpenGL" },
