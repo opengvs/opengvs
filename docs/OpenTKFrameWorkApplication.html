@@ -30,8 +30,8 @@ img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
 button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
 p { line-height: inherit; }
 h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
@@ -161,6 +161,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-fences.md-fences-math { font-size: 1em; }
 .md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
 .md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
 .typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
@@ -554,22 +555,374 @@ img {
     top: -20px;
     color: #7a7a7a;
 }*/
+.blockquote-tuijian {
+    border-color: #5bc0de;
+    color: #37b3d7;
+    background-color: #f4f8fa;
+}
+.blockquote-jinggao {
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+    color: #ee9e33;
+}
+.blockquote-weixian {
+    color: #c42f2b;
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
 
+ 
+.CodeMirror-line .cm-number{color:#7f6bff} /*数字，蓝色*/
+.CodeMirror-line .cm-property {
+    color: #f08d49;
+}
+.CodeMirror-line .cm-variable-3{color:#ffed6b} /*返回值、变量类型，int、void等，淡黄色*/
+.CodeMirror-line .cm-qualifier{color:#888}
+.CodeMirror-line .cm-variable-2 {
+    color: #888;
+} 
+.CodeMirror-line .cm-meta{ color:#BBFFFF}  /* 头文件、宏定义一整行 青色*/
+.CodeMirror-line .cm-atom { color:#f9ff00} /* true、false 黄色*/
+.CodeMirror-line .cm-keyword{    color: #ff1800;} /* if、return等关键字红色*/
+
+.CodeMirror-line .cm-def{ color:#00ff00  } /* 函数定义，绿色 */
+
+
+.CodeMirror-line .cm-variable { color: #90EE90; } /* 入参定义，亮绿色 */
+
+.CodeMirror-line .cm-builtin {
+    color: #82AAFF;
+}/* 蓝色 */
+.CodeMirror-line .cm-comment {
+    color: #888;
+} /* 灰色 */
+.CodeMirror-line .cm-string{ color: #82AAFF  } /* 字符串， 蓝色*/
+.CodeMirror-line .cm-string-2 { color: #888  }
+.CodeMirror-line .cm-operator {color: #ff1800}/* +=等操作符，红色*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #fff;
+    z-index: 3;
+}
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: #666 !important;
+}
+ 
+ 
+.CodeMirror-line .cm-tag{
+    color: #F07178;
+}
+.CodeMirror-line .cm-bracket{
+    color: #FFF;
+}
+.CodeMirror-line .cm-attribute{
+    color: #FFCB6B;
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h1) "."counter(h2) " "
+}
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h1) "."counter(h2) "."counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write {
+    counter-reset: h1
+}
+ 
+h1 {
+    counter-reset: h2
+}
+ 
+h2 {
+    counter-reset: h3
+}
+ 
+h3 {
+    counter-reset: h4
+}
+ 
+h4 {
+    counter-reset: h5
+}
+ 
+h5 {
+    counter-reset: h6
+}
+ 
+#write h1:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h1) "."counter(h2) " "
+}
+ 
+#write h3:before,
+h3.md-focus.md-heading:before
+ 
+    {
+    counter-increment: h3;
+    content: counter(h1) "."counter(h2) "."counter(h3) " "
+}
+ 
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) " "
+}
+ 
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+ 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+ 
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+ 
+.md-fences,
+code,
+tt {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 0.9em;
+}
+ 
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+ 
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+ 
+ 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+ 
+@media print {
+    html {
+ font-size: 13px;
+    }
+    table,
+    pre {
+ page-break-inside: avoid;
+    }
+    pre {
+ word-wrap: break-word;
+    }
+}
+ 
+.md-fences {
+    background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+ 
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+ 
+ 
+ 
+ 
+ 
+#write .md-fences:not([mermaid-type])  {
+    padding-top: 7px;
+    border-radius: 10px;
+    background-color: #282c34;
+    color: #eeeeee;
+}
+ 
+.code-tooltip .ty-input,
+.code-tooltip input {
+    color: #eee;
+}
+ 
+ 
+ 
+.CodeMirror-wrap .CodeMirror-scroll {
+    padding-top: 20px;
+}
+ 
+#write .md-fences:before {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #fa3534;
+}
+ 
+#write .CodeMirror-scroll:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    z-index: 999;
+    background-color: #ff9900;
+}
+#write .md-fences::after {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #19be6b;
+}
 
 
 </style><title>采用C#开发的基于OpenTK窗口应用程序框架</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='采用c开发的基于opentk窗口应用程序框架'><span>采用C#开发的基于OpenTK窗口应用程序框架</span></h1><h2 align="Center"><font color="Red">刘文庆 整理</font></h2><p><span>        基于微软的.Net架构的OpenGL应用程序开发，经过多年的技术沉淀，目前基本接受了OpenTL库对OpenGL函数的封装为主流的开发模式，包括微软自己的Unity3D系统，底层很多代码也是基于OpenTL库实现的。为此针对三维程序的初学者，作者封装了OpenTK窗口应用程序开发的基本框架：</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>。下载后安装在C:\Users\Administrator\Documents\Visual Studio 2022\Templates\ProjectTemplates目录下，在使用Visual Studio 2022创建应用程序时，使用WinFormOpenTKApp模板创建出的应用程序自动构成的C#环境下的OpenTK应用程序：</span></p><p><img src="../images/image-20250114201357391.png" alt="image-20250114201357391 " style="zoom:60%;" /></p><p><span>      </span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>应用程序开发框架包含了如下模块：</span></p><p><span>                    ⑴⑶⑷⑸⑹⑺⑻⑼⑽基于.Net 8.0 长期支持版开发。</span></p><p><span>                    ⑵ 集成了OpenTK 4.93版的所有内容，主要包含如下开发模块：</span></p><p><span>                         ❶ OpenTK.Audio.OpenAL 用于处理声音的库模块</span></p><p><span>                         ❷ OpenTK.Compute 用于进行OpenCL计算的库模块</span></p><p><span>                         ❸  OpenTK.Core  OpenTK的核心模块</span></p><p><span>                         ❹  OpenTK.Graphics  对OPenGL扩展函数的封装,可以使用OpenGL4.6一下的所有扩展函数</span></p><p><span>                         ❺  OpenTK.Input  实现了硬件输入层的封装应用，对标DirectInput</span></p><p><span>                         ❻   OpenTK.Mathematics  主要实现了OpenGL程序开发过程中应用到的数学函数的封装对标C++中的GLM库</span></p><p><span>                         ❼   OpenTK.Windowing.GraphicsLibrary完成了对开源库GLFW的内部封装，从而实现跨平台的应用</span></p><p><span>                      ❽   System.Runtime.CompilerServices.Unsafe  对windows系统不安全代码的应用设置(本框架需要工作在windows系统unsafe模式下）</span></p><p><span>                    ⑶ OpenGL窗口控件OpenGLView。我们没有使用网上Nuget上面的OpenTK COntrol封装的窗口控件，在借鉴其实现原理基础上，封装了OpenGLView控件，然后随同</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>模版文件一同发布。</span></p><p><span>             通过</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>模版生成的OpenGL窗口程序工程如下：</span></p><p><img src="../images/image-20250114205131029.png" referrerpolicy="no-referrer" alt="image-20250114205131029"></p><p><span>  主程序源代码如下:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 14.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">using OpenGLObject;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">using OpenTK.Graphics.OpenGL;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">namespace winFormOpenTKApp</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  public partial class OpenTKMainForm : Form</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  public OpenTKMainForm()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  InitializeComponent();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  private void OpenTKMainForm_Load(object sender, EventArgs e)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  openglView.Resize += openglView_Resize;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  openglView.Paint += openglView_Paint;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  //openglView1.KeyDown += Form1_KeyDown;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int w = this.openglView.Width;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int h = this.openglView.Height;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GL.Viewport(0, 0, w, h);  //窗体尺寸设置</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // 设定清除屏幕后屏幕显示的背景色，这里是深绿色</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  timer1.Enabled = true;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  private void OpenTKMainForm_FormClosed(object sender, FormClosedEventArgs e)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  //</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  private void openglView_Paint(object sender, PaintEventArgs e)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // 清屏</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GL.Clear(ClearBufferMask.ColorBufferBit);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // 绘制代码</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // 交换缓冲区，防止程序运行异常</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  openglView.SwapBuffers();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  private void openglView_Resize(object sender, EventArgs e)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int w = this.openglView.Width;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int h = this.openglView.Height;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GL.Viewport(0, 0, w, h);  //窗体尺寸设置</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // 设定清除屏幕后屏幕显示的背景色，这里是深绿色</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  private void timer1_Tick(object sender, EventArgs e)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  this.Refresh();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1914px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1914px;"></div></div></div></pre><p>&nbsp;</p></div></div>
+<div id='write'  class=''><h1 id='采用c开发的基于opentk窗口应用程序框架'><span>采用C#开发的基于OpenTK窗口应用程序框架</span></h1><h2 align="Center"><font color="Red">刘文庆 整理</font></h2><p><span>        基于微软的.Net架构的OpenGL应用程序开发，经过多年的技术沉淀，目前基本接受了OpenTL库对OpenGL函数的封装为主流的开发模式，包括微软自己的Unity3D系统，底层很多代码也是基于OpenTL库实现的。为此针对三维程序的初学者，作者封装了OpenTK窗口应用程序开发的基本框架：</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>。下载后安装在C:\Users\Administrator\Documents\Visual Studio 2022\Templates\ProjectTemplates目录下，在使用Visual Studio 2022创建应用程序时，使用WinFormOpenTKApp模板创建出的应用程序自动构成的C#环境下的OpenTK应用程序：</span></p><p><img src="../images/image-20250114201357391.png" alt="image-20250114201357391 " style="zoom:60%;" /></p><p><span>      </span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>应用程序开发框架包含了如下模块：</span></p><p><span>                    ⑴⑶⑷⑸⑹⑺⑻⑼⑽基于.Net 8.0 长期支持版开发。</span></p><p><span>                    ⑵ 集成了OpenTK 4.93版的所有内容，主要包含如下开发模块：</span></p><p><span>                         ❶ OpenTK.Audio.OpenAL 用于处理声音的库模块</span></p><p><span>                         ❷ OpenTK.Compute 用于进行OpenCL计算的库模块</span></p><p><span>                         ❸  OpenTK.Core  OpenTK的核心模块</span></p><p><span>                         ❹  OpenTK.Graphics  对OPenGL扩展函数的封装,可以使用OpenGL4.6一下的所有扩展函数</span></p><p><span>                         ❺  OpenTK.Input  实现了硬件输入层的封装应用，对标DirectInput</span></p><p><span>                         ❻   OpenTK.Mathematics  主要实现了OpenGL程序开发过程中应用到的数学函数的封装对标C++中的GLM库</span></p><p><span>                         ❼   OpenTK.Windowing.GraphicsLibrary完成了对开源库GLFW的内部封装，从而实现跨平台的应用</span></p><p><span>                      ❽   System.Runtime.CompilerServices.Unsafe  对windows系统不安全代码的应用设置(本框架需要工作在windows系统unsafe模式下）</span></p><p><span>                    ⑶ OpenGL窗口控件OpenGLView。我们没有使用网上Nuget上面的OpenTK COntrol封装的窗口控件，在借鉴其实现原理基础上，封装了OpenGLView控件，然后随同</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>模版文件一同发布。</span></p><p><span>             通过</span><a href='./WinFormOpenTKApp.zip'><span>WinFormOpenTKApp.zip</span></a><span>模版生成的OpenGL窗口程序工程如下：</span></p><p><img src="../images/image-20250114205131029.png" referrerpolicy="no-referrer" alt="image-20250114205131029"></p><p><span>  主程序源代码如下:</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c#" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 1684.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>58</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-variable">OpenGLObject</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-variable">OpenTK</span>.<span class="cm-variable">Graphics</span>.<span class="cm-variable">OpenGL</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">namespace</span> <span class="cm-def">winFormOpenTKApp</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-keyword">partial</span> <span class="cm-keyword">class</span> <span class="cm-def">OpenTKMainForm</span> : <span class="cm-variable">Form</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">OpenTKMainForm</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">InitializeComponent</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-keyword">void</span> <span class="cm-variable">OpenTKMainForm_Load</span>(<span class="cm-variable-3">object</span> <span class="cm-variable">sender</span>, <span class="cm-variable">EventArgs</span> <span class="cm-variable">e</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">openglView</span>.<span class="cm-variable">Resize</span> <span class="cm-operator">+=</span> <span class="cm-variable">openglView_Resize</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">openglView</span>.<span class="cm-variable">Paint</span> <span class="cm-operator">+=</span> <span class="cm-variable">openglView_Paint</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//openglView1.KeyDown += Form1_KeyDown;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">w</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-variable">openglView</span>.<span class="cm-variable">Width</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">h</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-variable">openglView</span>.<span class="cm-variable">Height</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">GL</span>.<span class="cm-variable">Viewport</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-variable">w</span>, <span class="cm-variable">h</span>); &nbsp;<span class="cm-comment">//窗体尺寸设置</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 设定清除屏幕后屏幕显示的背景色，这里是深绿色</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">GL</span>.<span class="cm-variable">ClearColor</span>(<span class="cm-number">0.2f</span>, <span class="cm-number">0.3f</span>, <span class="cm-number">0.3f</span>, <span class="cm-number">1.0f</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">timer1</span>.<span class="cm-variable">Enabled</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-keyword">void</span> <span class="cm-variable">OpenTKMainForm_FormClosed</span>(<span class="cm-variable-3">object</span> <span class="cm-variable">sender</span>, <span class="cm-variable">FormClosedEventArgs</span> <span class="cm-variable">e</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-keyword">void</span> <span class="cm-variable">openglView_Paint</span>(<span class="cm-variable-3">object</span> <span class="cm-variable">sender</span>, <span class="cm-variable">PaintEventArgs</span> <span class="cm-variable">e</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 清屏</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">GL</span>.<span class="cm-variable">Clear</span>(<span class="cm-variable">ClearBufferMask</span>.<span class="cm-variable">ColorBufferBit</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 绘制代码</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 交换缓冲区，防止程序运行异常</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">openglView</span>.<span class="cm-variable">SwapBuffers</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">42</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">43</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-keyword">void</span> <span class="cm-variable">openglView_Resize</span>(<span class="cm-variable-3">object</span> <span class="cm-variable">sender</span>, <span class="cm-variable">EventArgs</span> <span class="cm-variable">e</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">44</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">45</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">w</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-variable">openglView</span>.<span class="cm-variable">Width</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">46</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">h</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-variable">openglView</span>.<span class="cm-variable">Height</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">47</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">GL</span>.<span class="cm-variable">Viewport</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-variable">w</span>, <span class="cm-variable">h</span>); &nbsp;<span class="cm-comment">//窗体尺寸设置</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">48</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 设定清除屏幕后屏幕显示的背景色，这里是深绿色</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">49</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">GL</span>.<span class="cm-variable">ClearColor</span>(<span class="cm-number">0.2f</span>, <span class="cm-number">0.3f</span>, <span class="cm-number">0.3f</span>, <span class="cm-number">1.0f</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">50</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;" class="CodeMirror-activeline"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">51</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">52</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-keyword">void</span> <span class="cm-variable">timer1_Tick</span>(<span class="cm-variable-3">object</span> <span class="cm-variable">sender</span>, <span class="cm-variable">EventArgs</span> <span class="cm-variable">e</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">53</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">54</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">this</span>.<span class="cm-variable">Refresh</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">55</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">56</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">57</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">58</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1914px;"></div><div class="CodeMirror-gutters" style="height: 1914px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p>&nbsp;</p></div></div>
 </body>
 </html>
