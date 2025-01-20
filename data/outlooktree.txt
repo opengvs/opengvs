@@ -17,14 +17,13 @@
         {id: "BaseOpenGL", text: "三维图形学原理",  pid: "OpenGL" },
 		
 	{id: "BaseOpenGL1", text: "三维图形学基本变换过程介绍", url:"三维图形学 openGLDiret3D中变换原理.html", pid: "BaseOpenGL" },
-        {id: "BaseOpenGL2", text: "四元数表示旋转公式推导过程", url:"四元数表示空间坐标旋转的公式证明 .html", pid: "BaseOpenGL" },	
-        {id: "BaseOpenGL3", text: "三维图形学中的透视投影公式", url:"再次推导三维图形学中的透视投影公式.html", pid: "BaseOpenGL" },	
-        {id: "BaseOpenGL4", text: "Shader中法向量计算的算法推导", url:"shader中计算法向量的公式详细推导过程 .html", pid: "BaseOpenGL" },
-        {id: "BaseOpenGL5", text: "一文读懂三维图形学中的光照模型", url:"一文读懂三维图形学中的光照模型(理论).html", pid: "BaseOpenGL" },
-        {id: "BaseOpenGL6", text: "三维图形学中相机变换矩阵的推导过程", url:"三维图形学中相机变换矩阵的推导过程(以OpenGL为例).html", pid: "BaseOpenGL" },
-        {id: "BaseOpenGL7", text: "坐标变换与齐次矩阵基础概念", url:"坐标变换与齐次矩阵基础概念.html", pid: "BaseOpenGL" },
-        {id: "BaseOpenGL8", text: "刚体的姿态表示及坐标变换原理", url:"三维图形学刚体的姿态表示及坐标变换原理.html", pid: "BaseOpenGL" },
-
+        {id: "BaseOpenGL2", text: "坐标变换与齐次矩阵基础概念", url:"坐标变换与齐次矩阵基础概念.html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL3", text: "刚体的姿态表示及坐标变换原理", url:"三维图形学刚体的姿态表示及坐标变换原理.html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL4", text: "四元数表示旋转公式推导过程", url:"四元数表示空间坐标旋转的公式证明 .html", pid: "BaseOpenGL" },	
+        {id: "BaseOpenGL5", text: "三维图形学中相机变换矩阵的推导过程", url:"三维图形学中相机变换矩阵的推导过程(以OpenGL为例).html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL6", text: "三维图形学中的透视投影公式", url:"再次推导三维图形学中的透视投影公式.html", pid: "BaseOpenGL" },	
+        {id: "BaseOpenGL7", text: "一文读懂三维图形学中的光照模型", url:"一文读懂三维图形学中的光照模型(理论).html", pid: "BaseOpenGL" },
+        {id: "BaseOpenGL8", text: "Shader中法向量计算的算法推导", url:"shader中计算法向量的公式详细推导过程 .html", pid: "BaseOpenGL" },
 		
 	{id: "CPPOpenGL", text: "C++版三维图形学原理(OpenGL示例)",  pid: "OpenGL" },
         {id: "CPPOpenGL1", text: "基于windows窗口的OpenGL程序基本框架", url:"基于windows窗口的OpenGL程序基本框架.html", pid: "CPPOpenGL" },
