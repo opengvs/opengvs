@@ -1,7 +1,10 @@
-/* -*-C++  FileName:ref_ptr.hpp   多线程智能安全指针的定义   本文件从osg::ref_ptr改造过来，去除了对OpenThread的依赖
-      1、本文件需要C++17的支持
+/*   FileName:ref_ptr.hpp   多线程智能安全指针的定义头文件   本文件从osg::ref_ptr改造过来，去除了对OpenThread的依赖
+*      这个多线程条件下满足安全性的智能指针，最初时从OSG下抠出来的，用到了多个工程项目中，
+                    使用了std::scoped_lock lock(_ObserverMutex);函数，需要c++17的支撑
+      2024年12月闲着没事，突然看到多年前的代码，想到使用原子操作实现，于是改造了Refencenced.hpp文件
+      1、本文件需要C++11的支持
       2、本指针为模板类，模板T类需要实现T->ref()/T->unref()/T->unref_nodelete()三个函数，建议用户从osg::Referenced类派生
-      版权所有：刘文庆     2013年12月  于廊坊威达科技发展有限公司
+      版权所有：刘文庆     2024年12月  于西双版纳家中
 */
 
 #ifndef OSG_REF_PTR
@@ -38,9 +41,9 @@ namespace osg {
         //2024年11月增加右值构造函数，解决函数返回智能指针问题--以前智能指针返回时，需要在函数内部使用return ref_ptr->get()
         ref_ptr( ref_ptr&& rp) noexcept
         {
-            _ptr = std::move_if_noexcept(rp._ptr);
+            _ptr = std::move_if_noexcept(rp._ptr);  // _ptr = rp._ptr;//使用这句就会引起异常
             
-           // _ptr = rp._ptr;//使用这句就会引起异常
+           
             rp._ptr = nullptr;
         }
 
@@ -60,8 +63,8 @@ namespace osg {
             {
                 this->release();
            }
-            _ptr = std::move_if_noexcept(rp._ptr);
-            //_ptr = rp._ptr;
+            _ptr = std::move_if_noexcept(rp._ptr);//_ptr = rp._ptr;
+            
             rp._ptr = nullptr;
 
             return *this;
@@ -125,9 +128,22 @@ namespace osg {
           * object from being deleted even if the reference count goes to zero.  Use when using a local ref_ptr<> to an Object that you want to return
           * from a function/method via a C pointer, whilst preventing the normal ref_ptr<> destructor from cleaning up the object. When using release()
           * you are implicitly expecting other code to take over management of the object, otherwise a memory leak will result. */
-        T* release() { T* tmp = _ptr; if (_ptr) _ptr->unref_nodelete(); _ptr = 0; return tmp; }
+        T* release() 
+        {
+            T* tmp = _ptr; 
+            if (_ptr)
+                _ptr->unref_nodelete();
+            _ptr = 0; 
+            
+            return tmp; 
+        }
 
-        void swap(ref_ptr& rp) { T* tmp = _ptr; _ptr = rp._ptr; rp._ptr = tmp; }
+        void swap(ref_ptr& rp) 
+        { 
+            T* tmp = _ptr; 
+            _ptr = rp._ptr; 
+            rp._ptr = tmp;
+        }
 
     private:
 
@@ -228,7 +244,8 @@ namespace osg {
 
         observer_ptr& operator = (const observer_ptr& wp)
         {
-            if (&wp == this) return *this;
+            if (&wp == this) 
+                return *this;
 
             _reference = wp._reference;
             _ptr = wp._ptr;
@@ -239,6 +256,7 @@ namespace osg {
         {
             if (&wp == this) 
                 return *this;
+
            // if (this->valid() == true)
            // {
            //     this->_reference->unref();
@@ -362,35 +380,3 @@ void main()
     osg::ref_ptr<Teacher>  teacher1 = person3;
 }
 */
-/*
-std::atomic_flag lock = ATOMIC_FLAG_INIT;       //初始化原子布尔类型
-
-void SelfLockCallBack(int n)
-{
-
-    for (int cnt = 0; cnt < 100; ++cnt) {
-
-        while (lock.test_and_set(std::memory_order_acquire))  // 获得锁
-            ; // 自旋
-        std::cout << n << " thread Output: " << cnt << '\n';
-        lock.clear(std::memory_order_release);               // 释放锁
-    }
-}
-int main()
-{
-
-    std::vector<std::thread> v;     //实例化一个元素类型为std::thread的向量
-    for (int n = 0; n < 10; ++n) {
-
-        v.emplace_back(SelfLockCallBack, n);       //以参数(SelfLockCallBack,n)为初值的元素放到向量末尾，相当于启动新线程f(n)
-    }
-    for (auto& t : v) {
-        //遍历向量v中的元素，基于范围的for循环，auto&自动推导变量类型并引用指针指向的内容
-        t.join();           //阻塞主线程直至子线程执行完毕
-    }
-
-    getchar();
-    return 0;
-}
-自旋锁除了使用atomic_flag的TAS(Test And Set)原子操作实现外，还可以使用普通的原子类型std::atomic实现：其中a.exchange(val)是支持TAS原子操作的，a.compare_exchange(expected, desired)是支持CAS(Compare And Swap)原子操作的，感兴趣可以自己实现出来。其中CAS原子操作是无锁编程的主要实现手段
-   */
