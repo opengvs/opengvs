@@ -5,6 +5,7 @@
 			
 	{id: "CPPBasic", text: "C++11学习之右值引用", url:"C++11学习之右值引用和移动语义详解.html",   pid: "CPPBase"},			
         {id: "CPPRALL", text: "C++智能指针及其应用", url:"再次谈谈C++语言中的智能指针.html" ,  pid: "CPPBase"},
+         {id: "CPPBase3", text: "开源一个线程安全的智能指针", url:"开源一个线程安全的智能指针.html" ,  pid: "CPPBase"},
 
 	{id: "windowsAPI", text: "windowsAPI编程", pid: "cpp"},
 		
