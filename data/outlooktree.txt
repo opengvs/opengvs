@@ -29,7 +29,7 @@
 	{id: "CPPOpenGL", text: "C++版三维图形学原理(OpenGL示例)",  pid: "OpenGL" },
         {id: "CPPOpenGL1", text: "基于windows窗口的OpenGL程序基本框架", url:"基于windows窗口的OpenGL程序基本框架.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL2", text: "二维空间xoy坐标系中绘制三角形(1)", url:"在二维空间xoy坐标系中绘制三角形_1.html", pid: "CPPOpenGL" },
-        {id: "CPPOpenGL3", text: "三维空间物体变换过程演示", url:"三维控件变换过程演示.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL3", text: "固定管线下VBO模式绘制三角形", url:"固定管线下VBO模式绘制三角形.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL4", text: "相机控制程序演示", url:"相机控制程序演示.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL5", text: "纹理应用演示程序", url:"纹理应用演示程序.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL6", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CPPOpenGL" },
