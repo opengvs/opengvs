@@ -4,7 +4,7 @@
 
 #include "g_consts.h"
 
-//#define __USE_OWNED_VECTOR
+#define __USE_OWNED_VECTOR
 
 #ifdef __USE_OWNED_VECTOR
 namespace OSG
@@ -38,7 +38,8 @@ namespace OSG
 				vec3::z + b.z
 			);
 		}
-		inline  vec3& operator+=(const vec3& b)  {
+		inline  vec3& operator+=(const vec3& b)  
+		{
 			*this = vec3::operator+(b);
 			return *this;
 		}
@@ -80,7 +81,7 @@ namespace OSG
 		}
 
 		inline const vec3 operator/(const vec3& b) const {
-			return vec3::vec3(
+			return OSG::vec3(
 				vec3::x / b.x,
 				vec3::y / b.y,
 				vec3::z / b.z
@@ -144,7 +145,7 @@ namespace OSG
 		return a.x * b.x + a.y * b.y + a.z * b.z;
 	}
 
-	inline const vec3& cross(const vec3& a, const vec3& b) {
+	inline const vec3 cross(const vec3& a, const vec3& b) {
 		return OSG::vec3(
 			a.y * b.z - a.z * b.y,
 			a.z * b.x - a.x * b.z,
@@ -152,7 +153,7 @@ namespace OSG
 		);
 	}
 
-	inline const vec3& normalize(const vec3& a) {
+	inline const vec3 normalize(const vec3& a) {
 		const float s = 1.0f / sqrtf(a.x * a.x + a.y * a.y + a.z * a.z);
 		return OSG::vec3(a.x * s, a.y * s, a.z * s);
 	}
@@ -239,12 +240,12 @@ extern "C" {
 
 		}
 		//计算点v到直线的垂足
-		const glm::dvec3&  GetVerticPointInLine(const glm::dvec3& p);
+		const glm::dvec3  GetVerticPointInLine(const glm::dvec3& p);
 
 
 		//计算cPt点绕直线旋转angle角度的坐标
-		const glm::dvec3& getPointRotateAroundLine(const glm::dvec3&  cPt, const double& angle);
-		const glm::dvec3& getPointRotateAroundLineUseQuat(const glm::dvec3&  cPt, double& angle);
+		const glm::dvec3 getPointRotateAroundLine(const glm::dvec3&  cPt, const double& angle);
+		const glm::dvec3 getPointRotateAroundLineUseQuat(const glm::dvec3&  cPt, double& angle);
 
 		glm::dvec3  GetPoint() { return Pt_0; };
 		glm::dvec3  GetVector() { return vector; };
@@ -300,7 +301,7 @@ extern "C" {
 			set(norm[0], norm[1], norm[2], d);
 		}
 		//返回面的法线
-		glm::dvec3&  getNorm() 
+		glm::dvec3  getNorm() 
 		{ 
 			glm::dvec3  tVec(_fv[0], _fv[1], _fv[2]);
 			tVec = glm::normalize(tVec);
@@ -346,7 +347,7 @@ extern "C" {
 	};
 	//p点在直线上的垂足(投影点)，可以看成tempP(p-Pt_0)矢量与Vecttor矢量的点积得到
 	//    垂足的长度（带符号），然后加上Pt_0点坐标就是计算结果
-	inline const glm::dvec3& OSGLine::GetVerticPointInLine(const glm::dvec3& p)
+	inline const glm::dvec3 OSGLine::GetVerticPointInLine(const glm::dvec3& p)
 	{
 		if (PointIsInLine(p) == true)
 			return  p;
@@ -359,7 +360,7 @@ extern "C" {
 		tRtRetVetV[2] = Pt_0.z + vector.z * k;
 		return  tRtRetVetV;
 	}
-	inline const glm::dvec3& OSGLine::getPointRotateAroundLine(const glm::dvec3& cPt, const double& angle)
+	inline const glm::dvec3 OSGLine::getPointRotateAroundLine(const glm::dvec3& cPt, const double& angle)
 	{
 		if (PointIsInLine(cPt) == 1)
 			return cPt;
@@ -429,7 +430,7 @@ extern "C" {
 		}
 	}
 #ifndef __USE_OWNED_VECTOR
-	const glm::dvec3& OSGLine::getPointRotateAroundLineUseQuat(const glm::dvec3& cPt, double& angle)
+	const glm::dvec3 OSGLine::getPointRotateAroundLineUseQuat(const glm::dvec3& cPt, double& angle)
 	{
 		glm::dvec3   vecPt = cPt - GetPoint();
 		glm::dvec3   vecLine = this->GetVector();
