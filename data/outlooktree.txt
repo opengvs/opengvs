@@ -36,7 +36,7 @@
         {id: "CPPOpenGL5", text: "使用Shader绘制VAO、VBO、EBO类型的三角形", url:"使用Shader绘制VAO、VBO、EBO类型的三角形.html", pid: "CPPOpenGL" },
 	{id: "CPPOpenGL6", text: "相机控制程序演示", url:"OpenGL程序中相机类的设计及观察变换应用.html", pid: "CPPOpenGL" },
          {id: "CPPOpenGL7", text: "物体的空间变换", url:"三维应用程序中物体的空间变换.html", pid: "CPPOpenGL" },
-        {id: "CPPOpenGL8", text: "纹理应用演示程序", url:"纹理应用演示程序.html", pid: "CPPOpenGL" },
+        {id: "CPPOpenGL8", text: "OpenGL三维程序中纹理基本概念与编程实践", url:"OpenGL三维程序中纹理基本概念与编程实践.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL9", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL10", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CPPOpenGL" },
 
