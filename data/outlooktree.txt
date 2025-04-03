@@ -13,7 +13,8 @@
 	{id: "panel", text: "WindowsAPI函数编程C++封装", url:"WindowsAPI函数编程C++封装.html", pid: "windowsAPI"},
 	{id: "splitter", text: "常用基础控件的使用",  url:"windows窗口程序中基本控件的使用.html",pid: "windowsAPI"},
         {id: "splitter1", text: "Qt系统中的事件处理机制详解", url:"Qt系统中的事件处理机制及信号与槽的关系.html",pid: "windowsAPI"},
-		
+	{id: "splitter2", text: "WIndowsAPI编程中TabControl控件的应用", url:"WIndowsAPI编程中TabControl控件的应用.html",pid: "windowsAPI"},
+	
 	{ id: "OpenGL", text: "OpenGL三维图形学"},
 	
         {id: "BaseOpenGL", text: "三维图形学原理",  pid: "OpenGL" },
