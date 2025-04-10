@@ -13,7 +13,7 @@
 	{id: "panel", text: "WindowsAPI函数编程C++封装", url:"WindowsAPI函数编程C++封装.html", pid: "windowsAPI"},
 	{id: "splitter", text: "常用基础控件的使用",  url:"windows窗口程序中基本控件的使用.html",pid: "windowsAPI"},
         {id: "splitter1", text: "Qt系统中的事件处理机制详解", url:"Qt系统中的事件处理机制及信号与槽的关系.html",pid: "windowsAPI"},
-	{id: "splitter2", text: "WIndowsAPI编程中TabControl控件的应用", url:"WIndowsAPI编程中TabControl控件的应用.html",pid: "windowsAPI"},
+	{id: "splitter2", text: "WIndows API编程中TabControl控件的应用", url:"WIndows API编程中TabControl控件的应用.html",pid: "windowsAPI"},
 	
 	{ id: "OpenGL", text: "OpenGL三维图形学"},
 	
@@ -38,9 +38,7 @@
 	{id: "CPPOpenGL6", text: "相机控制程序演示", url:"OpenGL程序中相机类的设计及观察变换应用.html", pid: "CPPOpenGL" },
          {id: "CPPOpenGL7", text: "物体的空间变换", url:"三维应用程序中物体的空间变换.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL8", text: "OpenGL三维程序中纹理基本概念与编程实践", url:"OpenGL三维程序中纹理基本概念与编程实践.html", pid: "CPPOpenGL" },
-        {id: "CPPOpenGL9", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CPPOpenGL" },
-        {id: "CPPOpenGL10", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CPPOpenGL" },
-
+        {id: "CPPOpenGL9", text: "OpenGL光照基础光照模型", url:"OpenGL光照基础光照模型.html", pid: "CPPOpenGL" },
 		
 	{id: "CSharpOpenGL", text: "C#版三维图形学原理(OpenGL示例)", pid: "OpenGL"},
 				
