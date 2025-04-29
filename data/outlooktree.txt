@@ -35,11 +35,12 @@
         {id: "CPPOpenGL3", text: "固定管线下VBO模式绘制三角形", url:"固定管线下VBO模式绘制三角形.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL4", text: "OpenGL程序中VAO、VBO、EBO相关概念描述", url:"OpenGL程序中VAO、VBO、EBO相关概念描述.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL5", text: "使用Shader绘制VAO、VBO、EBO类型的三角形", url:"使用Shader绘制VAO、VBO、EBO类型的三角形.html", pid: "CPPOpenGL" },
-	{id: "CPPOpenGL6", text: "相机控制程序演示", url:"OpenGL程序中相机类的设计及观察变换应用.html", pid: "CPPOpenGL" },
+	    {id: "CPPOpenGL6", text: "相机控制程序演示", url:"OpenGL程序中相机类的设计及观察变换应用.html", pid: "CPPOpenGL" },
          {id: "CPPOpenGL7", text: "物体的空间变换", url:"三维应用程序中物体的空间变换.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL8", text: "OpenGL三维程序中纹理基本概念与编程实践", url:"OpenGL三维程序中纹理基本概念与编程实践.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL9", text: "OpenGL光照基础光照模型", url:"OpenGL光照基础光照模型.html", pid: "CPPOpenGL" },
 		
+	
 	{id: "CSharpOpenGL", text: "C#版三维图形学原理(OpenGL示例)", pid: "OpenGL"},
 				
 	{id: "CSharpOpenGL1", text: "基于OpenTK的C#程序框架", url:"OpenTKFrameWorkApplication.html", pid: "CSharpOpenGL" },
@@ -50,7 +51,26 @@
         {id: "CSharpOpenGL6", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CSharpOpenGL" },
          {id: "CSharpOpenGL7", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CSharpOpenGL" },
 
-
+    { id: "Vulkan", text: "Vulkan学习"},
+	{id: "STEPBYSTEP_BASE", text: "STEP-BY-STEP学习Vulkan基础知识入门", pid: "Vulkan"},
+	{id: "STEP_1", text: "Step1开发环境及SDK验证", url:"Step1开发环境及SDK验证.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_2", text: "Step2程序基本框架构建", url:"Step2程序基本框架构建.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_3", text: "Step3创建VkInstance实例", url:"Step3创建VkInstance实例.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_4", text: "Step4添加调试信息输出功能", url:"Step4添加调试信息输出功能.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_5", text: "Step5创建VkSurface对象", url:"Step5创建VkSurface对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_6", text: "Step6选择物理设备", url:"Step6选择物理设备.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_7", text: "Step7创建逻辑设备", url:"Step7创建逻辑设备.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_8", text: "Step8创建交换链", url:"Step8创建交换链.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_9", text: "Step9创建渲染通道RenderPass对象", url:"Step9创建渲染通道RenderPass对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_10", text: "Step10创建VkFrameBuffer对象", url:"Step10创建VkFrameBuffer对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_11", text: "Step11创建VkPipeline对象", url:"Step11创建VkPipeline对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_12", text: "Step12创建命令缓冲区对象", url:"Step12创建命令缓冲区对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_13", text: "Step13创建同步对象", url:"Step13创建同步对象.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_14", text: "Step14实现图形的绘制", url:"Step14实现图形的绘制.html", pid: "STEPBYSTEP_BASE" },
+	{id: "STEP_15", text: "Step15响应OnSized事件", url:"Step15响应OnSized事件.html", pid: "STEPBYSTEP_BASE" },
+	
+	
+	
 	{ id: "other", text: "人工智能算法"},
 	{id: "otherBase", text: "人工智能算法基础",   pid: "other" },
 
