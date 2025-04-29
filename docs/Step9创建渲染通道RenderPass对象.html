@@ -1,0 +1,990 @@
+<!doctype html>
+<html style='font-size:22px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: white;
+    --window-border: none;
+    --search-select-bg-color: #575c61;
+    --active-file-bg-color: #f1f4f5;
+    --item-hover-bg-color: #f1f4f5;
+    --item-hover-text-color: black;
+    --control-text-color: #555;
+}
+
+@include-when-export url(https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css);
+
+html {
+    font-size: 12pt;
+}
+
+#write {
+    font-family: "STIX2Text", "Times New Roman", "华文中宋", "serif";
+    line-height: 1.5em;
+    padding: 10%;
+    padding-top: 5%;
+}
+
+.file-list-item-summary {
+    height: 36px;
+}
+
+.file-list-item {
+    padding-top: 18px !important;
+    padding-bottom: 18px;
+}
+
+#sidebar-loading-template.file-list-item {
+    padding-top: 0 !important;
+}
+
+a, a:visited {
+    color: #a00;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+h1  {
+    font-size: 2.4em;
+}
+
+#write h1  {
+    text-align: center;
+}
+#write h2  {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5  {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+	color: #777;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+pre, code {
+    font-family: 'Source Code Pro', 'Latin Modern Mono Light', "Latin Modern Mono", monospace !important;
+}
+
+.footnotes {
+    display: list-item;
+    margin-left: 1em;
+}
+
+.md-fences {
+    border: 1px solid;
+}
+
+.md-fences.md-fences-with-lineno {
+    border: none;
+}
+
+.CodeMirror-linenumber {
+    color: #333;
+}
+
+*.in-text-selection,
+::selection,
+.CodeMirror-selected {
+    background: var(--search-select-bg-color);
+    color: var(--search-select-text-color) !important;
+    text-shadow: none;
+}
+
+a.md-toc-inner {
+    color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-link {
+    color: #a00;
+    text-decoration: underline;
+}
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+    color: black;
+}
+
+#typora-source .CodeMirror-lines {
+    -webkit-font-smoothing: auto;
+    max-width: 1000px;
+}
+
+.md-def-name:before,
+.md-def-name:after {
+    color: #2d2d2d;
+}
+
+sup.md-footnote {
+    background-color: initial;
+    color: inherit;
+}
+
+mark {
+    background: #fff387;
+}
+
+td, th {
+    border: 1px solid;
+    padding-left: 1ch;
+    padding-right: 1ch;
+}
+
+/*table tr[cid]:first-child > td {
+    border-top: 3px double;
+}*/
+
+th {
+    border-bottom: 0;
+    padding-top: 2px;
+    background: #575c61;
+    border-color: #333;
+    color: #f3f3f3;
+}
+
+pre.md-meta-block {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+
+.task-list-item input:before {
+    content: '\221A';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    background-color: inherit;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+    color: inherit;
+}
+
+.md-task-list-item > input {
+    top: auto;
+    margin-left: -1.1em;
+    font-size: 1.3em;
+    margin-top: 0px;
+    -webkit-appearance: none;
+}
+
+.md-task-list-item input:before {
+    content: '\2610';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    background-color: inherit;
+}
+
+.md-task-list-item input:checked:before,
+.md-task-list-item input[checked]:before{
+    color: inherit;
+    content: '\2611';
+}
+
+.task-list-item {
+    padding-left: 1.5em;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 0.25em 24px;
+    position: relative;
+    color: #383838;
+    border-left: 2px solid;
+    
+}
+
+#write > blockquote {
+    padding: 0.25em 30px;
+    margin-left: -32px;
+    width: calc(100% + 32px);
+}
+
+#write >  .md-fences-with-lineno {
+    margin-left: -33px;
+    color: black;
+}
+/*
+img {
+	max-height: 20em;
+}*/
+
+.CodeMirror-linenumber {
+    min-width: 25px;
+}
+
+.md-header {
+    font-size: inherit !important;
+}
+
+/*blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}*/
+.blockquote-tuijian {
+    border-color: #5bc0de;
+    color: #37b3d7;
+    background-color: #f4f8fa;
+}
+.blockquote-jinggao {
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+    color: #ee9e33;
+}
+.blockquote-weixian {
+    color: #c42f2b;
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+ 
+.CodeMirror-line .cm-number{color:#7f6bff} /*数字，蓝色*/
+.CodeMirror-line .cm-property {
+    color: #f08d49;
+}
+.CodeMirror-line .cm-variable-3{color:#ffed6b} /*返回值、变量类型，int、void等，淡黄色*/
+.CodeMirror-line .cm-qualifier{color:#888}
+.CodeMirror-line .cm-variable-2 {
+    color: #888;
+} 
+.CodeMirror-line .cm-meta{ color:#BBFFFF}  /* 头文件、宏定义一整行 青色*/
+.CodeMirror-line .cm-atom { color:#f9ff00} /* true、false 黄色*/
+.CodeMirror-line .cm-keyword{    color: #ff1800;} /* if、return等关键字红色*/
+
+.CodeMirror-line .cm-def{ color:#00ff00  } /* 函数定义，绿色 */
+
+
+.CodeMirror-line .cm-variable { color: #90EE90; } /* 入参定义，亮绿色 */
+
+.CodeMirror-line .cm-builtin {
+    color: #82AAFF;
+}/* 蓝色 */
+.CodeMirror-line .cm-comment {
+    color: #888;
+} /* 灰色 */
+.CodeMirror-line .cm-string{ color: #82AAFF  } /* 字符串， 蓝色*/
+.CodeMirror-line .cm-string-2 { color: #888  }
+.CodeMirror-line .cm-operator {color: #ff1800}/* +=等操作符，红色*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #fff;
+    z-index: 3;
+}
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: #666 !important;
+}
+ 
+ 
+.CodeMirror-line .cm-tag{
+    color: #F07178;
+}
+.CodeMirror-line .cm-bracket{
+    color: #FFF;
+}
+.CodeMirror-line .cm-attribute{
+    color: #FFCB6B;
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+/* 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h2) " "
+}
+*/
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write {
+    counter-reset: h1
+}
+ 
+h1 {
+    counter-reset: h2
+}
+ 
+h2 {
+    counter-reset: h3
+}
+ 
+h3 {
+    counter-reset: h4
+}
+ 
+h4 {
+    counter-reset: h5
+}
+ 
+h5 {
+    counter-reset: h6
+}
+ 
+#write h1:before {
+    counter-increment: h1;
+   /* content: counter(h1) " "*/
+}
+ 
+#write h2:before {
+    counter-increment: h2;
+   /* content: counter(h1) "."counter(h2) " "*/
+}
+ 
+#write h3:before,
+h3.md-focus.md-heading:before
+ 
+    {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+ 
+ 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+ 
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+ 
+.md-fences,
+code,
+tt {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 0.9em;
+}
+ 
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+ 
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+ 
+ 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+ 
+@media print {
+    html {
+ font-size: 13px;
+    }
+    table,
+    pre {
+ page-break-inside: avoid;
+    }
+    pre {
+ word-wrap: break-word;
+    }
+}
+ 
+.md-fences {
+    background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+ 
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+ 
+ 
+ 
+ 
+ 
+#write .md-fences:not([mermaid-type])  {
+    padding-top: 7px;
+    border-radius: 10px;
+    background-color: #282c34;
+    color: #eeeeee;
+}
+ 
+.code-tooltip .ty-input,
+.code-tooltip input {
+    color: #eee;
+}
+ 
+ 
+ 
+.CodeMirror-wrap .CodeMirror-scroll {
+    padding-top: 20px;
+}
+ 
+#write .md-fences:before {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #fa3534;
+}
+ 
+#write .CodeMirror-scroll:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    z-index: 999;
+    background-color: #ff9900;
+}
+#write .md-fences::after {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #19be6b;
+}
+
+
+</style><title>StepByStep学习Vulkan编程入门(Step9创建渲染通道RenderPass对象)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='step-by-step学习vulkan编程入门创建渲染通道renderpass对象'><span>Step-by-Step学习Vulkan编程入门（创建渲染通道RenderPass对象）</span></h2><h2 id='作者刘文庆'><span>作者：刘文庆</span></h2><p><span>           写在前面：本部分为《Step-by-Step学习Vulkan编程入门》的第9步，从逻辑上讲可能有些不够严密，顺着前面“创建交换链并创建了与交换链内部VkImage关联的vectror</span><VkImageView><span>对象”后，似乎应该创建VkFrameBuffer对象，这样逻辑顺序可能更好理解。只是创建VkFrameBuffer对象时，需要用到VkRenderPass对象，为了避免设计程序过程中，回头完成前面未完成的功能，我们才将创建渲染通道RenderPass对象放到这里。</span></p><p><span>          在Vulkan程序中，交换链VkSwapchainKHR对象中的std::Vector</span><VkImage><span>对象、std::Vector</span><VkImageView><span>对象与VkFrameBuffer对象和VKRenderPass对象的关系可以通过下图描述清楚：</span></p><p><span>          </span><img src="../images/bcc7c06ed890451ab1647aa402302e43.png" referrerpolicy="no-referrer" alt="RenderPass、FrameBuffer、VkImage间的关系"></p><p><span>         ◆ RenderPass中有很多个Attachment每个，Attachment对应一块内存空间。Attachment用于指明该空间在渲染时具体起到的作用。如：颜色缓存、深度缓存、模板缓存等。</span>
+<span>​        ◆ 多个Attachment由一个Subpass进行关联，指明一次渲染会用到Subpass中的所有的Attachment。比如将第一个Attachment当作颜色缓存，将第二Attachment当作深度缓存。</span>
+<span>​       ◆  一个RenderPass对应一个FrameBuffer。而FrameBuffer中有多个ImageView，每个ImageView对应一个RenderPass中的Attachment。ImageView还不是真正的内存空间。</span>
+<span>​        ◆  ImageView会关联到一个Image。Image是对内存空间的描述，每个Image对象就是我们再创建交换链VkSwapchainKHR</span>
+<span>  对象时生成的VkImage对象。</span></p><p><span>         采用这种显存关联方式设计应用程序，程序的绘制代码就不直接与VkSwapchainKHR对象、VkFrameBuffer对象打交道了，绘制代码执行过程中操作的对象为VkRenderPass对象中Attachment对象，而Attachment对象通过VkRenderPass对象内部的VkSubpass对象进行约束，就保证了渲染过程中的数据传输校验的问题。</span></p><h5 id='step-2-9-创建vulkan中渲染通道renderpass'><span>Step-2-9 创建Vulkan中渲染通道RenderPass</span></h5><h6 id='渲染通道renderpass概念'><span>渲染通道RenderPass概念</span></h6><p><span>          VkRenderPass是VulkanAPI中描述渲染流程的对象，表示附件Attachment、子通道Subpass和子过程之间的依赖关系Dependency的集合，并描述了在子过程中如何使用附件，包括附件（VkAttachmentDescription）布局变化、同步操作和子通道关系。它定义了颜色附件和深度附件/模板附件，以及它们在渲染开始和结束时的布局（VkAttachmentReference）。子通道(VkSubpassDescription)引用允许灵活控制附件在不同阶段的使用布局。子通道依赖用于同步资源访问和布局转换（VkSubpassDependency），确保渲染过程的正确性和性能。VkRenderPass对象会在命令缓冲中，通过vkCmdBeginRenderPass等命令记录渲染管线GraphicsPipeline的渲染指令的渲染结果，实现多子通道的渲染操作。</span></p><p><span>          总之Vulkan 渲染通道(RenderPass) 规定了整个渲染管线一次执行的过程，包括了渲染所使用的所有资源和操作的描述(比如指定渲染管线的渲染目标，告诉管线要渲染到哪里)。RenderPass 本质上是一个渲染流程的完整描述(管理渲染流程)，包括如何渲染这些数据的元数据和指令，但是不包括实际的数据(图像)，通过与 FrameBuffer 结合来获取实际的图像数据，在Vulkan编程，RenderPass是必不可少的，它必须包含一个或者多个子通道(SubPass)  。</span></p><p><span>       每个子通道表示一个渲染阶段，并且都是使用 </span><code>RenderPass</code><span> 中定义的渲染数据描述VkAttachmentDescription定义这个阶段的渲染的步骤。 </span></p><p><span>        ①  Attachment 附件----VkAttachmentDescription对象：</span></p><p><span>   RenderPass 是通过附件(Attachment)的形式描述图像资源，包括颜色附件(Color Attachment）、深度/模板附件(Depth/Stencil Attachment)、用于多重采样的的解析附件(Resolve Attachment)和输入附件(Input Attachment)等。通俗的理解附件(Attachment)就是参与渲染的图像资源，严格来说它就是已经存在的资源，只是这里换种方式引用他们，这里称为附件，就像图像资源的View视图。附件描述AttachmentDescription定义了参与渲染的图像的属性，包括其格式Format、采样数Sample以及在每个渲染通道实例的开始操作Load Operation和结束操作Store Operation时如何处理其内容。</span></p><p><span>           </span><strong><span>Vulkan RenderPass常用附件描述</span></strong><span>‌包括以下几种类型：</span></p><p><span> ‌         ◆</span><strong><span>颜色附件（Color Attachment）</span></strong><span>‌：用于存储颜色信息，通常用于渲染图像或场景的颜色输出。</span></p><p><span> ‌         ◆</span><strong><span>深度/模板附件（Depth/Stencil Attachment）</span></strong><span>‌：用于存储深度信息和模板信息，常用于实现深度测试和模板测试。</span></p><p><span> ‌        ◆</span><strong><span>输入附件（Input Attachment）</span></strong><span>‌：用于读取其他RenderPass的输出结果，常用于实现复杂的渲染效果，如多层渲染或后期处理效果。</span></p><p><span> ‌         ◆</span><strong><span>解析附件（Resolve Attachment）</span></strong><span>‌：用于解决多重采样问题，通常在多重采样后使用，将低分辨率的图像解析为高分辨率的图像。</span></p><p><span>目前阶段我们只要了解颜色附件和深度附件的描述就足够了。（一下代码不要添加在程序中，只是用于解释附件描述）</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  // 定义颜色附件描述</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">VkAttachmentDescription colorAttachment = {};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.format = VK_FORMAT_R8G8B8A8_UNORM; // 交换链图像格式</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT; // 采样数</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR; // 在渲染前清除附件</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE; // 在渲染后存储附件内容</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE; // 不关心模板加载操作</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE; // 不关心模板存储操作</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED; // 初始布局</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR; // 最终布局</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">// 定义深度模板附件描述</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">VkAttachmentDescription depthAttachment = {};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.format = VK_FORMAT_R8G8B8A8_UNORM;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.samples = VK_SAMPLE_COUNT_1_BIT; // 采样数</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR; // 在渲染前清除附件</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE; // 渲染后不需要存储附件内容</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE; // 不关心模板加载操作</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE; // 不关心模板存储操作</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED; // 初始布局</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">depthAttachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL; // 最终布局</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 693px;"></div><div class="CodeMirror-gutters" style="height: 693px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>        loadOp和storeOp相信经常使用URP的小伙伴应该都很熟悉了，我们在SetRenderTarget的时候会经常对这些值做文章。它们决定了在渲染前和渲染后我们会对attachment的数据做什么，我们具有以下选项给loadOp：</span>
+<span>​                ◆  VK_ATTACHMENT_LOAD_OP_LOAD：保留attachment上的当前内容。</span>
+<span>​                ◆  VK_ATTACHMENT_LOAD_OP_CLEAR：在开始时使用一个常值清理attachment的内容。</span>
+<span>​                ◆  VK_ATTACHMENT_LOAD_OP_DONT_CARE：当前attachment上的内容被认为是未定义的，我们不关心它。</span>
+<span>在我们的项目中，我们会使用Clear操作，在绘制新一帧前用黑色来清理framebuffer。</span>
+<span>storeOp只有2个可选项： </span>
+<span>​               ◆  VK_ATTACHMENT_STORE_OP_STORE：渲染完的内容将被存储到内存中，之后可以读取。 </span>
+<span>​               ◆  VK_ATTACHMENT_STORE_OP_DONT_CARE：在渲染完后，framebuffer的内容被视为未定义的。</span></p><p><span>我们想在渲染完三角形后看到它显示在屏幕上，因此我们使用store操作。</span>
+<span>loadOp和storeOp应用于color和depth。stencilLoadOp和stencilStoreOp应用于stencil。</span></p><p><span>接下来看initialLayout和finalLayout。Vulkan中的textures和framebuffers都是用VKImages对象来表示的，而VKImage会包含一个特定的pixel format，我们可以根据我们要对Image做的操作改变内存中的pixel layout，以获取更好的性能。</span>
+<span>              以下为几个常见的Layouts：</span></p><p><span>            ◆VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL：Images被用作color attachment。</span></p><p><span>            ◆YOUT_PRESENT_SRC_KHR：Images在swap chain中被用作present。       </span></p><p><span>           ◆VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL：Images被用作memory copy的destination。</span>
+<span>​           将在texturing章节对该话题展开，但目前更重要的是，我们需要知道Images需要转换为适合接下来要涉及的操作的特定Layouts。initialLayout指定了在render pass开始前image将使用的layout。finalLayout指定了当render pass结束时image会自动切换成的layout。对initialLayout使用VK_IMAGE_LAYOUT_UNDEFINED意味着我们并不关心image之前的layout是什么样的。需要注意的是，这个UNDEFINED意味着image的内容不能保证被preserved，但这并不重要，因为我们会清理它。我们希望这个image在渲染完后被用于在swap chain中呈现，因此我们使用VK_IMAGE_LAYOUT_PRESENT_SRC_KHR作为finalLayout。下图描述了VkAttachmentDescription定义的附件VKImage对象从输入到输出过程的变化，中间部分就是Subpass通道的Layout类型。</span></p><p><span>                                                  </span><img src="../images/1113490-20170612104658415-904586548.png" referrerpolicy="no-referrer" alt="Vulkan render passes"><span>         </span></p><p><span>          </span><strong><span>initialLayout</span></strong><span>指定图像在开始进入渲染通道render pass前将要使用的布局结构。</span><strong><span>finalLayout</span></strong><span>指定当渲染通道结束自动变换时使用的布局。使用</span><strong><span>VK_IMAGE_LAYOUT_UNDEFINED</span></strong><span>设置</span><strong><span>initialLayout</span></strong><span>，意为不关心图像之前的布局。特殊值表明图像的内容不确定会被保留，但是这并不总要，因为无论如何我们都要清理它。我们希望图像渲染完毕后使用交换链进行呈现，这就解释了为什么</span><strong><span>finalLayout</span></strong><span>要设置为</span><strong><span>VK_IMAGE_LAYOUT_PRESENT_SRC_KHR</span></strong><span>。</span></p><p><span>如果没有搞清楚布局存在的意义，进一步解释layout请看如下图示:</span></p><p><span>                                                                       </span><img src="../images/1113490-20170612114241946-470130568.png" referrerpolicy="no-referrer"></p><p><span>          一般意义上，我们理解</span><code>CPU</code><span>进行内存中的数据读写往往都是线性排序的</span><code>linear memory layout</code><span>，可以看到</span><code>AB</code><span>与</span><code>CD</code><span>作为来个连续的行来进行读取。但是在很多时候对于像素纹理数据的操作是非线性连续的，这种情景更多发生在</span><code>GPU</code><span>操作中，所以</span><code>GPU</code><span>硬件更多的支持基于(</span><code>Tiled</code><span>)平铺的或者成为最佳的内存布局结构，来提降低</span><code>GPU</code><span>处理数据的开销。所以从</span><code>CPU linear layout</code><span> 内存数据 到 </span><code>GPU optimal layout</code><span> 显存数据的读写 往返之间存在数据存储格式的优化转变步骤。</span></p><p><span>        RenderPass中定义的子通道SubRenderPass并没有直接使用VkAttachmentDescription定义的定义颜色附件描述和深度模板附件描述，而是通过他们的一个引用结构来对附件相应的操作。</span></p><p><span>VkAttachmentReference    colorAttachmentRef{};</span>
+<span>                                                colorAttachmentRef.attachment = 0;</span>
+<span>                                                colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;</span></p><p><span>VkAttachmentReferencei结构中定义了一个布局成员变量layout，每个subpass可以指定的流程中需要用到的附件是哪些，以及使用该附件时，该附件的布局方式应该变为什么（</span><code>layout</code><span>字段指定）。通过在</span><code>VkAttachmentReference</code><span>中为每个附件指定layout字段，可以灵活地控制附件在子流程中的使用布局，而不仅仅受限于初始布局。这种灵活性有助于优化渲染流程，提高性能。</span></p><p><span>// 如果还有subpass2，它需要的颜色附件布局类型是不同的，则应该重新创建颜色附件的引用</span></p><p><span>VkAttachmentReference    colorAttachmentRef2{};</span>
+<span>                                                colorAttachmentRef2.attachment = 0;//指向附件的数组下标</span>
+<span>                                                colorAttachmentRef2.layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL; // shader只读</span></p><p><span>// 如果还有subpass3，它的需求跟subpass1一样，那就直接重用上面的colorReference 即可</span></p><p><span>这里就能够看出为啥要用引用而不是直接使用附件了，灵活。</span></p><p><span>        ② Subpass 子通道----VkSubpassDescription</span></p><p><span>             typedef struct VkSubpassDescription {</span>
+<span>​</span><span>			</span><span>VkSubpassDescriptionFlags       flags;// 子通道描述的附加标志，目前必须为0</span>
+<span>​</span><span>			</span><span>VkPipelineBindPoint             pipelineBindPoint; // 管线绑定点，必须是 VK_PIPELINE_BIND_POINT_GRAPHICS</span>
+<span>​</span><span>			</span><span>uint32_t                        inputAttachmentCount;// 输入附件的数量</span>
+<span>​</span><span>			</span><span>const VkAttachmentReference* pInputAttachments; // 输入附件数组 </span>
+<span>​</span><span>			</span><span>uint32_t                        colorAttachmentCount; // 颜色附件数量</span>
+<span>​</span><span>			</span><span>const VkAttachmentReference* pColorAttachments; // 颜色附件数组</span>
+<span>​</span><span>			</span><span>const VkAttachmentReference* pResolveAttachments; // 解析附件数组</span>
+<span>​</span><span>			</span><span>const VkAttachmentReference* pDepthStencilAttachment; // 深度附件数组</span>
+<span>​</span><span>			</span><span>uint32_t                        preserveAttachmentCount;</span>
+<span>​</span><span>			</span><span>const uint32_t* pPreserveAttachments;</span>
+<span>​</span><span>		</span><span>} VkSubpassDescription;</span></p><p><span>        子通道表示渲染的一个阶段，在该阶段中会读取和写入渲染通道中的附件的某个子集（一部分或全部）。渲染命令就记录在某个渲染通道实例的特定子通道中。和附件一样，子通道也不需要实际创建出来，只需要描述，使用子通道描述SubpassDescription。子通道描述，描述了执行子通道所涉及的附件。每个子通道都可以从一些附件中进行读取操作将其作为输入附件，向一些附件中进行写入操作并将其作为颜色附件或深度/模板附件，对颜色附件或深度/模板附件执行着色器解析操作Resolve Operation，以及为解析附件Resolve Attachment执行多重采样MSAA解析操作。子通道描述还可以包括一组保留附件Preserve Attachment，这些附件不是子通道读取或写入的，但其内容必须在整个子通道中保留。</span></p><p><span>         一个渲染通道可以包好多个子通道，并且每个子通道执行的操作依赖于经过前一个子通道的帧缓冲区Framebuffer的内容。可以理解为附件经过一个又一个子通道，在其中发生各式各样的操作。</span></p><p><span>        子通道可以引用以下类型的附件：</span></p><p><span>        ◆pInputAttachments: 从着色器中读取的附件</span></p><p><span>        ◆pColorAttachments: 代表图像数据的附件</span></p><p><span>       ◆pResolveAttachments: 多重采样结果的颜色附件</span></p><p><span>       ◆pDepthStencilAttachment: 用于深度模板测试的附件</span></p><p><span>       ◆pPreserveAttachments: 不会被子通道使用，但会保留数据的附件</span></p><p><span>        每种附件都需要通过AttachmentReferance指定其下标和引用时的布局。 其中下标就是创建渲染通道时指定的AttachmentDescription数组的下标，而布局决定了子通道引用它们时会自动转变为的布局。对于InputAttachment和ColorAttachment而言，它们各自数组的下标还与片元着色器中的输入（Input）或输出（Color）位置下标一致（数组下标 X  等价于 location =  X）</span></p><p><span>         ③ SubpassDependency 子通道依赖</span></p><p><span>         子通道依赖是用来描述子通道之间的执行依赖Execution Dependency和内存依赖Memory Dependency的，两者被引入两组“操作”之间发挥作用（后面会讲）。所谓的“操作”Operation在Vulkan就是指在主机，设备或某个外部实体（比如呈现引擎Presentation Engine）上执行的工作。</span></p><p><span>         如果存在多个子通道，子通道的执行顺序可能会与其他子通道重叠或乱序执行，除非执行依赖另有规定。每个子通道只遵守自己通道中记录的命令的提交顺序，以及用于分隔渲染过程的vkCmdBeginRenderPass和vkCmdEndRenderPass命令，但是不包括其他子通道中的命令。这会影响大多数其他隐式排序保证机制</span></p><p><span>typedef struct VkSubpassDependency {</span>
+<span>                           uint32_t srcSubpass;    // 源子通道索引或VK_SUBPASS_EXTERNAL。</span>
+<span>                                                                 // 如果设置为VK_SUBPASS_EXTERNAL，表示依赖于渲染通道外部的操作，</span>
+<span>                                                                // 比如在渲染通道开始前或结束后的操作。</span></p><p><span>                            uint32_t dstSubpass;    // 目标子通道索引或VK_SUBPASS_EXTERNAL。</span>
+<span>​                                                                    // 如果设置为VK_SUBPASS_EXTERNAL，表示依赖于渲染通道外部的操作。</span></p><p><span>                          VkPipelineStageFlags srcStageMask;  // 源阶段掩码。</span>
+<span>​                                                                                             // 指定在这些阶段结束时，依赖将生效。</span>
+<span>​                                             // 常见阶段包括：</span>
+<span>​                                             //          VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT - 颜色附件输出阶段</span>
+<span>​                                            //           VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT - 早期片段测试阶段</span>
+<span>​                                            //           VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT - 晚期片段测试阶段等。</span></p><p><span>                          VkPipelineStageFlags            dstStageMask;  // 目标阶段掩码。</span>
+<span>​                                                                                                    // 指定在这些阶段开始前，依赖将生效。</span>
+<span>​                                         // 常见阶段包括：</span>
+<span>​                                         // VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT - 颜色附件输出阶段</span>
+<span>​                                         // VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT - 早期片段测试阶段</span>
+<span>​                                        // VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT - 晚期片段测试阶段等。</span></p><p><span>                         VkAccessFlags srcAccessMask;        // 源访问掩码。</span>
+<span>​                                                                                        // 指定在这些访问类型完成后，依赖将生效。</span>
+<span>​                                        // 常见访问类型包括：</span>
+<span>​                                        // VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT - 颜色附件写入</span>
+<span>​                                        // VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT - 深度模板附件写入等。</span></p><p><span>                        VkAccessFlags dstAccessMask;        // 目标访问掩码。</span>
+<span>​                                                                                       // 指定在这些访问类型开始前，依赖将生效。</span>
+<span>​                                         // 常见访问类型包括：</span>
+<span>​                                          // VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT - 颜色附件写入</span>
+<span>​                                         // VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT - 深度模板附件写入</span>
+<span>​                                         // VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_READ_BIT - 深度模板附件读取等。</span></p><p><span>                         VkDependencyFlags dependencyFlags;  // 依赖标志。</span>
+<span>​                                                                                                // 可以是0或包含以下标志之一：</span>
+<span>​                                                                                                // VK_DEPENDENCY_BY_REGION_BIT - 表示依赖仅在图像的同一区域内生效。</span>
+<span>​                                                                                                // VK_DEPENDENCY_VIEW_LOCAL_BIT - 表示依赖在单个描述符的视图上生效。</span>
+<span>​                                                                                                // VK_DEPENDENCY_DEVICE_GROUP_BIT - 表示依赖在设备组内生效。</span>
+<span>​                      } VkSubpassDependency;</span></p><p><span>           一整个渲染通道其实只描述了子通道和附件的结构，与附件对应的实际图像资源（图像视图）无关。实际放入渲染通道的图像资源及其详细信息需要在帧缓冲区Framebuffer中指定。帧缓冲区也需要根据与它兼容的特定渲染通道来创建。总的来说，渲染通道和帧缓冲区定义了一个或多个子通道的完整渲染目标状态以及子通道之间的算法依赖关系。</span></p><p><span>         不论是帧缓冲区还是渲染管线，都需要根据特定的渲染通道来创建。而且只有那个特定的渲染通道或者是和它适配的其他渲染管线才能和两者一起使用，至于有关适配的详细定义在明细里有。当用某个渲染通道创建帧缓冲区时，我们就说该帧缓冲区跟该渲染通道是适配的Compatible。</span></p><p><span>      </span><code>RenderPass</code><span> 和 </span><code>FrameBuffer</code><span> 的关系密切，</span><code>FrameBuffer</code><span> 代表了 </span><code>RenderPass</code><span>使用的具体内存集合，定义了 </span><code>RenderPass</code><span> 中每个 </span><code>ImageView</code><span> 与附件的对应关系。</span><code>RenderPass</code><span> 使得开发者能够更精细的控制渲染过程，优化性能，同时适应现代</span><code>GPU</code><span>架构的特点</span></p><h6 id='创建渲染管道renderpass'><span>创建渲染管道RenderPass</span></h6><p><span>       前面我们讲述了渲染通道的概念以及渲染通道到中渲染附件、渲染子通道以及他们的引用的相关概念，下面我们构建一个只包含一个颜色附件和一个渲染子通道的渲染通道的函数。</span></p><p><span>         ① 在VulkanAppBase类内部定义VkRenderPass对象</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; VkRenderPass renderPass;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 33px;"></div><div class="CodeMirror-gutters" style="height: 33px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>         ② 添加创建VkRenderPass对象的函数</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 35.1667px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>41</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>void createRenderPass() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VkAttachmentDescription colorAttachment{};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.format = swapChainImageFormat;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VkAttachmentReference colorAttachmentRef{};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachmentRef.attachment = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VkSubpassDescription subpass{};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>subpass.colorAttachmentCount = 1;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>subpass.pColorAttachments = &amp;colorAttachmentRef;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VkSubpassDependency dependency{};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.srcSubpass = VK_SUBPASS_EXTERNAL;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.dstSubpass = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.srcAccessMask = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VkRenderPassCreateInfo renderPassInfo{};</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.attachmentCount = 1;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.pAttachments = &amp;colorAttachment;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.subpassCount = 1;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.pSubpasses = &amp;subpass;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.dependencyCount = 1;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>renderPassInfo.pDependencies = &amp;dependency;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>if (vkCreateRenderPass(logicDevice, &amp;renderPassInfo, nullptr, &amp;renderPass) != VK_SUCCESS) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>throw std::runtime_error("failed to create render pass!");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1401px;"></div><div class="CodeMirror-gutters" style="height: 1401px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>          ③ 修改initVulkan()函数与cleanup()函数</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 35.1667px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>8</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>void initVulkan()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>VulkanAppCore::initVulkan();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>//在这行后面添加初始化代码</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  createSwapChain();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  createImageViews();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  createRenderPass();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 271px;"></div><div class="CodeMirror-gutters" style="height: 271px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>20</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">void cleanup()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (renderPass != VK_NULL_HANDLE)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkDestroyRenderPass(logicDevice, renderPass, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  renderPass = VK_NULL_HANDLE;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  for (auto imageView : swapChainImageViews)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkDestroyImageView(logicDevice, imageView, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (swapChain != nullptr)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkDestroySwapchainKHR(logicDevice, swapChain, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  swapChain = nullptr;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>//在这行前面添加销毁代码</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>VulkanAppCore::cleanup();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 663px;"></div><div class="CodeMirror-gutters" style="height: 663px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>到目前为止</span><a href='./Vulkan_code/VulkanAppBase_Create_createRenderPass.hpp'><span>VulkanAppBase.hpp代码：</span></a></p></div></div>
+</body>
+</html>

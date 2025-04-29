@@ -1,0 +1,941 @@
+<!doctype html>
+<html style='font-size:22px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: white;
+    --window-border: none;
+    --search-select-bg-color: #575c61;
+    --active-file-bg-color: #f1f4f5;
+    --item-hover-bg-color: #f1f4f5;
+    --item-hover-text-color: black;
+    --control-text-color: #555;
+}
+
+@include-when-export url(https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css);
+
+html {
+    font-size: 12pt;
+}
+
+#write {
+    font-family: "STIX2Text", "Times New Roman", "华文中宋", "serif";
+    line-height: 1.5em;
+    padding: 10%;
+    padding-top: 5%;
+}
+
+.file-list-item-summary {
+    height: 36px;
+}
+
+.file-list-item {
+    padding-top: 18px !important;
+    padding-bottom: 18px;
+}
+
+#sidebar-loading-template.file-list-item {
+    padding-top: 0 !important;
+}
+
+a, a:visited {
+    color: #a00;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+h1  {
+    font-size: 2.4em;
+}
+
+#write h1  {
+    text-align: center;
+}
+#write h2  {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5  {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+	color: #777;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+pre, code {
+    font-family: 'Source Code Pro', 'Latin Modern Mono Light', "Latin Modern Mono", monospace !important;
+}
+
+.footnotes {
+    display: list-item;
+    margin-left: 1em;
+}
+
+.md-fences {
+    border: 1px solid;
+}
+
+.md-fences.md-fences-with-lineno {
+    border: none;
+}
+
+.CodeMirror-linenumber {
+    color: #333;
+}
+
+*.in-text-selection,
+::selection,
+.CodeMirror-selected {
+    background: var(--search-select-bg-color);
+    color: var(--search-select-text-color) !important;
+    text-shadow: none;
+}
+
+a.md-toc-inner {
+    color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-link {
+    color: #a00;
+    text-decoration: underline;
+}
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+    color: black;
+}
+
+#typora-source .CodeMirror-lines {
+    -webkit-font-smoothing: auto;
+    max-width: 1000px;
+}
+
+.md-def-name:before,
+.md-def-name:after {
+    color: #2d2d2d;
+}
+
+sup.md-footnote {
+    background-color: initial;
+    color: inherit;
+}
+
+mark {
+    background: #fff387;
+}
+
+td, th {
+    border: 1px solid;
+    padding-left: 1ch;
+    padding-right: 1ch;
+}
+
+/*table tr[cid]:first-child > td {
+    border-top: 3px double;
+}*/
+
+th {
+    border-bottom: 0;
+    padding-top: 2px;
+    background: #575c61;
+    border-color: #333;
+    color: #f3f3f3;
+}
+
+pre.md-meta-block {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+
+.task-list-item input:before {
+    content: '\221A';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    background-color: inherit;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+    color: inherit;
+}
+
+.md-task-list-item > input {
+    top: auto;
+    margin-left: -1.1em;
+    font-size: 1.3em;
+    margin-top: 0px;
+    -webkit-appearance: none;
+}
+
+.md-task-list-item input:before {
+    content: '\2610';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    background-color: inherit;
+}
+
+.md-task-list-item input:checked:before,
+.md-task-list-item input[checked]:before{
+    color: inherit;
+    content: '\2611';
+}
+
+.task-list-item {
+    padding-left: 1.5em;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 0.25em 24px;
+    position: relative;
+    color: #383838;
+    border-left: 2px solid;
+    
+}
+
+#write > blockquote {
+    padding: 0.25em 30px;
+    margin-left: -32px;
+    width: calc(100% + 32px);
+}
+
+#write >  .md-fences-with-lineno {
+    margin-left: -33px;
+    color: black;
+}
+/*
+img {
+	max-height: 20em;
+}*/
+
+.CodeMirror-linenumber {
+    min-width: 25px;
+}
+
+.md-header {
+    font-size: inherit !important;
+}
+
+/*blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}*/
+.blockquote-tuijian {
+    border-color: #5bc0de;
+    color: #37b3d7;
+    background-color: #f4f8fa;
+}
+.blockquote-jinggao {
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+    color: #ee9e33;
+}
+.blockquote-weixian {
+    color: #c42f2b;
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+ 
+.CodeMirror-line .cm-number{color:#7f6bff} /*数字，蓝色*/
+.CodeMirror-line .cm-property {
+    color: #f08d49;
+}
+.CodeMirror-line .cm-variable-3{color:#ffed6b} /*返回值、变量类型，int、void等，淡黄色*/
+.CodeMirror-line .cm-qualifier{color:#888}
+.CodeMirror-line .cm-variable-2 {
+    color: #888;
+} 
+.CodeMirror-line .cm-meta{ color:#BBFFFF}  /* 头文件、宏定义一整行 青色*/
+.CodeMirror-line .cm-atom { color:#f9ff00} /* true、false 黄色*/
+.CodeMirror-line .cm-keyword{    color: #ff1800;} /* if、return等关键字红色*/
+
+.CodeMirror-line .cm-def{ color:#00ff00  } /* 函数定义，绿色 */
+
+
+.CodeMirror-line .cm-variable { color: #90EE90; } /* 入参定义，亮绿色 */
+
+.CodeMirror-line .cm-builtin {
+    color: #82AAFF;
+}/* 蓝色 */
+.CodeMirror-line .cm-comment {
+    color: #888;
+} /* 灰色 */
+.CodeMirror-line .cm-string{ color: #82AAFF  } /* 字符串， 蓝色*/
+.CodeMirror-line .cm-string-2 { color: #888  }
+.CodeMirror-line .cm-operator {color: #ff1800}/* +=等操作符，红色*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #fff;
+    z-index: 3;
+}
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: #666 !important;
+}
+ 
+ 
+.CodeMirror-line .cm-tag{
+    color: #F07178;
+}
+.CodeMirror-line .cm-bracket{
+    color: #FFF;
+}
+.CodeMirror-line .cm-attribute{
+    color: #FFCB6B;
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+/* 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h2) " "
+}
+*/
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write {
+    counter-reset: h1
+}
+ 
+h1 {
+    counter-reset: h2
+}
+ 
+h2 {
+    counter-reset: h3
+}
+ 
+h3 {
+    counter-reset: h4
+}
+ 
+h4 {
+    counter-reset: h5
+}
+ 
+h5 {
+    counter-reset: h6
+}
+ 
+#write h1:before {
+    counter-increment: h1;
+   /* content: counter(h1) " "*/
+}
+ 
+#write h2:before {
+    counter-increment: h2;
+   /* content: counter(h1) "."counter(h2) " "*/
+}
+ 
+#write h3:before,
+h3.md-focus.md-heading:before
+ 
+    {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+ 
+ 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+ 
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+ 
+.md-fences,
+code,
+tt {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 0.9em;
+}
+ 
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+ 
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+ 
+ 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+ 
+@media print {
+    html {
+ font-size: 13px;
+    }
+    table,
+    pre {
+ page-break-inside: avoid;
+    }
+    pre {
+ word-wrap: break-word;
+    }
+}
+ 
+.md-fences {
+    background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+ 
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+ 
+ 
+ 
+ 
+ 
+#write .md-fences:not([mermaid-type])  {
+    padding-top: 7px;
+    border-radius: 10px;
+    background-color: #282c34;
+    color: #eeeeee;
+}
+ 
+.code-tooltip .ty-input,
+.code-tooltip input {
+    color: #eee;
+}
+ 
+ 
+ 
+.CodeMirror-wrap .CodeMirror-scroll {
+    padding-top: 20px;
+}
+ 
+#write .md-fences:before {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #fa3534;
+}
+ 
+#write .CodeMirror-scroll:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    z-index: 999;
+    background-color: #ff9900;
+}
+#write .md-fences::after {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #19be6b;
+}
+
+
+</style><title>StepByStep学习Vulkan编程入门(Step6选择物理设备)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='step-by-step学习vulkan编程入门选择显卡物理设备'><span>Step-by-Step学习Vulkan编程入门（选择显卡物理设备）</span></h1><h2 id='作者刘文庆'><span>作者：刘文庆</span></h2><h5 id='step-2-6-查询机器可用的物理设备以及与物理设备关联的队列族'><span>Step-2-6 查询机器可用的物理设备以及与物理设备关联的队列族</span></h5><p><span>        我们已经创建了Instance对象和surface对象，接着我们就需要查询可用的物理设备（显卡GPU）以及显卡驱动提供的执行Vulkan绘制命令(执行Vulkan绘制函数)的队列类型，我们称为队列族。</span></p><p><span>          Vulkan允许我们选择任意数量的显卡设备并同时使用它们，对于多显卡系统特别有用，本教程这里只使用一个物理设备：</span></p><p><span>          ①  在VulkanAppCore 类内部添加VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;对象</span></p><p><span>          ②  通过编写查找函数查询可用的VkPhysicalDevice physicalDevice 对象</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">void pickPhysicalDevice() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 99px;"></div><div class="CodeMirror-gutters" style="height: 99px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>        ③  将pickPhysicalDevice()函数添加到initVulkan()函数中</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  void initVulkan() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  createInstance();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  CreateVkDebugUtilsMessengerEXT();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  createSurface();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  pickPhysicalDevice();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 198px;"></div><div class="CodeMirror-gutters" style="height: 198px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>       ④ 完善pickPhysicalDevice()</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>29</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">void pickPhysicalDevice() </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{ &nbsp; </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❶首先需要查询系统中安装的显示设备GPU的数量</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  uint32_t _VkPhysicaldeviceCount = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  vkEnumeratePhysicalDevices(instance, &amp;_VkPhysicaldeviceCount, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (_VkPhysicaldeviceCount == 0) //如果显示设备GPU的数量为您报错退出</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  throw std::runtime_error("没有发现 GPUs设备，程序退出！");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❷ 枚举系统中所有显示设备GPU,并保存到数组中</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::vector&lt;VkPhysicalDevice&gt; _VkPhysicaldevices(_VkPhysicaldeviceCount);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  vkEnumeratePhysicalDevices(instance, &amp;_VkPhysicaldeviceCount, _VkPhysicaldevices.data());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  // ❸对std::vector&lt;VkPhysicalDevice&gt; _VkPhysicaldevices数组中每个物理设备进行遍历，</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  // &nbsp; 选择一个可用的物理设备,我们通过一个独立的isDeviceSuitable函数进行判断</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  for (const auto&amp; device : _VkPhysicaldevices) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  if (isDeviceSuitable(device)) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  physicalDevice = device;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  break;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❹ 如果没有找到合适的物理设备，程序报错退出</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (physicalDevice == VK_NULL_HANDLE) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  throw std::runtime_error("failed to find a suitable GPU!");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 957px;"></div><div class="CodeMirror-gutters" style="height: 957px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>            ⑤ 编写检测可选设备是否满足要求的函数isDeviceSuitable（）函数</span></p><p><span>                 在VulkanAppCore 类内部添加添加isDeviceSuitable函数</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">bool isDeviceSuitable(VkPhysicalDevice device) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  return true;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 99px;"></div><div class="CodeMirror-gutters" style="height: 99px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>            检查可以支持Vulkan运行的物理设备，设计后续能否为Vulkan运行提供做大支持的运行环境，对于多显卡系统当然是选择性能更为先进的显卡，如作者运行的计算机一个显卡为Nvidia 的6显卡一个NVIDIA的GeForce 4060，一个是Intel的集成显卡，当然是选择NVIDIA显卡。</span></p><p><span>           为了选择合适的设备，我们需要获取更加详细的设备信息。对于基础的设备属性，比如名称、类型和支持的Vulkan版本可以通过</span><code>vkGetPhysicalDeviceProperties</code><span>函数进行查询。</span></p><p><span>                      VkPhysicalDeviceProperties    </span><em><span>vkPhysicalDeviceProperties;</span>
+<span>​                      vkGetPhysicalDeviceProperties( _vkPhysicalDevice, &amp;</span></em><span>vkPhysicalDeviceProperties);</span></p><p><span>对于纹理压缩、64位浮点和多视口渲染(常用于VR)等特性的支持情况可以通过</span><code>vkGetPhysicalDeviceFeatures</code><span>函数查询：</span></p><p><span>                      VkPhysicalDeviceFeatures    </span><em><span>vkPhysicalDeviceFeatures;</span>
+<span>​                      vkGetPhysicalDeviceFeatures( _vkPhysicalDevice, &amp;</span></em><span>vkPhysicalDeviceFeatures);</span></p><p><span>假设应用程序只能在支持几何着色器的显卡上运行，那么</span><code>isDeviceSuitable</code><span>函数可以这样判断：</span></p><p><em><span>bool</span></em><span> isDeviceSuitable(VkPhysicalDevice </span><em><span>vkPhysicalDevice)  {</span>
+<span>                             VkPhysicalDeviceProperties  _vkPhysicalDeviceProperties;</span>
+<span>                             VkPhysicalDeviceFeatures  _vkPhysicalDeviceFeatures;</span>
+<span>                            vkGetPhysicalDeviceProperties( _vkPhysicalDevice, &amp; _vkPhysicalDeviceProperties);</span>
+<span>                           vkGetPhysicalDeviceFeatures(</span></em><span>vkPhysicalDevice, &amp; _vkPhysicalDeviceFeatures);</span></p><p><span>                        return        (_vkPhysicalDeviceProperties.deviceType == </span></p><p><span>                  VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU &amp;&amp; _vkPhysicalDeviceFeatures.geometryShader ）;</span>
+<span>}</span></p><p><span>我们开发的实验性应用程序仅需要最基础的Vulkan支持环境，这涉及到</span><strong><span>检测物理设备上的队列族</span></strong><span>、检测物理设备支持的Vulkan扩展、</span><strong><span>检测交换链扩展的支持</span></strong><span> ，这些概念将在下面章节讲述，本部分我们仅仅使用一个空的isDeviceSuitable函数：</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">bool isDeviceSuitable(VkPhysicalDevice device) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  return true;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 99px;"></div><div class="CodeMirror-gutters" style="height: 99px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>           ⑥ 我们注意到，我们定义的VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;对象是通过vkEnumeratePhysicalDevices函数获得的设备句柄，而不是创建出来的，也就是所Vulkan的VKInstance内部本身就保存了VkPhysicalDevice physicalDevice 物理设备的列表，我们只是选择了一个可用的物理设备而已，所以VkPhysicalDevice physicalDevice对象并不需要我们在程序中销毁，在VKInstance对象销毁过程中Vulkan会自动处理。</span></p><p><span>            ⑦  枚举设备支持的扩展并交验应用程序需要的扩展是否可用</span></p><p><font color=red><span>知识点：</span></font><span> </span><font color=blue><span>  vulkan的核心设计理念是高度抽象化，同时进来不强制标准化 GPU硬件的具体实现，为了达到这样的效果，所以有了扩展API， 扩展功能实际上主要是满足一下几个目的：</span></font></p><p><span>                  </span><font color=blue><span> </span><strong><span>◆在驱动中实现</span></strong><span>：厂商在显卡驱动中实现了某些硬件功能的支持； </span></font></p><p><span>                  </span><font color=blue><span> </span><strong><span>◆ 通过 Vulkan 暴露给开发者</span></strong><span>：通过扩展 API，让开发者可以访问这些驱动功能。 </span></font></p><p><span>                   </span><font color=blue><strong><span>◆ 调用 GPU 硬件执行操作</span></strong><span>：当开发者调用这些扩展时，驱动会将它们翻译成底层硬件指令，由 GPU 执行实际的操作。 </span></font></p><p><span>           </span><font color=green><span>Vulkan应用层开发过程中常用的设备扩展主要有：</span></font></p><ul><li><p><font color=green><strong><span>VK_KHR_surface</span></strong><span>：用于与窗口系统进行交互的扩展，可以创建Vulkan表面。</span></font><span> </span></p></li><li><p><font color=green><strong><span>VK_KHR_swapchain</span></strong><span>：用于创建交换链的扩展，用于在窗口系统和Vulkan设备之间进行图像交换。</span></font><span> </span></p></li><li><p><font color=green><strong><span>VK_KHR_display</span></strong><span>：用于与显示设备进行交互的扩展，可以在显示设备上呈现图像。</span></font></p></li><li><p><font color=green><strong><span>VK_KHR_get_physical_device_properties2</span></strong><span>：扩展了获取物理设备属性的功能，提供更详细的设备信息。</span></font><span> </span></p></li><li><p><font color=green><strong><span>VK_NV_ray_tracing</span></strong><span>：这是由NVIDIA提供的扩展，为支持光线追踪的GPU提供接口。</span></font></p></li><li><p><font color=green><strong><span>VK_EXT_memory_budget</span></strong><span>‌：这是一个由多家厂商共同支持的扩展，用于管理显存。它帮助开发者更好地控制和管理显存的使用，避免内存溢出等问题‌。</span></font></p></li><li><p><font color=green><strong><span>VK_KHR_sampler_mirror_clamp_to_edge</span></strong><span>‌：这个扩展解决了纹理采样时的边界问题，避免边缘伪影的出现。通过驱动实现的扩展API，开发者可以更灵活地处理纹理采样‌。</span></font></p></li><li><p><font color=green><strong><span>VK_KHR_depth_stencil_resolve</span></strong><span>‌：这个扩展优化了深度和模板缓冲的多重采样（MSAA），通过驱动暴露硬件能力，提升渲染性能‌。</span></font></p></li></ul><p><span>              枚举到物理设备后，首先需要检测该设备是否支持我们设计的应用程序需要的扩展。应用程序设计过程中会用到很多Vulkan扩展，一般会构建一个表格，列出程序需要的扩展名称：</span></p><p><span>              ❶ 在class VulkanAppCore外部添加应用程序需要的扩展表：目前我们仅仅使用VK_KHR_SWAPCHAIN_EXTENSION_NAME扩展</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>4</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">//VK_KHR_SWAPCHAIN_EXTENSION_NAME 是Vulkan SDK中定义的一个宏，表示交换链扩展名称</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">inline const std::vector&lt;const char*&gt; deviceExtensions = {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  VK_KHR_SWAPCHAIN_EXTENSION_NAME</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="height: 132px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>             ❷ 设计获得设备扩展的函数与保存所选设备可用扩展的列表</span></p><p><span>            class VulkanAppCore 内部添加如下代码：</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">std::vector&lt;VkExtensionProperties&gt; m_VkDeviceExtensionPropertis; &nbsp; </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 33px;"></div><div class="CodeMirror-gutters" style="height: 33px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>12</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //获得设备支持的所有Device类型的扩展属性列表</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::vector&lt;VkExtensionProperties&gt;  getAvailableExtensionsProperties(VkPhysicalDevice _physicalDevice)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  uint32_t extensionCount;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkEnumerateDeviceExtensionProperties(_physicalDevice, nullptr, &amp;extensionCount, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  std::vector&lt;VkExtensionProperties&gt; &nbsp; &nbsp;  extensions(extensionCount);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  if (extensionCount == 0) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  throw std::runtime_error("No extensions found!");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkEnumerateDeviceExtensionProperties(_physicalDevice, nullptr, &amp;extensionCount, extensions.data());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  return extensions;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 396px;"></div><div class="CodeMirror-gutters" style="height: 396px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>           ❸ 添加检测物理设备是否支持应用程序需要的扩展列表的函数</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>25</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">bool CheckPhysicalDeviceExtensionSupport(VkPhysicalDevice _physicaldevice, </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  const std::vector&lt;const char*&gt;&amp;  _AppNeedPhysicalDeviceExtensions)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::vector&lt;VkExtensionProperties&gt;  availableExtensions = getAvailableExtensionsProperties(_physicaldevice);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  bool  hResult = true;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  for (int i = 0; i &lt; _AppNeedPhysicalDeviceExtensions.size(); i++)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  std::string tempExtensionName = _AppNeedPhysicalDeviceExtensions[i];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  bool  bFind = false;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  for (int j = 0; j &lt; availableExtensions.size(); j++)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if (tempExtensionName == availableExtensions[j].extensionName)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  bFind = true;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  break;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  if (bFind == false)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  hResult = false;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  std::cerr &lt;&lt; "没有找到需要的扩展属性" &lt;&lt; tempExtensionName &lt;&lt; std::endl;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  break;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 858px;"></div><div class="CodeMirror-gutters" style="height: 858px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>             ❹ 修改isDeviceSuitable（）函数，判定设备是否可用</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">bool isDeviceSuitable(VkPhysicalDevice _physicaldevice)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  bool isPhysicalDeviceExtension = CheckPhysicalDeviceExtensionSupport(_physicaldevice,</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  deviceExtensions);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  return &nbsp; isPhysicalDeviceExtension;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 264px;"></div><div class="CodeMirror-gutters" style="height: 264px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>          ❺ 修改pickPhysicalDevice()函数，保存所选设备可用的扩展列表</span></p><p><span>           m_VkDeviceExtensionPropertis =  getAvailableExtensionsProperties(physicalDevice);</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>29</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">void pickPhysicalDevice() </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{ &nbsp; </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❶首先需要查询系统中安装的显示设备GPU的数量</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  uint32_t _VkPhysicaldeviceCount = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  vkEnumeratePhysicalDevices(instance, &amp;_VkPhysicaldeviceCount, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (_VkPhysicaldeviceCount == 0) //如果显示设备GPU的数量为您报错退出</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  throw std::runtime_error("没有发现 GPUs设备，程序退出！");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❷ 枚举系统中所有显示设备GPU,并保存到数组中</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::vector&lt;VkPhysicalDevice&gt; _VkPhysicaldevices(_VkPhysicaldeviceCount);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  vkEnumeratePhysicalDevices(instance, &amp;_VkPhysicaldeviceCount, _VkPhysicaldevices.data());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  // ❸对std::vector&lt;VkPhysicalDevice&gt; _VkPhysicaldevices数组中每个物理设备进行遍历，</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  // &nbsp; 选择一个可用的物理设备,我们通过一个独立的isDeviceSuitable函数进行判断</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  for (const auto&amp; device : _VkPhysicaldevices) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  if (isDeviceSuitable(device)) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  physicalDevice = device;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  m_VkDeviceExtensionPropertis =  getAvailableExtensionsProperties(physicalDevice);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  break;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  //❹ 如果没有找到合适的物理设备，程序报错退出</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  if (physicalDevice == VK_NULL_HANDLE) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  throw std::runtime_error("failed to find a suitable GPU!");</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 957px;"></div><div class="CodeMirror-gutters" style="height: 957px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>         ⑧ 查询物理设备能够提供的队列族(Queue Family)</span></p><p><span>         在Vulkan中，队列（Queue）是一个重要的概念。应用程序通过将指令记录到指令缓存，然后提交到队列，而物理设备会设备读取队列中的任务并通过异步的方式来处理它们。下面是队列类型的基本示意图：</span></p><p><span>        </span><img src="../images/2fb24bbbd40f711e078400b53592a684.png" referrerpolicy="no-referrer" alt="图片"><span>                </span></p><p><span>        在Vulkan设计中，每个物理设备包含一个或多个队列族（Queue Family），每个队列族包含一个或多个队列。这些队列用于处理不同类型的任务，如图形渲染、计算任务和传输操作。</span></p><p><span>         </span><img src="../images/7b37f33e22eca15c410d636f7d3b143e.png" referrerpolicy="no-referrer" alt="图片"></p><p><span>      我们使用Vulkan支撑系统是用来开发图形应用程序的，所以最基本的队列族graphicsFamily是必须的。我们检索出可用的物理设备列表后，需要检索出该设备GPU显卡驱动程序能够为Vulkan程序运行提供的队列族，并判定显卡驱动是否支持graphicsFamily队列族。</span></p><p><span>       除了队列族graphicsFamily外，我们总是希望显存中的图像信息能够显示到显示器上(显示输出设备)，所以还需要GPU设备支持显示队列族presentFamily，我们目前对这两个GPU设备功能进行检测</span></p><p><span>        ❶ 在VulkanAppCore.hpp文件的class VulkanAppCore 类外部定义保存队列族的数据结构</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>7</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">struct QueueFamilyIndices {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::optional&lt;uint32_t&gt;  graphicsFamily;//保存graphicsFamily队列族的可选值变量</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  std::optional&lt;uint32_t&gt;  presentFamily;//保存presentFamily队列族的可选值变量</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  bool isComplete() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  return graphicsFamily.has_value() &amp;&amp; presentFamily.has_value();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 231px;"></div><div class="CodeMirror-gutters" style="height: 231px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>        注意：QueueFamilyIndices结构中包含了一个std::optional&lt;uint32_t&gt; graphicsFamily;可选值变量，需要添加#include</span><optional><span>头文件；并保证编译器支持C++17标准。</span></p><p><span>       ❷在 class VulkanAppCore 类内部添加findQueueFamilies()检测队列族的函数</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 51px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 43px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>31</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -43px; width: 43px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  QueueFamilyIndices findQueueFamilies(VkPhysicalDevice _physicalDevice) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  QueueFamilyIndices indices;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  uint32_t queueFamilyCount = 0;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkGetPhysicalDeviceQueueFamilyProperties(_physicalDevice, &amp;queueFamilyCount, nullptr);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  std::vector&lt;VkQueueFamilyProperties&gt; queueFamilies(queueFamilyCount);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  vkGetPhysicalDeviceQueueFamilyProperties(_physicalDevice, &amp;queueFamilyCount, queueFamilies.data());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  for (int i = 0;i&lt; queueFamilies.size();i++ ) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  const VkQueueFamilyProperties&amp; queueFamily = queueFamilies[i];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if (queueFamily.queueFlags &amp; VK_QUEUE_GRAPHICS_BIT) //判定支持VK_QUEUE_GRAPHICS_BIT类型的队列族</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  indices.graphicsFamily = i;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  VkBool32 presentSupport = false;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  vkGetPhysicalDeviceSurfaceSupportKHR(_physicalDevice, i, surface, &amp;presentSupport);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if (presentSupport) </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  indices.presentFamily = i;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if (indices.isComplete()) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  break;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 34px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  return indices;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -43px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 34px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1023px;"></div><div class="CodeMirror-gutters" style="height: 1023px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 42px;"></div></div></div></div></pre><p><span>     ❸ 将findQueueFamilies() 函数添加到isDeviceSuitable()函数中</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 34.5px; left: 44px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>9</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">bool isDeviceSuitable(VkPhysicalDevice _physicaldevice)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  QueueFamilyIndices indices = findQueueFamilies(_physicaldevice);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  bool isPhysicalDeviceExtension = CheckPhysicalDeviceExtensionSupport(_physicaldevice,</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  deviceExtensions);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  return indices.isComplete() &amp;&amp; isPhysicalDeviceExtension;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 297px;"></div><div class="CodeMirror-gutters" style="height: 297px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>                 编译运行应用程序截至本部分</span><a href='./Vulkan_code/VulkanAppCore_Step_5.hpp'><span>VulkanAppCore.hpp文件源代码</span></a><span> </span></p><p>&nbsp;</p></div></div>
+</body>
+</html>
