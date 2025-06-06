@@ -70,6 +70,7 @@
 	{id: "STEP_15", text: "Step15响应OnSized事件", url:"Step15响应OnSized事件.html", pid: "STEPBYSTEP_BASE" },
 	{id: "VULKAN_CONCEPT", text: "Vulkan系统基础概念", pid: "Vulkan"},
 	{id: "CONCEPT_1", text: "使用Volk库简化Vulkan编程", url:"Volk库实现VulkanAPI函数动态载入.html", pid: "VULKAN_CONCEPT" },
+        {id: "CONCEPT_2", text: "HPP库对VulkanAPI进行简单包装", url:"HPP库对VulkanAPI进行简单包装.html", pid: "VULKAN_CONCEPT" },
 	
 	{ id: "other", text: "人工智能算法"},
 	{id: "otherBase", text: "人工智能算法基础",   pid: "other" },
