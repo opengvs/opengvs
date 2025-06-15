@@ -73,6 +73,8 @@
         {id: "CONCEPT_2", text: "HPP库对VulkanAPI进行简单包装", url:"HPP库对VulkanAPI进行简单包装.html", pid: "VULKAN_CONCEPT" },
         {id: "CONCEPT_2", text: "Vulkan程序中使用深度缓冲区", url:"Vulkan程序中使用深度缓冲区.html", pid: "VULKAN_CONCEPT" },
         {id: "CONCEPT_3", text: "使用UniformBuffer传递变换矩阵", url:"Vulkan使用UniformBuffer传递变换矩阵.html", pid: "VULKAN_CONCEPT" },
+        {id: "CONCEPT_4", text: "顶点索引缓冲区绘制物体", url:"Vulkan中使用顶点索引缓冲区绘制物体.html", pid: "VULKAN_CONCEPT" },
+
 	
 	{ id: "other", text: "人工智能算法"},
 	{id: "otherBase", text: "人工智能算法基础",   pid: "other" },
