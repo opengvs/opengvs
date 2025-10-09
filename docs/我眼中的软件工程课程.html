@@ -1,0 +1,2270 @@
+<!doctype html>
+<html style='font-size:16px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-theme_css">@font-face{font-family:"iconfont";src:url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/source/dy/iconfont.woff2?t=1670129411561') format('woff2'),url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/source/dy/iconfont.woff?t=1670129411561') format('woff'),url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/source/dy/iconfont.ttf?t=1670129411561') format('truetype');}.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.icon-ok:before{content:"\e614";}.icon-question:before{content:"\eb81";}.icon-warning2:before{content:"\e8c7";}.icon-question2:before{content:"\e6ab";}.icon-prohibition:before{content:"\e695";}.icon-fengshan1:before{content:"\e6be";}.icon-fengshan2:before{content:"\e601";}.icon--e-fengshan:before{content:"\e683";}.icon-institueinfo:before{content:"\e613";}.icon-fengshan:before{content:"\e600";}.icon-a-28tongfengfengshan:before{content:"\e604";}.icon-a-28atongfengfengshan:before{content:"\e605";}.icon-weibiaoti-:before{content:"\e689";}.icon-fengche2:before{content:"\e625";}
+
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+    url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/source/zj/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@import '';
+@import '';
+
+
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.window * {
+    color: var(--body-color) !important;
+}
+.nav-group-item.active {
+    color: black !important;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    color: black;
+}
+#sidebar-files-menu li a {
+    color: var(--body-color) !important;
+}
+#file-library-search-panel input {
+    color: var(--para-color) !important;
+}
+#sidebar-loading-template {
+    background-color: var(--bg-color) !important;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 160px;
+}
+
+/*
+content {
+    background-color: var(--bg-color) !important;
+}
+*/
+
+
+/* 人物背景图片（右下角显示） */
+
+
+@media only screen and (min-width: 1600px){
+    @media only screen and (min-width: 1800px){
+        body:not(.typora-sourceview-on) content {
+            background: var(--bgimg-url) no-repeat;
+            background-size : 12%;
+            background-position: 86% 100%;
+        }
+    }
+    @media only screen and (max-width: 1800px){
+        body:not(.pin-outline, .typora-sourceview-on) content {
+            background: var(--bgimg-url) no-repeat;
+            background-size : 12%;
+            background-position: 86% 100%;
+        }
+    }
+    /*效仿https://github.com/Soanguy/typora-theme-autumnus，取消下面注释，并注释上面即可，换个背景（透明）风格*/
+    /*body:not(.typora-sourceview-on) content {
+        background: var(--bgimg-url) no-repeat;
+        background-size : 30%;
+        background-position: center 10%;
+    }
+    #write {
+        backdrop-filter: blur(15px);
+        max-width: 950px;
+        padding: 50px;
+        border: 1px dashed #d0d5d7;
+        border-radius: 4px;
+        margin: 470px auto 20px;
+    }
+    #write *:not(font,span) {
+        background: transparent !important;
+    }
+    #write table *, #write blockquote, #write pre, #write details, #write details * {
+        background: transparent !important;
+    }
+    #write details, #write details summary {
+        border-color: #d0d5d7 !important;
+    }
+    #write a:not([alt="null"], .md-toc-inner):hover {
+        background-color:gray !important;
+    }
+    .mathjax-block:hover .md-rawblock-container,
+    .mathjax-block:hover .md-rawblock-tooltip,
+    .md-htmlblock:hover .md-rawblock-container,
+    .md-htmlblock:hover .md-rawblock-tooltip {
+        background-color: rgba(0,0,0,0) !important;
+    }*/
+}
+content #md-searchpanel {
+    background: var(--bg-color);
+}
+
+/*
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+*/
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color) !important;
+  background-clip: padding-box;
+}
+
+#write p {
+    line-height: 1.7rem;
+    word-spacing: .05rem;
+    color: var(--para-color);
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+body>*:first-child {
+    margin-top: 0 !important;
+}
+
+body>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+.mathjax-block:hover .md-rawblock-container,
+.mathjax-block:hover .md-rawblock-tooltip,
+.md-htmlblock:hover .md-rawblock-container,
+.md-htmlblock:hover .md-rawblock-tooltip {
+    background-color: var(--bg-color);
+    -webkit-animation: none;
+    animation: none;
+}
+
+.mathjax-block .md-rawblock-control, .md-htmlblock .md-rawblock-control {
+    color: var(--para-color);
+    background-color: var(--codeblockbg-color);
+}
+
+
+/** 超链接 **/
+
+
+#write a {
+    border-bottom:2px solid var(--abottom-color);
+    padding: 0 4px;
+    /*padding-top: 2px;*/
+    transition: .3s;
+    color: var(--atext-color);
+    text-decoration: none;
+}
+#write a:hover {
+    border-radius:6px;
+    border-bottom:2px solid transparent;
+    background-color:var(--abottom-color);
+    color: var(--ahover-color) !important;
+    cursor:pointer;
+}
+#write a[href*="muggledy"] {
+    border-bottom:2px solid red;
+}
+#write a[href*="muggledy"]:hover {
+    background-color:red;
+}
+#write h2 a, #write h4 a, #write a[alt="null"], #write a[alt="ref"]{
+    border-bottom: none !important;
+    /*color: var(--code-color);*/
+}
+h2 a:hover:before, h4 a:hover:before, #write a[alt="null"]:hover:before{
+    content: none !important;
+}
+
+/* 修复空链接（标题锚点）显示底部下划线的问题（padding宽度引起的问题），但是自定义锚点怎么处理？因为自定义的锚点链接里有一个空格，非空，所以自定义锚点时请额外加上alt="none"，这将会使得链接“消失” */
+#write a:empty, #write a[alt="none"], #write a[alt="null"] {
+    padding-left:0px; /*直接上display:none消除超链接会导致锚点失效，visibility:hidden又占位*/
+    padding-right:0px;
+}
+#write a[alt="none"] span {
+    display: none; /*消除空格或其他内容*/
+}
+
+/* 无样式超链接 */
+#write a[alt="null"]:hover{
+    background-color: inherit;
+    border-radius: 0px;
+    color: var(--atext-color) !important;
+}
+#write a[alt="null"] .md-image {
+    margin: 0 !important;
+}
+
+/* 样式：<超链接> */
+#write a[alt="ref"]:before{
+    content: "<";
+}
+#write a[alt="ref"]:after{
+    content: ">";
+}
+
+/* 写法：<span alt="ref">[[1][],[2][]]</span> */
+#write span[alt="ref"] a{
+    border-bottom: none;
+    color: var(--abottom-color);
+    /*padding-left: 2px;
+    padding-right: 2px;*/
+}
+
+
+/** 目录 **/
+
+
+#write a.md-toc-inner {
+    line-height: 1.6;
+    white-space: pre-line;
+    border-bottom: none;
+    color: var(--toc-color);
+}
+.md-toc {
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+#write a.md-toc-inner:hover{
+    text-decoration: underline;
+    /* border-bottom: 2px solid var(--toc-color);text-decoration: none; */
+    color: var(--toc-color) !important;
+    background-color: inherit;
+    border-radius: 0px;
+}
+#write a.md-toc-inner code{
+    color: var(--toc-color);
+    background-color: #f3f4f4;
+}
+#write a.md-toc-inner:hover:before {
+    content: none !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 code {
+    font-size: inherit !important;
+}
+h2 code {
+    font-size: inherit !important;
+}
+h3 code {
+    font-size: inherit !important;
+}
+h4 code {
+    font-size: inherit !important;
+}
+h5 code {
+    font-size: inherit !important;
+}
+h6 code {
+    font-size: inherit !important;
+}
+
+
+
+/** 不同级别标题样式 **/
+
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.2;
+    margin: 2.4em auto 1.2em;
+    display:block;
+}
+h1 span{
+    display: inline-block;
+    position: relative;
+}
+h1 span:after {
+    background: var(--titlebefore-color);
+    bottom: -5px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    width: 100%;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+h1:hover span:after {
+    transform: scaleX(1);
+}
+
+h2 {
+    margin: 1.2em auto 1em;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--titlebefore-color);
+	text-align: center;
+}
+h2::before {
+    content: '\e689' !important; /* 风车图标 */
+    color: var(--titlebefore-color);
+    font-family: "iconfont";
+}
+
+/* h2标题前缀旋转动画 */
+@-moz-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}
+h2:before {
+    display: inline-block;
+    -webkit-animation: avatar_turn_around 1s linear infinite;
+    -moz-animation: avatar_turn_around 1s linear infinite;
+    -o-animation: avatar_turn_around 1s linear infinite;
+    -ms-animation: avatar_turn_around 1s linear infinite;
+    animation: avatar_turn_around 1s linear infinite;
+    font-size: 34px;
+    margin-left: -29px;
+}
+
+/* h2标题内容稍稍偏右一点 */
+h2 * {
+    margin-left: .18rem;
+}
+#write>h2.md-focus:before {
+    color: var(--focus-color);
+}
+#write>h2.md-focus {
+    border-bottom-color: var(--focus-color);
+}
+
+.about-content-description h2:before{
+    content: none !important;
+}
+.about-content-description h2 {
+    border-bottom: none;
+}
+
+h3 {
+    font-size: 1.4em;
+    line-height: 1.43;
+    /*margin: 1.6em auto 1.2em;*/
+    padding-left: 9px;
+    border-left: 5px solid var(--titlebefore-color);
+}
+h4 {
+    margin: 0.4em auto 0.1em;
+    font-size: 1.2em;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    border: 1px solid var(--titlebefore-color);
+    border-top: 4px solid var(--titlebefore-color);
+}
+
+/* 三级四级标题点击后的前缀提示图标 */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before {
+    width: auto;
+    height: auto;
+    background-color: var(--focus-color);
+    color: #ffffff;
+}
+#write>h3.md-focus,
+#write>h4.md-focus {
+    border-color: var(--focus-color);
+}
+
+#write h5::before,
+#write h6::before {
+    position: absolute;
+    right: calc(100% + .75em);
+    top: 0;
+    color: var(--titlebefore-color); /* #5b5b5b */
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-variant: 'small-caps';
+    white-space: nowrap;
+    /* 文本强制不换行 */
+    border: 0;
+}
+#write h5.md-focus:before, #write h6.md-focus:before{
+    color: var(--focus-color);
+}
+#write h5, #write h6 {
+    /* margin-left: 2em; */
+    font-size: 1rem;
+}
+#write h5::before {
+    content: 'H5';
+    top: 0.18rem;
+}
+#write h6::before {
+    content: 'H6';
+    top: 0.18rem;
+}
+
+
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.5em 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+body>h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child+h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h3:first-child,
+body>h4:first-child,
+body>h5:first-child,
+body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+#write ol,
+#write ul {
+    padding-left: 35px;
+    margin: .5rem 0;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    font-weight: normal;
+}
+
+#write ol>li>*:not(ol):not(ul):not(details),
+#write ul>li>*:not(ol):not(ul):not(details) {
+    padding-left: .25rem;
+}
+
+
+
+/** 引用块（提示型） **/
+
+
+blockquote {
+    /* border: 1px solid #d1f3ff; */
+    border-left: 5px solid var(--blockquoteicon-color);
+    padding: 10px 15px;
+    color: #3f3f3f;
+    background-color: var(--blockquotebg-color); /* white */
+    border-radius: 3px;
+    position:relative;
+}
+
+/* 给提示块加info图标 */
+blockquote>* {
+    margin-left: 2rem !important;
+}
+blockquote::before {
+    content: '\e613';
+    font-family: "iconfont";
+    color: var(--blockquoteicon-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: large;
+    font-weight: 600;
+}
+/*
+blockquote:hover {
+    border-left: 5px solid var(--focus-color);
+}
+blockquote:hover:before {
+    color: var(--focus-color);
+}
+*/
+blockquote[alt="danger"] {
+    border-left-color: var(--blockquotedangericon-color);
+    background-color: var(--blockquotedangerbg-color);
+}
+blockquote[alt="danger"]::before {
+    content: '\e695';
+    font-family: "iconfont";
+    color: var(--blockquotedangericon-color);
+}
+blockquote[alt="success"] {
+    border-left-color: var(--blockquotesuccessicon-color);
+    background-color: var(--blockquotesuccessbg-color);
+}
+blockquote[alt="success"]::before {
+    content: '\e614';
+    font-family: "iconfont";
+    color: var(--blockquotesuccessicon-color);
+}
+blockquote[alt="warn"] {
+    border-left-color: var(--blockquotewarnicon-color);
+    background-color: var(--blockquotewarnbg-color);
+}
+blockquote[alt="warn"]::before {
+    content: '\e8c7';
+    font-family: "iconfont";
+    color: var(--blockquotewarnicon-color);
+}
+blockquote[alt="question"] {
+    border-left-color: var(--blockquotequestionicon-color);
+    background-color: var(--blockquotequestionbg-color);
+}
+blockquote[alt="question"]::before {
+    content: '\eb81';
+    font-family: "iconfont";
+    color: var(--blockquotequestionicon-color);
+}
+
+/** 表格样式 **/
+
+
+table {
+    padding: 0;
+    word-break: initial;
+    font-size:12pt;
+}
+table tr {
+    line-height: 23px !important;
+}
+/*
+table tr {
+    border-top: 1px solid var(--main-6);
+    margin: 0;
+    padding: 0;
+}
+*/
+table tr:nth-child(2n) {
+    background-color: var(--tableevenrow-color);
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid var(--tableborder-color);
+    background-color: var(--tablethbg-color);
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid var(--tableborder-color);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+table tr:hover {
+  background-color: var(--tablefocusrow-color);
+}
+
+/* 三线表（自定义需覆盖上述默认表格样式） */
+div[alt="three-table"] table {
+    border-top: 1.5pt solid;
+    border-bottom: 1.5pt solid;
+    font-size:11pt;
+}
+div[alt="three-table"] table tr td, div[alt="three-table"] table tr th {
+    border: none;
+}
+div[alt="three-table"] table tr, div[alt="three-table"] table tr th, div[alt="three-table"] table tr:hover {
+    background-color: var(--bg-color);
+}
+div[alt="three-table"] table tr th {
+    border-bottom: 0.75pt solid;
+    font-family:黑体;
+    font-size:11pt;
+}
+
+/* 控制文本的居中or左or右显示 */
+*[alt="center"]{
+    text-align: center;
+}
+*[alt="left"]{
+    text-align: left;
+}
+*[alt="right"]{
+    text-align: right;
+}
+
+/* 无表头表格（且调小了格子的padding值） */
+div[alt="notitle-table"] table {
+    font-size: 11pt;
+}
+div[alt="notitle-table"] table tr, div[alt="notitle-table"] table tr th, div[alt="notitle-table"] table tr:hover {
+    background-color: var(--bg-color);
+}
+div[alt="notitle-table"] table tr td:hover, div[alt="notitle-table"] table tr th:hover {
+    background-color: var(--tablefocusrow-color);
+}
+div[alt="notitle-table"] table tr th {
+    font-weight: normal;
+}
+div[alt="notitle-table"] table tr th, div[alt="notitle-table"] table tr td {
+    padding: 0px 8px;
+}
+
+
+/** 代码块 **/
+
+
+#write .CodeMirror pre {
+    font-family: var(--code-font);
+    font-size: 0.95em;
+    padding-left: 12px;
+}
+.md-fences {
+    background: var(--codeblockbg-color);
+    border-radius: 3px;
+    color: var(--codeblockfont-color);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.6em;
+    border: 1px solid #d0d5d7;
+}
+
+/* 行号左框线 */
+/*
+#write .CodeMirror-gutters {
+    border-right: 1px solid rgba(204, 51, 0);
+}
+*/
+
+/* 代码块行号颜色 */
+.cm-s-inner .CodeMirror-linenumber {
+    /* width: 2ch !important; */
+    color: var(--codeblocknum-color);
+}
+
+/* 代码块光标线条宽度、颜色 */
+#write .CodeMirror-cursors .CodeMirror-cursor {
+    border-left: 2px solid var(--focus-color);
+}
+
+/* 选中行高亮 */
+.md-fences:not(.md-focus) .CodeMirror-code>*:hover {
+    background-color: var(--codeblockline-color);
+}
+.md-fences.md-focus .CodeMirror-code>div.CodeMirror-activeline {
+    background-color: var(--codeblockline-color);
+}
+
+#write ol>li>*[class~="md-fences"], #write ul>li>*[class~="md-fences"] {
+    padding-left: 0 !important;
+}
+
+/* 蓝色行内数学公式 */
+/*
+[md-inline='inline_math'] {
+    color: blue;
+    font-size: 100%;
+}
+*/
+
+/* 修复行间公式在手机端屏幕宽度较小时公式极端缩小的问题，但是打印为pdf时仍要设为100%，否则有滚动条 */
+@media only screen and (max-width: 800px) {
+    .MathJax_SVG_Display svg{
+        max-width: inherit !important;
+    }
+}
+
+/* 头部YAML格式 */
+pre.md-meta-block {
+    font-family: "Poppins";
+    color: var(--yaml-color) !important;
+    padding: 15px;
+    background: var(--yamlbg-color) !important;
+    /*border: 1px grey dashed !important;*/
+    font-size: 0.8rem;
+    line-height: 1.45;
+    border-radius: 5px;
+}
+
+
+/** 行内代码 **/
+
+
+#write code {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: var(--code-font); /*font-family: '微软雅黑';*/
+    font-size: 0.9rem;
+    color: var(--code-color);
+    background-color: var(--codebg-color);
+}
+
+
+/** 脚注（上标） **/
+
+
+#write .md-footnote {
+    background-color: var(--footnotebg-color);
+    color: var(--footnote-color);
+}
+
+/* 脚注上标链接禁止显示下划线样式 */
+#write sup.md-footnote a{
+    color: inherit !important; /* 鼠标hover时禁止颜色发生变化 */
+    border-bottom: none;
+    padding: 1px;
+    background-color: inherit;
+}
+
+
+/** 文本高亮 **/
+
+
+#write span[md-inline="highlight"] mark {
+    background-color: var(--highlightbg-color);
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: var(--highlight-color);
+    font-weight: 500;
+}
+
+
+/** 分割线 **/
+
+
+/*
+hr {
+    height: 1px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--split-color);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+*/
+/* 来自next主题样式 */
+/*
+hr {
+    background-image: repeating-linear-gradient(-45deg, var(--split-color), var(--split-color) 4px, transparent 4px, transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0
+}
+*/
+/* 透明渐变水平线 */
+hr {
+ width:80%;
+ margin:0 auto;
+ border: 0;
+ height: 2px;
+ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--split-color), rgba(0, 0, 0, 0));
+}
+
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+
+
+/** 任务列表小方框 **/
+
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.4rem;
+    -webkit-appearance: none;
+}
+.md-task-list-item>input:before {
+    content: '';
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    border-radius: 2px;
+    /*background-color: white;*/
+    border: 1px solid var(--taskborder-color);
+    margin-top: -0.4rem;
+    transition: all 0.2s linear;
+}
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+    content: '\2714';
+    font-size: 0.625rem;
+    color: white;
+    border: 1px solid var(--taskfocus-color);
+    background-color: var(--taskfocus-color);
+    line-height: .8rem;
+}
+.md-task-list-item:before{
+    content: none !important;
+}
+
+#write input[type=checkbox] {
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    background-color: inherit;
+}
+
+.md-task-list-item.task-list-done {
+    text-decoration: line-through;
+    color: #999;
+}
+.md-task-list-item.task-list-done span {
+    color: #999;
+}
+
+
+/** 导出html文件，修复流程图在手机端高度太大的问题 **/
+
+
+.md-diagram-panel svg{
+    /*max-width: inherit !important;*/
+    height: inherit !important;
+}
+
+
+
+/* @media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+} */
+
+/* .md-fences {
+    background-color: #f8f8f8;
+} */
+
+#write pre.md-meta-block {
+    /* padding: 1rem; */
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+    /* bottom: .575rem; */
+}
+
+#write>h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write>h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+/* https://www.bnxb.com/divcss/27022.html */
+details pre {
+    color:#444;
+    margin:15px auto;
+    padding:20px 15px;
+    padding-bottom: 0px;
+    background:#fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAmCAIAAACphTeFAAAAJElEQVRIx2N4RS5gGNU5qnNU56hOZJ2fyQWjOkd1juoc1YkMAKDL4lkok3p7AAAAAElFTkSuQmCC') repeat;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    letter-spacing:1.5px;
+    font:14px/25px 'Comic Sans MS','courier new';
+    line-height:22px;
+    background-size:100% 44px;
+}
+
+
+/** 图片 **/
+
+
+.md-image {
+    margin: 15px auto 5px;
+}
+.md-image img {
+    border-radius: 4px;
+}
+
+/* 当按`![shadow-随便写]()`格式写时（或`<img src="" alt="shadow-随便写">`），会有阴影 */
+.md-image img[alt|='shadow'] {
+    box-shadow: #84A1A8 0px 10px 15px;
+    background-size: 100% 100%;
+    cursor: default;
+    border-left: 0;
+    border-right: 0;
+}
+
+/* 模糊特效 */
+.md-image img[alt|='blur'] {
+    filter:blur(6px);
+    -webkit-filter:blur(6px);
+    -moz-filter:blur(6px);
+    -ms-filter:blur(6px);
+    -o-filter:blur(6px);
+    transition: all 0.2s linear;
+}
+.md-image img[alt|='blur']:hover {
+    filter:none;
+    -webkit-filter:none;
+    -moz-filter:none;
+    -ms-filter:none;
+    -o-filter:none;
+}
+
+/*图片暗灰*/
+.md-image img[alt|='gray'] {
+    filter:grayscale(100%);
+}
+.md-image img[alt|='gray']:hover {
+    transition: 0.5s linear;
+    filter:grayscale(0);
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    font-family: var(--body-font);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+/* 图片自动编号 */
+#write{
+    counter-reset: imgNum;
+}
+#write p>.md-image:after{
+    counter-increment: imgNum;
+    content: "图" counter(imgNum) attr(alt) !important;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin-top: 8px !important;
+    font-size: small;
+}
+
+div[alt="fig"]{
+    font-size: small;
+    text-align: center;
+    margin-top: -10px !important;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification {
+    background-color: var(--bg-color) !important;
+}
+
+/* focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--body-font);
+}
+
+
+/* 侧边栏 */
+
+
+#typora-sidebar{
+    background-color: var(--sidebarbg-color);
+}
+
+.file-list-item:hover, .file-list-item.active {
+    background-color: var(--sidelist-selected-color);
+}
+
+.file-node-content, .file-tree-node.active .file-node-content {
+    color: var(--para-color);
+}
+.file-tree-node.active>.file-node-background {
+    background-color: var(--sidelist-selected-color);
+}
+.file-node-content:hover .file-node-icon {
+    color: var(--titlebefore-color);
+}
+.file-node-content:hover {
+    cursor: pointer;
+    color: var(--titlebefore-color) !important;
+}
+.outline-item:hover {
+    color: var(--titlebefore-color) !important;
+    background-color: var(--sidelist-selected-color);
+}
+
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #e6f0fe;
+}
+
+.info-panel-tab:hover{
+    color: var(--para-color);
+}
+
+@media print {
+    .typora-export * {
+        -webkit-print-color-adjust: exact;
+    }
+    html {
+        font-size: 16px!important;
+    }
+    body {
+        font-family: Times, 'SimSun', serif!important;
+        color: #000000!important;
+    }
+    p {
+        color: #000000!important;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+    .MathJax_SVG_Display svg{
+        max-width: 100% !important;
+    }
+}
+
+
+
+/** 有序、无序列表，来自Butterfly主题 **/
+
+
+#write ul li, #write ol li, #write .ul .li, #write .ol .li {
+    list-style-type: none;
+}
+#write ul>li:not(.tab):before, #write .ul>.li:not(.tab):before {
+    margin-left: -22px;
+    margin-top: 10px;
+    width: .62em;
+    height: .62em;
+    border: .1em solid var(--ulol-color); /* #81d8cf */
+    border-radius: .31em;
+    background: 0 0;
+    content: '';
+    line-height: .42em;
+}
+#write ol li:before, #write ul li:before, #write .ol .li:before, #write .ul .li:before {
+    position: absolute;
+    background: var(--ulol-color); /* #81d8cf */
+    color: var(--olfore-color);
+    cursor: pointer;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+#write ol li:first-child, #write .ol .li:first-child { /* https://www.w3school.com.cn/cssref/pr_gen_counter-increment.asp */
+    counter-reset: li;
+}
+#write ol li:hover:before, #write ul li:hover:before, #write .ol .li:hover:before, #write .ul .li:hover:before {
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+#write ul>li:not(.tab):hover:before, #write .ul>.li:not(.tab):hover:before{
+    border-color: var(--focus-color);
+}
+#write ol>li:before, #write .ol>.li:before {
+    margin-top: 6px;
+    margin-left: -25px;
+    width: 1.65em;
+    height: 1.65em;
+    border-radius: 0.825em;
+    content: counter(li);
+    counter-increment: li;
+    text-align: center;
+    font-size: .65em;
+    line-height: 1.7em;
+}
+
+/* 列表子项上下间隔调整 */
+#write ul li input, #write ol li input, #write .ul .li input, #write .ol .li input {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 列表上下间隔调整 */
+#write ul li, #write ol li, #write .ul .li, #write .ol .li {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+/** 小标签 **/
+
+
+font {
+    display: inline;
+    padding: .2em .6em;
+    font-size: 90%;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    /*white-space: nowrap;*/
+    vertical-align: baseline;
+    border-radius: .1rem;
+    border-radius: 6px;
+    background-color: var(--spannote-color);
+}
+font[title="red"] {
+    background-color:#e91e64;
+}
+font[title="blue"] {
+    background-color:#02aaf4;
+}
+font[title="yellow"] {
+    background-color:#ffc50a;
+}
+font[title="green"] {
+    background-color:#8bc34a;
+}
+font[title="gray"] {
+    background-color:#4c4c4c;
+}
+
+
+/** 强调型文本 **/
+
+
+span[alt='emp'] {
+    border-bottom: 4px dotted var(--emptext-color);
+}
+span[alt='underline'] {
+    border-bottom: 2px solid var(--emptext-color);
+}
+span[alt='wavy'] {
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+    text-decoration-color: var(--emptext-color);
+}
+
+
+/** 折叠标签 **/
+
+
+details {
+    display: block;
+    padding: 16px;
+    margin: 1em 0;
+    border-radius: 4px;
+    background: var(--bg-color);
+    font-size: 14px;
+    -webkit-transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    -ms-transition: all .28s ease;
+    transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -webkit-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    border: 1px solid var(--bg-color);
+}
+summary {
+    display: list-item;
+}
+details summary {
+    cursor: pointer;
+    padding: 16px;
+    margin: -16px;
+    border-radius: 4px;
+    color: var(--detailstxt-color);
+    font-size: .875rem!important;
+    font-weight: 700;
+    position: relative;
+    line-height: normal;
+}
+details>summary {
+    background: var(--detailsbg-color);
+}
+details[open] {
+    border-color: var(--detailsborder-color);
+}
+details[open]>summary {
+    color: #444;
+    margin-bottom: 0;
+}
+details[open]>summary {
+    border-bottom: 1px solid var(--detailsborder-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* 折叠框、视频、音频标签点击时候会出现黑色边框，极不美观，去除 */
+summary:focus {
+    outline: none !important;
+}
+video:focus{
+    outline: none !important;
+}
+audio:focus{
+    outline: none !important;
+}
+
+
+/** 隐藏型文本 **/
+
+
+span[alt="hide"] {
+    color: transparent;
+    background: var(--hidetextcover-color);
+    border-radius: 2px;
+    -webkit-transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    -ms-transition: all .28s ease;
+    transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -webkit-transition: all .28s ease;
+    -o-transition: all .28s ease;
+}
+span[alt="hide"]:hover {
+    color:var(--hidetext-color);
+    background:0 0
+}
+
+
+/** 彩虹变换字体特效（来自黑石博客） **/
+
+
+@-webkit-keyframes rainbowan {
+    to {
+        background-position: -2000vw;
+    }
+}
+@keyframes rainbowan {
+    to {
+        background-position: -2000vw;
+    }
+}
+span[alt="rainbow"], span[alt="rainbow"] * {
+    padding-top: 3px;
+    background-image: linear-gradient( to left, orangered, orange, gold, lightgreen, cyan, dodgerblue, mediumpurple, hotpink, orangered);
+    background-size: 110vw;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: rainbowan 60s linear infinite;
+    animation: rainbowan 60s linear infinite;
+}
+
+
+/** 一款时尚的span字体，来自QinXS **/
+
+
+span[alt="modern"] {
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: var(--body-font);
+    font-size: 1em;
+    letter-spacing: .2em;
+    color: red;
+    text-shadow: 0 8px 9px #c4b59d, 0 -2px 1px #fff;
+    font-weight: 700;
+    background: linear-gradient(to bottom,#ece4d9 0,#e9dfd1 100%);
+}
+
+
+/** volantis文本按钮样式 **/
+
+
+span[alt="btn"] {
+    color: var(--spanbtn-color);
+    border: 1px solid var(--spanbtn-color);
+    padding: 3px 4px 2px;
+    margin: 4px;
+    line-height: 1.1;
+    border-radius: 2px;
+}
+#write span[alt="btn"] a{
+    color: var(--spanbtn-color);
+    border-bottom:none;
+    background-color:inherit;
+    transition: none;
+}
+span[alt="btn"]:hover {
+    color: var(--focus-color);
+    border: 1px solid var(--focus-color);
+}
+#write span[alt="btn"]:hover a{
+    color: var(--focus-color) !important;
+    background-color:inherit !important;
+}
+
+
+/** 抖音字效 **/
+
+
+@-webkit-keyframes uk-text-shadow-glitch{0%{text-shadow:none}25%{text-shadow:-1px -1px 0 #ff0048,1px 1px 0 #3234ff}50%{text-shadow:1px -1px 0 #ff0048,-1px 1px 0 #3234ff}75%{text-shadow:-1px 1px 0 #ff0048,1px -1px 0 #3234ff}to{text-shadow:1px 1px 0 #ff0048,-1px -1px 0 #3234ff}}@keyframes uk-text-shadow-glitch{0%{text-shadow:none}25%{text-shadow:-1px -1px 0 #ff0048,1px 1px 0 #3234ff}50%{text-shadow:1px -1px 0 #ff0048,-1px 1px 0 #3234ff}75%{text-shadow:-1px 1px 0 #ff0048,1px -1px 0 #3234ff}to{text-shadow:1px 1px 0 #ff0048,-1px -1px 0 #3234ff}}
+
+span[alt="shake"] {
+    -webkit-animation: uk-text-shadow-glitch .95s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
+    animation: uk-text-shadow-glitch .95s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
+}
+
+
+/* https://www.jq22.com/webqd4214（爱是一道光，绿到你发慌） */
+span[alt="glow"] {
+	font-family:'Audiowide';
+	text-align:center;
+	/*color:black;*/
+	-webkit-transition:all 1.5s ease;
+	transition:all 1.5s ease;
+}
+span[alt="glow"]:hover {
+    color:#00a67c;
+	-webkit-animation:Glow 1.5s ease infinite alternate;
+	animation:Glow 1.5s ease infinite alternate;
+}
+@-webkit-keyframes Glow {
+	from {
+	text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 40px #00a67c,0 0 70px #00a67c,0 0 80px #00a67c,0 0 100px #00a67c,0 0 150px #00a67c;
+}
+to {
+	text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #00a67c,0 0 35px #00a67c,0 0 40px #00a67c,0 0 50px #00a67c,0 0 75px #00a67c;
+}
+}@keyframes Glow {
+	from {
+	text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 40px #00a67c,0 0 70px #00a67c,0 0 80px #00a67c,0 0 100px #00a67c,0 0 150px #00a67c;
+}
+to {
+	text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #00a67c,0 0 35px #00a67c,0 0 40px #00a67c,0 0 50px #00a67c,0 0 75px #00a67c;
+}
+}
+
+
+/* 空心字等文字特效 https://www.cnblogs.com/xiaohuochai/p/7521282.html */
+
+
+span[alt="hollow"]{
+    color:white;
+    text-shadow:1px 1px black,-1px -1px black,1px -1px black,-1px 1px black;
+}
+
+@keyframes blink-smooth{50%{color:transparent;}}
+span[alt="blink"]{
+  animation:.5s blink-smooth infinite alternate linear;
+}
+
+span[alt="str"]{
+    padding: 2px 4px;
+    color: var(--commonstr-color);
+    background-color: var(--commonstrbg-color);
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: var(--body-font);
+}
+
+
+/* 时间轴（来自Volantis主题） */
+
+
+div[alt="timeline"] {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+div[alt="timenode"] {
+    position: relative;
+}
+div[alt="timenode"]:after, div[alt="timenode"]:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    background: rgba(68,215,182,.5);
+    width: 2px;
+    left: 7px;
+}
+div[alt="timenode"]:before {
+    top: 0px;
+    height: 6px;
+}
+div[alt="timenode"] div[alt="body"], div[alt="timenode"] div[alt="meta"] {
+    max-width: calc(100% - 24px);
+}
+div[alt="timenode"] div[alt="meta"] {
+    position: relative;
+    color: var(--para-color);
+    line-height: 32px;
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 0 0 0 24px;
+}
+div[alt="timenode"] div[alt="meta"]:after, div[alt="timenode"] div[alt="meta"]:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    z-index: 2;
+    left: -24px;
+}
+div[alt="timenode"] div[alt="meta"]:before {
+    background: rgba(68,215,182,.5);
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+}
+div[alt="timenode"] div[alt="meta"]:after {
+    background: #44d7b6;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -o-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+}
+div[alt="timenode"] div[alt="body"] {
+    margin: 4px 0 10px 24px;
+    padding: 10px;
+    border-radius: 12px;
+    background: var(--timebodybg-color);
+    display: inline-block;
+    font-size: .9rem;
+}
+div[alt="timenode"]:not(:last-child):after {
+    top: 26px;
+    height: calc(100% - 26px);
+}
+div[alt="timenode"]:last-child:after {
+    top: 26px;
+    height: calc(100% - 30px);
+}
+div[alt="timenode"]:hover div[alt="meta"]{
+    color: var(--para-color);
+}
+div[alt="timenode"]:hover div[alt="meta"]:before{
+    background:rgba(255,87,34,.5)
+}
+div[alt="timenode"]:hover div[alt="meta"]:after{
+    background:#ff5722;-webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -o-transform:scale(1);
+    -ms-transform:scale(1);
+    transform:scale(1);
+}
+
+
+/* 参考链接样式修改（隐藏链接部分，只显示标题） */
+
+
+.footnotes.md-def-link .md-def-split, .footnotes .md-def-url {
+    display: none;
+}
+.footnotes.md-def-link .md-def-name, .footnotes .md-def-title {
+    display: inline;
+}
+.footnotes {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+/* KBD按键样式 */
+
+
+kbd {
+    font: var(--code-font);
+    font-size: .8em;
+    background: var(--bg-color);
+    color: var(--body-color);
+    border-radius: 5px;
+}
+@import url();
+
+:root {
+    /* dy color */
+    --select-text-bg-color: #ffafa3; /* 文本选中背景色（粉红） */
+    /*--primary-color: red;*/
+    --bg-color: white; /* 整体背景色（白色） */
+    --sidebarbg-color: white; /* 侧边栏背景色（白色） */
+    --focus-color: #ff5d52; /* 点击某些元素（如标题）显示的颜色（偏红） */
+    --codeblockbg-color: #eee; /* 代码块背景色（灰色） */
+    --codeblockfont-color: #555; /* 代码块默认字体颜色（黑色） */
+    --codeblockline-color: #e0f8f8; /* 代码块选中行颜色（青色） */
+    --titlebefore-color: #00c4b6; /* 各级标题点缀颜色（绿色） */
+    --codeblocknum-color: rgba(128, 128, 255, 0.8); /* 代码块行编号颜色（蓝色） */
+    --blockquoteicon-color: #5fa7e4; /* blockquote提示图标色（蓝色） */
+    --blockquotebg-color: #f4fcff; /* blockquote背景色（淡蓝） */
+    --blockquotedangericon-color: #db524f; /* 危险型blockquote提示图标色（红色） */
+    --blockquotedangerbg-color: #fcf1f2; /* 危险型blockquote背景色（淡红） */
+    --blockquotesuccessicon-color: #5cb85c; /* 成功型blockquote提示图标色（绿色） */
+    --blockquotesuccessbg-color: #eef7f0; /* 成功型blockquote背景色（淡绿） */
+    --blockquotewarnicon-color: #f0ad4e; /* 警告型blockquote提示图标色（橙色） */
+    --blockquotewarnbg-color: #fef8ea; /* 警告型blockquote背景色（淡橙） */
+    --blockquotequestionicon-color: #FF8C00; /* 问题型blockquote提示图标色（橙色） */ 
+    --blockquotequestionbg-color: #FFFACD; /* 问题型blockquote背景色（淡橙） */
+    --ulol-color: #81accf; /* 有序无序列表前缀颜色（灰色） */
+    --olfore-color: #fff; /* 有序列表字体颜色（白色） */
+    --tableevenrow-color: #eee; /* 表格偶数行颜色（淡灰） */
+    --tablefocusrow-color: #e0f8f8; /* 表格鼠标悬停行颜色（淡蓝） */
+    --tableborder-color: #c5c5c5; /* 表格边框色（黑色） */
+    --tablethbg-color: #f4fcff; /* 表格表头背景色（淡蓝） */
+    --scrollbar-color: #9e9e9e; /* 滚动条颜色（灰色） */
+    --toc-color: #00a0a0; /* 目录颜色（绿色） */
+    --atext-color: black; /* 超链接文本颜色（黑色） */
+    --ahover-color: #ffffffe6; /* 超链接悬停文本颜色（白色） */
+    --abottom-color: #81d8cf; /* 超链接下划线颜色（青色） */
+    --code-color: #ff3502; /* 行内代码前景色（红色） */
+    --codebg-color: #f8f5ec; /* 行内代码背景色（淡红） */
+    --footnote-color: #e96900; /* 脚注上标前景色（红色） */
+    --footnotebg-color: #f8f8f8; /* 脚注上标背景色（淡灰） */
+    --highlight-color: red; /* 高亮文本前景色（红色） */
+    --highlightbg-color: yellow; /* 高亮文本背景色（黄色） */
+    --split-color: #00c4b6; /* 分割线颜色（绿色） */
+    --taskborder-color: red; /* 任务列表边框色（红色） */
+    --taskfocus-color: #00c4b6; /* 任务列表选中填充色（绿色） */
+    --spannote-color: #e91e64; /* 小标签背景色（红色） */
+    --emptext-color: #fe5f58; /* 几款强调型文本的颜色（红色） */
+    --hidetextcover-color: #a1a1a1; /* 隐藏文本遮罩颜色（灰色） */
+    --hidetext-color: #444; /* 隐藏文本颜色（黑色） */
+    --spanbtn-color: #44d7b6; /* 文本按钮颜色（绿色） */
+    --detailstxt-color: rgba(68,68,68,.7); /* 折叠框summary文字颜色（灰色） */
+    --detailsbg-color: #ebf9ed; /* 折叠框summary背景色（青绿色） */
+    --detailsborder-color: #00c4b6; /* 折叠框边框色（绿色） */
+    --body-color: #000000; /* 文本颜色（黑色） */
+    --para-color: #000000; /* 段落文本颜色（黑色） */
+    --commonstr-color: #232629; /* 常规字符串颜色（黑色） */
+    --commonstrbg-color: #e3e6e8; /* 常规字符串背景色（灰色） */
+    --timebodybg-color: #efeded; /* 时间轴主体部分背景色（灰色） */
+    --sidelist-selected-color: #eeeeee; /* 侧边栏条目选中背景色（灰色） */
+    --yamlbg-color: #f7f7f7; /* 头部YAML背景色（白色） */
+    --yaml-color: #585858; /* 头部YAML字体颜色（黑色） */
+    /* dy font */
+    --body-font: 'Source Sans Pro', '等距更纱黑体 SC', 'Helvetica Neue', Arial, sans-serif; /* 全局字体（"Poppins", -apple-system, "Helvetica Neue", Helvetica, "Noto Sans", "Nimbus Sans L", Arial, "Liberation Sans", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;） */
+    --code-font: 'JetBrains Mono'; /* 代码块以及行内代码字体 */
+    /* bg image */
+    --bgimg-url: url(file:///C://Users//Administrator//AppData//Roaming//Typora/themes/bg-light.gif);
+}
+</style>
+<style type='text/css'  id="style-base_user_css">
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+ 
+.CodeMirror-line .cm-number{color:#7f6bff} /*数字，蓝色*/
+.CodeMirror-line .cm-property {
+    color: #f08d49;
+}
+.CodeMirror-line .cm-variable-3{color:#ffed6b} /*返回值、变量类型，int、void等，淡黄色*/
+.CodeMirror-line .cm-qualifier{color:#888}
+.CodeMirror-line .cm-variable-2 {
+    color: #888;
+} 
+.CodeMirror-line .cm-meta{ color:#BBFFFF}  /* 头文件、宏定义一整行 青色*/
+.CodeMirror-line .cm-atom { color:#f9ff00} /* true、false 黄色*/
+.CodeMirror-line .cm-keyword{    color: #ff1800;} /* if、return等关键字红色*/
+
+.CodeMirror-line .cm-def{ color:#00ff00  } /* 函数定义，绿色 */
+
+
+.CodeMirror-line .cm-variable { color: #90EE90; } /* 入参定义，亮绿色 */
+
+.CodeMirror-line .cm-builtin {
+    color: #82AAFF;
+}/* 蓝色 */
+.CodeMirror-line .cm-comment {
+    color: #888;
+} /* 灰色 */
+.CodeMirror-line .cm-string{ color: #82AAFF  } /* 字符串， 蓝色*/
+.CodeMirror-line .cm-string-2 { color: #888  }
+.CodeMirror-line .cm-operator {color: #ff1800}/* +=等操作符，红色*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #fff;
+    z-index: 3;
+}
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: #666 !important;
+}
+ 
+ 
+.CodeMirror-line .cm-tag{
+    color: #F07178;
+}
+.CodeMirror-line .cm-bracket{
+    color: #FFF;
+}
+.CodeMirror-line .cm-attribute{
+    color: #FFCB6B;
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+/* 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h2) " "
+}
+*/
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write {
+    counter-reset: h1
+}
+ 
+h1 {
+    counter-reset: h2
+}
+ 
+h2 {
+    counter-reset: h3
+}
+ 
+h3 {
+    counter-reset: h4
+}
+ 
+h4 {
+    counter-reset: h5
+}
+ 
+h5 {
+    counter-reset: h6
+}
+ 
+#write h1:before {
+    counter-increment: h1;
+   /* content: counter(h1) " "*/
+}
+ 
+#write h2:before {
+    counter-increment: h2;
+   /* content: counter(h1) "."counter(h2) " "*/
+}
+ 
+#write h3:before,
+h3.md-focus.md-heading:before
+ 
+    {
+    counter-increment: h3;
+    content: counter(h3) " "
+}
+ 
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h3) "."counter(h4) " "
+}
+ 
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h3) "."counter(h4) "."counter(h5) " "
+}
+ 
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}
+ 
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+ 
+ 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+ 
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+ 
+.md-fences,
+code,
+tt {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 0.9em;
+}
+ 
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+ 
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+ 
+ 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+ 
+@media print {
+    html {
+ font-size: 13px;
+    }
+    table,
+    pre {
+ page-break-inside: avoid;
+    }
+    pre {
+ word-wrap: break-word;
+    }
+}
+ 
+.md-fences {
+    background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+ 
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+ 
+ 
+ 
+ 
+ 
+#write .md-fences:not([mermaid-type])  {
+    padding-top: 7px;
+    border-radius: 10px;
+    background-color: #282c34;
+    color: #eeeeee;
+}
+ 
+.code-tooltip .ty-input,
+.code-tooltip input {
+    color: #eee;
+}
+ 
+ 
+ 
+.CodeMirror-wrap .CodeMirror-scroll {
+    padding-top: 20px;
+}
+ 
+#write .md-fences:before {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #fa3534;
+}
+ 
+#write .CodeMirror-scroll:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    z-index: 999;
+    background-color: #ff9900;
+}
+#write .md-fences::after {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #19be6b;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>我眼中的软件工程课程</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='我眼中的软件工程课程'><span>我眼中的软件工程课程</span></h1><h2 id='作者刘文庆'><span>作者：刘文庆</span></h2><p><span>        最近听了几位《软件工程》课程的老师授课，课后与老师基本都进行了简短的交谈，有个共同的观点就是这门课比较空洞，老师不是照本宣科就是泛泛而谈一些空洞的概念，而学生基本是在玩手机或考研的同学在复习别的功课，很多学生课本都没带。“软件工程”专业在我国开设了很多年了，多数本科院校计算机软件工程专业主要是培养学生完成“信息管理系统”开发过程为主线开展相关课程的教学，对于《软件工程》偏重管理的课程重视不够。课后我查阅了关于《软件工程》的教材与学习资料，国内不下100种之多，书中涉及内容非常繁杂，让人目不暇接。</span></p><p><span>        作为在小公司从事计算机相关软硬件产品研发多年的老人，我讲的最多的一句话“如果完全按照软件工程规范进行软件产品设计与管理，多数小型软件企业会很快倒闭；作为从业人员，在软件产品研发过程中如果一点不遵从软件工程规范，那么你的产品不会走的特别远或成熟度稳定性可扩展性一定不强”。那么《软件工程》课程如何教学和组织学生学习才能避免目前课程空洞的弊病，让学生真正学习到以后从事软件开发过程中需要的必要技能和管理方法呢？本篇文章结合自己的一些体会谈谈几点感想，以期望对学校老师有所帮助。</span></p><h3 id='程序设计及软件开发软件工程与软件工程专业的概念'><span>程序设计及软件开发，软件工程与软件工程专业的概念</span></h3><p><span>       如果你作为计算机专业的学生一定学习过多种开发语言，如C++、java或python，也一定完成过多个程序设计，通过编写具有一定功能的程序解决过一些实际问题。从软件工程角度看你所编写的程序不一定是严格意义上的软件。软件和程序通俗的理解可以如下定义：</span></p><p><strong><span>软件</span></strong><span>：是一系列按照特定顺序组织的计算机数据和指令的集合。</span><em><span>（软件 = 程序 + 文档）</span></em>
+<strong><span>程序</span></strong><span>：是一组计算机能识别和执行的指令，运行于电子计算机上，满足人们某种需求的信息化工具。</span><em><span>（程序 = 数据结构 + 算法）</span></em></p><p><span>          从以上定义理解程序设计与软件开发就很容易区分出两者之间的不同：</span></p><p><span>          程序设计是指采用某种计算机编程语言编写能够解决一定问题的计算机程序。</span></p><p><span>          软件开发一定是在任务驱动下有组织的完成有一定功能的软件程序设计以及文档制作。软件开发一定包含程序设计。</span></p><p><strong><span>软件工程定义及其内涵：</span></strong></p><p><span>软件工程到目前为止还没有统一的被学术界公司技术管理人员全部认可的定义，比较几个较为权威的定义如下：</span></p><p><span>          BarryBoehm：运用现代科学技术知识来设计并构造计算机程序及为开发、运行和维护这些程序所必需的相关文件资料。</span></p><p><span>          IEEE：在软件工程术语汇编中的定义：软件工程是：1.将系统化的、严格约束的、可量化的方法应用于软件的开发、运行和维护，即将工程化应用于软件；2.在1中所述方法的研究</span></p><p><span>          FritzBauer：在NATO会议上给出的定义：建立并使用完善的工程化原则，以较经济的手段获得能在实际机器上有效运行的可靠软件的一系列方法。</span></p><p><span>       《计算机科学技术百科全书》：软件工程是</span><a href='https://baike.baidu.com/item/应用计算机科学/12588580?fromModule=lemma_inlink'><span>应用计算机科学</span></a><span>、数学、逻辑学及管理科学等原理，开发软件的工程。软件工程借鉴传统工程的原则、方法，以提高质量、降低成本和改进算法。其中，计算机科学、数学用于构建模型与算法，工程科学用于制定规范、设计范型(paradigm)、评估成本及确定权衡，管理科学用于计划、资源、质量、成本等管理。</span></p><p><span>         为此作者认为软件工程比较被各界认可的定义应该是：</span></p><p><span>         </span><strong><span>软件工程是研究和应用如何以系统性的、规范化的、可定量的过程化方法去开发和维护软件，以及如何把经过时间考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来的管理方法学。</span></strong><span> </span></p><p><span>         软件工程过程是指为获得软件产品，在软件工具的支持下由软件工程师完成的一系列软件工程活动，包括以下四个方面：</span></p><p><span>        ①  P（Plan）计划活动——软件规格说明。规定软件的功能及其运行时的限制。</span></p><p><span>        ②  D（DO）组织管理开发过程——软件开发。开发出满足规格说明的软件。</span></p><p><span>        ③   C（Check）测试与确认——软件确认。确认开发的软件能够满足用户的需求。</span></p><p><span>        ④   A（Action）版本控制与升级——软件演进。软件在运行过程中不断改进以满足客户新的需求。</span></p><p><span>        从软件开发的观点看，它就是使用适当的资源（包括人员，软硬件资源，时间等），为开发软件进行的一组开发活动，在活动结束时输入（即用户的需求）转化为输出（最终符合用户需求的软件产品）。</span></p><p><span>        软件工程对软件开发划分的三个阶段：</span></p><p><span>                 定义阶段：可行性研究初步项目计划、需求分析； </span></p><p><span>                 开发阶段：概要设计、详细设计、实现、测试；</span></p><p><span>                 运行和维护阶段：运行、维护、废弃；</span></p><p><span>       软件工程组织软件开发活动所需遵循的几个基本原则：1、抽象；2、信息隐蔽；3、模块化；4、局部化；5、确定性；6，一致性；7、完备性；8、可验证性</span></p><p><strong><span>软件工程专业</span></strong><span>：主要讲授及研究学习计算机各类软件的构造、设计、开发方法、测试、维护等相关的知识和技术，涉及程序设计语言、数据库、软件开发工具、系统平台、设计模式等多方面的理论知识、技术和方法的学科专业。涉及软件开发过程中的软件需求分析、软件设计、软件测试、软件维护等。</span></p><p><span>       作者理解</span><strong><span>软件工程课程</span></strong><span>只是软件</span><strong><span>工程专业</span></strong><span>中的一门专业课程而并不是全部。作为本科软件工程专业学生需要更多的注重软件开发过程中需要基础理论知识、技术和程序设计方法的学习。</span><strong><span>软件工程</span></strong><span>应该属于管理学学科主要研究在软件开发过程中对开发人员、开发流程、程序代码的标准化管理，以提高开发效率，避免不必要浪费的管理学学科。</span></p><h3 id='不同软件产品以及不同规模的团队公司需要不同的软件工程方法学'><span>不同软件产品以及不同规模的团队(公司)需要不同的软件工程方法学</span></h3><p><span>        很多教科书会大谈特谈软件开发危机，举了很多规模性软件研发失败的教训，强调软件工程课程的重要性，认为开发软件如果不安软件功能的规则方法一定会失败。其实这是在误导学生，作者从事软件研发接近30多年，开发过多个软件产品，如基于HLA的DirectRTI、基于OpenGVS的simGVS等软件产品，设计研发过多种模拟训练器材、完成过驾驶人考试科目一、科目二、科目三等多种相关产品。经验告诉我在实际的软件开发过程中一定要对软件工程的理论进行取舍，否则你会陷入无穷无尽的软件工程陷阱，各种管理规定会束缚住研发人员的手脚，软件管理的各种事物会严重影响软件产品的进度和研发效率，是得不偿失的。</span></p><p><span>        我们不妨对软件工程按照研发团队规模进行分类：</span></p><p><span>        ①  个体软件工程：在github、gitee、gitlab上有很多开源或闭源的软件个体研发人员。很多软件项目是软件个体的劳动成果，经过多年的产品跌到已经非常成熟，也为社会或其他需要人员提供了巨大帮助。对于个体软件程序员我们称为个体软件工程：这类程序员眼中的软件功能需求比较小，一般不注重软件开发过程中的管理工作，不会进行详细的需求分析、总体设计等繁杂的管理步骤，当然有经验的会写一些功能目标和测试文档。多数程序员会把软件开发过程中代码管理提交到github平台，以帮助开发过程中的程序版本控制和分支控制。</span></p><p><span>        ②  小组软件工程：开发团队小于5人，技术负责人基本是团队核心人员，开发项目目标明确且相关技术基本成熟的软件开发小组，我们认为适合小组软件工程。绝大多数软件公司构建的软件开发团队属于小组软件工程模式，即使比较大型的软件公司也是将规模较大的软件开发团队按任务分解为较小的软件开发小组，每个小组3~5人，小组长基本是核心开发人员也是技术负责人，其中一人作为测试人员并辅助小组长完成开发过程管理并撰写技术文档。这样的好处是小组软件开发相对完成的软件相对独立，技术和规模可控，版本迭代比较清晰，变更比较容易。</span></p><p><span>             对于小组软件工程所关心的软件工程问题比较具体且可操作性较强，一般需要制定开发目标（需求分析报告相对任务较为明确）、总体设计技术路线比较清晰、软件技术架构比较成熟、测试文档较为规范或测试范围界限明确。多数软件团队基本不会采用复杂的软件工程管理软件工具组织管理，常制定常用的技术文档作为软件团队开发的依据：如需求分析报告、总体设计报告、单元和总体测试报告等。软件编码人员依据任务协同采用git服务器或SVN服务器定期提交软件代码作为协同依据。</span></p><p><span>        ③  规模软件工程：对于软件研发团队较为庞大，一般是50人以上的软件开发团队，完成的软件系统较为复杂，如操作系统、Office应用软件、编译软件或集成开发环境、AutoCAD等。需要明确最终任务，具有严格的分工和软件产品质量控制。这样的软件团队开发过程管理一般会依据成熟可操作的软件工程管理模型如CMM或CMMI，借助软件工程管理软件进行任务划分和软件开发过程管理，这类软件开发模式是软件工程课程讲解的主要目标对象。</span></p><p><span>          作者到目前为止没有在这样规模的软件企业任职过，从事的均是小规模的应用软件系统开发，所以本篇文章立足于小组软件开发为主进行描述。</span></p><h3 id='软件工程一点都不空洞它会贯穿软件产品生产前中后的方方面面'><span>软件工程一点都不空洞，它会贯穿软件产品生产前、中、后的方方面面</span></h3><p><span>        无论软件工程概念的定义还是授课教材、授课老师都会同意我这个观点，只是如何将软件工程从空中楼阁实实在在的落实到地面，真正对软件研发生产起到实实在在的作用，是企业程序员、项目经理、工程管理人员、软件用户等所有相关人员需要解决的基本问题。</span></p><p><span>        那么到底如何认识软件工程？如何学习软件工程才能实时在在对自己有所帮助呢？</span></p><p><span>        作者认为可以从两个维度认识软件功能：</span></p><p><span>        </span><strong><span>第一个维度：不同的角色对软件工程有不同的认识，不同的需求。我们可以把相关人员分解为如下角色：</span></strong></p><p><span>                   ①软件客户（企业老板或高级管理层）：这类人员其实不太关心软件开发过程的管理，他们关心的是开发预算、开发周期和软件产品所解决的问题。针对不同的软件产品、软件客户、研发团队的企业老板，在指定软件可行性报告或软件立项报告时一定要多留个心眼和考虑到功能变更、软件团队变更等风险因素，在研发周期、研发经费等实际问题上要有充分的余地，一般情况下需求分析报告会多次变更，如果是首次软件研发一般需要2次跌到才能够初步满足用户使用，还需要很长事件促进软件成熟。针对这类人群一般需要撰写《软件可行性分析报告》和《软件需求分析报告》，根据具体情况进行取舍。</span></p><p><span>                  ② 项目经理（软件设计研发负责人）、技术经理（软件架构师或技术负责人）：我们把这两个角色放到一起，一般情况下他们会是一个人担任，他们关心的问题基本具有同质性，只是项目经理比一定是软件研发人员而技术经理绝大多数是软件团队的核心研发人员。这两类人员关心软件工程的内容比较丰富，也是保障软件产品质量、控制软件项目进度与迭代周期、软件产品可用性与可靠性的核心负责人。</span></p><p><span>                    对于这类人员一般需要完成《软件需求分析报告》、《软件总体设计报告》( 其中包含技术路线和架构设计)、《软件测试规格任务书》等技术文档。</span></p><p><span>                ③程序员：作为程序员其实不太关心软件工程的，多数是程序员基本是在根据总体设计报告中设计的编程规范如信息管理系统中数据库结构(数据字典)、软件架构形式、自身受领的任务进行软件代码的编写。涉及程序人员的软件功能基本是制定好的《软件总体报告》中包图、配置图、软件架构模式等内容,有的可能涉及《 软件详细设计报告》中的状态图、活动图、交互图等具体的规则内容。</span></p><p><span>                ④测试员（调试安装人员）：软件工程中测试一般分为单元测试和总体测试。单元测试多数公司均是有程序员在开发过程中完成。总体测试可以分为内部测试和外部测试( 试运行)。比较规范的软件公司会有一到两名测试人员，依据《软件测试规格任务书》分步骤的进行软件测试，一般分为功能测试和安全测试等内容。</span></p><p><span>       </span><strong><span>第二维度：软件研发过程中需要软件工程管理步骤、方法、工具</span></strong></p><p><span>                  ①软件研发前：软件研发前一般需要立项，这就需要编写软件可行性分析报告，如果完成立项后作为公司管理层需要配置软件研发人员和对应管理机构，指定相关人员指定软件需求分析文档、软硬件实验性原型开发等工作。</span></p><p><span>                  ②软件研发中：在 《 需求分析报告》完成评审后，软件产品的功能界定基本已经明确了，我还是建议要制定《软件总体设计方案》，通过有文字可查的《方案》文档界定多位程序员需要遵守的一些基本准则，如数据库数据字典规范了数据库表和数据库字段、数据库存储过程及参数的命名规范、软件实现的总体技术路线、软件前后端架构、软件配置软硬件环境等内容，特别是软件开发人员的分工界限和基本的时间要求等。当然作为软件项目经理或技术负责人对于比较复杂的软件系统可以要求开发人员在编码过程中完成类图、对象图、状态图、活动图、序列图、活动图，以方便小组针对某些功能进行小组讨论，为以后的人员变更做好必要的组织准备。</span></p><p><span>                  ③软件研发后：软件产品研发完成后的测试是产品走向成熟的重要环境，单元测试贯穿到软件设计的整个过程，一般需要借助单元测试工具，如java语言的 JUnit 工具、C++语言的C++Test工具或由程序员通过编写测试代码完成单元测试。软件产品的集成测试还是很有必要的，集成测试建议一定有专门的测试人员完成，避免程序人员参与直接测试，《 软件测试规格任务书》需要软件经理、测试员、程序员共同指定，并在开发过程中逐步完善并且目标明确，可以将功能测试和安全测试分开，也可以一起进行，主要根据软件产品的重要性和公司管理实际情况确定。最后生成《软件测试报告》。软件交互用户试用还要提供《软件使用说明书》等文档。</span></p><p><span>                 ④软件产品的迭代升级步骤：软件产品是一个螺旋式迭代开发过程，首次测试完成的软件一般还不能称为软件产品，根据我开发的经验一般需要二次迭代完成的软件才能提交用户试运行，在试运行过程中还需要不断的修改软件 bug和完善软件功能，适应不断变化的应用需求，真正相对成熟的软件产品一般需要10年以上的试运行周期。</span></p><p><span>                  软件版本号的确定：在软件开发过程和测试迭代过程中，一般需要制定软件版本号用于界定不同软件发布日期。软件版本号是指软件在不同开发阶段的标识符。它通常由多个数字组成，这些数字通过点号（“.”）分隔，代表软件的不同版本或更新。这些版本号有助于开发团队追踪软件的历史，更有助于用户了解软件的更新状态。</span></p><p><span>                例如，在一个版本号“1.17.10”中：</span></p><p><span>                </span><strong><span>1</span></strong><span> 表示主要版本（Major Version），通常用于标识重大变更或不兼容的更新。</span></p><p><span>                </span><strong><span>17</span></strong><span> 表示次要版本（Minor Version），用于标识功能性改进或新增特性。</span></p><p><span>                </span><strong><span>10</span></strong><span> 表示补丁版本（Patch Version），用于修复小问题或漏洞。</span></p><h3 id='软件工程需要掌握的几个实际技能'><span>软件工程需要掌握的几个实际技能</span></h3><p><span>      学习软件工程课程是为了日后工作中从事软件产品的管理工作（或辅助性管理工作），需要实实在在的掌握几项技能：</span></p><h4 id='软件工程图形化描述语言uml语言'><span>软件工程图形化描述语言:UML语言</span></h4><p><span>           UML语言已经成为软件工程设计的标准化描述语言，涉及到软件研发前中后的各个阶段以及各种文档报告，所以学习软件功能课程首先需要掌握UML语言，能够应用UML园绘制各种软件的用例图、静态图、动态图、配置图。下面是UML语言描述的软件产品UML图的基本构成。</span></p><p><img src="../images/2025092801.jpg" alt="UML相关图"></p><h4 id='软件工程经常需要的几个标准性文档'><span>软件工程经常需要的几个标准性文档：</span></h4><p><span>         学习软件工程课程，需要实验性的学会撰写几个标准性文档：</span></p><p><span>         《需求分析报告》、《总体设计报告》、《详细设计报告》、《软件测试任务书》、《软件测试报告》、《软件使用说明书》等。在学习过程中可以参阅国标或大企业的标准文档格式要求，以模拟项目形式完成部分文档的撰写，我想对你一定会有所帮助的。</span></p><h4 id='软件工程过程性管理工具git工具与svn工具'><span>软件工程过程性管理工具：git工具与SVN工具</span></h4><p><span>           软件研发过程中离不开代码管理和版本控制，所以就离不开软件版本控制工具。比较常用的软件代码版本管理工具有git和SVN工具。SVN工具属于集中管理的软件管理模式，作者长期使用公式内部配置的SVN服务器对公司产品进行代码管理和软件版本管理。</span></p><p><span>          git属于分布式的软件管理模式工具，目前市场上基本常用git模式管理软件产品，你可以自己安装git服务器，亦可以借助免费的git空间进行软件产品的管理。比较知名的有</span><a href='http://www.github.com' target='_blank' class='url'>www.github.com</a><span>,国内有</span><a href='http://www.gitee.com' target='_blank' class='url'>www.gitee.com</a></p><p><span>          作为学生可以虚拟一个软件研发团队，申请git免费空间，协同完成软件代码的提交、变更、分支划分与合并、版本变更等基本的操作命令的练习。作者博客网站</span><a href='https://opengvs.github.io/opengvs' target='_blank' class='url'>https://opengvs.github.io/opengvs</a><span>就是托管在github.com服务器上的免费空间。</span></p><h3 id='软件工程方法与软件开发技术与方法函数式编程面向对象程序设计程序架构设计模式之间的关系'><span>软件工程方法与软件开发技术与方法(函数式编程、面向对象程序设计、程序架构、设计模式)之间的关系</span></h3><p><span>        前面已经给出了</span><strong><span>软件工程</span></strong><span>的定义，  有软件工程的定义可以看出软件工程属于管理学科。在理解或讲授学习</span><strong><span>软件工程</span></strong><span>的时候需要界定</span><strong><span>软件工程</span></strong><span>的内涵与边界，将软件工程的管理组织活动与软件开发技术方法区分开来，</span><font color=red><span>避免认为软件开发过程中的所有行为均属于软件工程的研究内容</span></font><span>，从而陷入庞大的无休止的软件工程学习陷阱。</span></p><p><span>        结合作者的认识，下面具体谈一下几个软件开发技术与方法：(</span><font color=red><span>其实他们不应该是软件工程内涵范围</span></font><span>)</span></p><p><span>        ① 面向过程的软件工程与</span><strong><span>面向过程软件开发</span></strong><span>是两个不同的概念描述       </span></p><p><span>        在《软件工程概论》中详细讲述了面向过程的软件工程在软件开发过程中所需进行的组织管理工作以及阶段目标，如软件开发前、开发过程、开发完成所进行的管理任务。其实 面向过程的软件工程是软件开发组织所构建软件系统的基本流程。</span></p><p><span>        </span><strong><span>面向过程软件开发</span></strong><span>也称结构化开发，将软件要实现的功能分解成一个个连续的流程结点，将每个节点都实现为一个函数，依次调用这些函数以完成软件功能。至于执行流程中多个函数共用的数据，则拿出来定义为共享的数据结构，实例化，在函数中使用和传递。所以</span><strong><span>面向过程软件开发</span></strong><span>属于软件设计方法学中的问题，应该属于编程语言或程序设计结构中的问题，不要拿到软件工程课程的教学范畴。</span></p><p><span>       ② </span><strong><span>面向对象软件工程</span></strong><span>只是软件工程实时过程中面向对象分析问题、组织设计程序的方法学问题，而不是软件工程的工作组织过程。</span></p><p><span>       “面向对象软件工程”多是讲解如何设计类和对象以及他们之间的关系、对象与对象之间的数据耦合等内容，作者认为这是软件开发过程中的方法学问题。面向对象开发主要指模拟人类的思维方式，将软件需求中的事物关系，通过封装、继承、多态等手法抽象为一个个具体的对象（类），在对象中包含数据和操作数据的方法，以此方式实现软件需求分析、程序设计和软件测试。我们前面提到的UML语言对软件开发过程的描述就是通过统一定义的符号描述形象化的绘制面向对象方法在软件开发过程中的设计方法。</span></p><p><span>       作者偏向于认为</span><strong><span>面向对象软件工程</span></strong><span>属于软件工程实施过程中分析问题解决问题方法学范畴，是学习软件工程课程中需要掌握的分析问题设计、解决方案、理清软件工作思路的重要技术技能。是软件工程课程的二级标题，不能成为软件工程的主干。</span></p><p><span>       </span><strong><span>其实：面向过程的软件方法学模拟了数学函数的思想，而面向对象的程序设计模拟了人类认识世界事物分类的思维模式，对于非数学问题采用面向对象构建软件使得软件结构更加清晰。</span></strong></p><p><span>       ③ </span><strong><span>软件架构与程序架构</span></strong><span> 在软件开发过程中经常用到，作者认为其同样属于软件开发过程中设计方法学范畴。</span></p><p><span>       软件架构在软件运行过程中起到十分重要的作用，决定了软件系统开发过程的分工合理性以及是否具有高效的运行效率。记得十多年前某地市在配置驾驶人科目一考试系统时，在Websphere集群服务器中修改关键表访问采用Redis二级缓存以及修改web服务访问的负债均衡，使得运行效率提高为原来的10多倍，解决了当时十分棘手的问题。</span></p><p><span>      程序架构在软件开发过程中同样是衡量程序员功底的重要因素，往往决定大型软件能否顺利完成或决定最终软件是否具有较高的运行效率，具有可维护性和扩充的重要体现。如当前信息系统管理类软件采用java形式开发时后台服务器多采用 SSM架构、前端页面Vue框架的事件处理采用MVVM架构等，后台服务器如何设计Been层、DAO层、Service层、Control层是决定web服务器应用层的稳定性和可扩充性的重要因素。这种类型的应用程序架构网上文章比较多了，这里列举一个作者开发的驾驶人科目二考试系统车载应用程序的架构设计：</span></p><p><img src="C:\xampp\htdocs\MiniUI\images\image-20251009095828038.png" alt="image-20251009095828038"></p><p><span>     通过设计合理的程序架构使得应用程序可维护性、可扩充性得到了极大的提升，10多年来考试程序适应了多种硬件信号的变化，依据用户需求更换过多种数据库平台接口程序基础框架未进行大的修改。不同的软件在设计时会采用不同的架构模式，其基本思想就是分层开发，减少层与层之间的耦合，以便于软件开发过程的分工协作，方便软件功能的相对独立测试。</span></p><p><span>      无论是软件运行架构还是程序设计架构作者认为这些属于程序设计的技术范畴，它们并不属于软件工程的研究范围，否则软件工程涵盖的内容就太大了，让人目不暇接。</span></p><p><span>       ④</span><strong><span>设计模式</span></strong><span>是程序代码组织形式，是实现程序架构设计的重要实现方法，同样不能称为软件工程的研究范围。记得OSG（OpenSceneGraph）中使用了10多种设计模式，实现了图形系统多种数据的管理与访问模式，如创造型模式---Factory(工厂)模式、AbstractFactory(抽象工厂)模式、Singleton(单例)模式、Builder(创造者)模式、Prototype(原型)模式、Bridge(桥接)模式、Adapter(适配器)模式、Decorator (装饰器)模式、Composite(组合)模式、Proxy(代理)模式、Template(模板)模式、Strategy (策略)模式、State(状态)模式、Observer(观察者)模式、Command(命令)模式、Visitor(访问者)模式、Interpreter(解释器)模式等。</span></p><p><span>        作者认为设计模式属于软件开发过程中设计技巧，体现了程序设计人员的编程水平。但是设计模式不应该划分到软件工程的研究范畴。</span></p><p><span>       总之程序架构与程序框架、设计模式、面向过程编程、面向对象分析与编程是软件工程在管理软件开发工程中经常用到离不开的软件设计技术，但是并不属于软件工程的研究范围，这样在教授和学习《软件工程》课程中就会清晰明了。</span></p><p><span>        以上是作者对软件工程课程的几点粗浅感想，这样会不会对你学习软件工程有所帮助？</span></p></div></div>
+</body>
+</html>
