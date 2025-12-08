@@ -48,7 +48,7 @@
         {id: "CSharpOpenGL2", text: "二维平面物体平移、旋转、缩放过程演示", url:"C_SHARPE语言的OpenGL程序基础框架.html", pid: "CSharpOpenGL" },
         {id: "CSharpOpenGL4", text: "相机控制程序演示", url:"OpenGL三维空间相机变换演示程序.html", pid: "CSharpOpenGL" },
 	{id: "CSharpOpenGL3", text: "三维空间物体变换过程演示", url:"C_Sharp语言OpenGL环境下物体的运动控制.html", pid: "CSharpOpenGL" },
-        {id: "CSharpOpenGL5", text: "纹理应用演示程序", url:"纹理应用演示程序.html", pid: "CSharpOpenGL" },
+        {id: "CSharpOpenGL5", text: "纹理应用演示程序", url:"CSharp语言实现OpenGL纹理编程基础.html", pid: "CSharpOpenGL" },
         {id: "CSharpOpenGL6", text: "光照与材质绘制物体演示程序", url:"光照与材质绘制物体演示程序.html", pid: "CSharpOpenGL" },
          {id: "CSharpOpenGL7", text: "读取obj模型文件演示程序", url:"读取obj模型文件演示程序.html", pid: "CSharpOpenGL" },
 
