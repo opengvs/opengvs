@@ -40,7 +40,8 @@
          {id: "CPPOpenGL7", text: "物体的空间变换", url:"三维应用程序中物体的空间变换.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL8", text: "OpenGL三维程序中纹理基本概念与编程实践", url:"OpenGL三维程序中纹理基本概念与编程实践.html", pid: "CPPOpenGL" },
         {id: "CPPOpenGL9", text: "OpenGL光照基础光照模型", url:"OpenGL光照基础光照模型.html", pid: "CPPOpenGL" },
-		
+		{id: "CPPOpenGL10", text: "基于GLSL的海浪仿真C++实现", url:"基于GLSL的海浪仿真算法.html", pid: "CPPOpenGL" },
+		{id: "CPPOpenGL11", text: "基于GLSL的海浪仿真html实现", url:"seascape.html", pid: "CPPOpenGL" },
 	
 	{id: "CSharpOpenGL", text: "C#版三维图形学原理(OpenGL示例)", pid: "OpenGL"},
 				
