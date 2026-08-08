@@ -161,6 +161,9 @@
       <button id="btnReset">重置</button>
       <button id="btnShot">截图</button>
     </div>
+    <div class="actions">
+      <button id="btnFull">全屏</button>
+    </div>
 
     <div class="hint">
       <kbd>移动鼠标</kbd> 改变视角偏移 &nbsp; <kbd>空格</kbd> 暂停<br>
@@ -598,6 +601,17 @@ function doShot() {
   }, 'image/png');
 }
 
+const btnFull = document.getElementById('btnFull');
+function updateFullBtn() {
+  btnFull.textContent = document.fullscreenElement ? '退出全屏' : '全屏';
+}
+function toggleFullscreen() {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen().catch(() => {});
+}
+btnFull.addEventListener('click', toggleFullscreen);
+document.addEventListener('fullscreenchange', updateFullBtn);
+
 const toggleBtn = document.getElementById('toggleBtn');
 toggleBtn.addEventListener('click', () => {
   const body = document.getElementById('panelBody');
@@ -608,7 +622,7 @@ toggleBtn.addEventListener('click', () => {
 window.addEventListener('keydown', e => {
   const k = e.key.toLowerCase();
   if (k === ' ')      { e.preventDefault(); togglePause(); }
-  else if (k === 'f') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+  else if (k === 'f') { toggleFullscreen(); }
   else if (k === 'h') { document.getElementById('panel').classList.toggle('hidden');
                         document.getElementById('hud').classList.toggle('hidden'); }
   else if (k === 'r') { reset(); }
