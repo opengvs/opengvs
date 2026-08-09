@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="380" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">Attention：Q' · K'ᵀ → scores [5,5]</text>
+
+  <!-- Q' -->
+  <rect x="40" y="70" width="120" height="200" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="76" y="92" font-size="13" font-weight="bold" fill="#0d47a1">Q' [5,32]</text>
+  <text x="56" y="120" font-size="12" fill="#222">pos0 (1)</text>
+  <text x="56" y="150" font-size="12" fill="#222">pos1 (+)</text>
+  <text x="56" y="180" font-size="12" fill="#222">pos2 (2)</text>
+  <text x="56" y="210" font-size="12" fill="#222">pos3 (+)</text>
+  <text x="56" y="240" font-size="12" fill="#222">pos4 (3)</text>
+
+  <!-- × -->
+  <text x="178" y="175" font-size="24" fill="#444">×</text>
+
+  <!-- K'ᵀ -->
+  <rect x="210" y="70" width="120" height="200" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="240" y="92" font-size="13" font-weight="bold" fill="#4a148c">K'ᵀ [32,5]</text>
+  <text x="226" y="120" font-size="12" fill="#222">col0 (1)</text>
+  <text x="226" y="150" font-size="12" fill="#222">col1 (+)</text>
+  <text x="226" y="180" font-size="12" fill="#222">col2 (2)</text>
+  <text x="226" y="210" font-size="12" fill="#222">col3 (+)</text>
+  <text x="226" y="240" font-size="12" fill="#222">col4 (3)</text>
+
+  <!-- = -->
+  <text x="348" y="175" font-size="24" fill="#444">=</text>
+
+  <!-- scores 5x5 -->
+  <rect x="380" y="70" width="200" height="200" rx="6" fill="#fff" stroke="#444" stroke-width="1.5"/>
+  <text x="396" y="92" font-size="13" font-weight="bold" fill="#222">scores [5,5] ÷√32</text>
+  <!-- 网格 + 掩码 -->
+  <g font-size="11" fill="#222" text-anchor="middle">
+    <!-- 行 i 列 j -->
+    <!-- 行0: 仅 j=0 有效 -->
+    <rect x="392" y="100" width="32" height="30" fill="#c8e6c9"/>
+    <text x="408" y="120" >●</text>
+    <rect x="424" y="100" width="32" height="30" fill="#eeeeee"/><text x="440" y="120" fill="#999">×</text>
+    <rect x="456" y="100" width="32" height="30" fill="#eeeeee"/><text x="472" y="120" fill="#999">×</text>
+    <rect x="488" y="100" width="32" height="30" fill="#eeeeee"/><text x="504" y="120" fill="#999">×</text>
+    <rect x="520" y="100" width="32" height="30" fill="#eeeeee"/><text x="536" y="120" fill="#999">×</text>
+    <!-- 行1 -->
+    <rect x="392" y="130" width="32" height="30" fill="#c8e6c9"/><text x="408" y="150" >●</text>
+    <rect x="424" y="130" width="32" height="30" fill="#c8e6c9"/><text x="440" y="150" >●</text>
+    <rect x="456" y="130" width="32" height="30" fill="#eeeeee"/><text x="472" y="150" fill="#999">×</text>
+    <rect x="488" y="130" width="32" height="30" fill="#eeeeee"/><text x="504" y="150" fill="#999">×</text>
+    <rect x="520" y="130" width="32" height="30" fill="#eeeeee"/><text x="536" y="150" fill="#999">×</text>
+    <!-- 行2 -->
+    <rect x="392" y="160" width="32" height="30" fill="#c8e6c9"/><text x="408" y="180" >●</text>
+    <rect x="424" y="160" width="32" height="30" fill="#c8e6c9"/><text x="440" y="180" >●</text>
+    <rect x="456" y="160" width="32" height="30" fill="#c8e6c9"/><text x="472" y="180" >●</text>
+    <rect x="488" y="160" width="32" height="30" fill="#eeeeee"/><text x="504" y="180" fill="#999">×</text>
+    <rect x="520" y="160" width="32" height="30" fill="#eeeeee"/><text x="536" y="180" fill="#999">×</text>
+    <!-- 行3 -->
+    <rect x="392" y="190" width="32" height="30" fill="#c8e6c9"/><text x="408" y="210" >●</text>
+    <rect x="424" y="190" width="32" height="30" fill="#c8e6c9"/><text x="440" y="210" >●</text>
+    <rect x="456" y="190" width="32" height="30" fill="#c8e6c9"/><text x="472" y="210" >●</text>
+    <rect x="488" y="190" width="32" height="30" fill="#c8e6c9"/><text x="504" y="210" >●</text>
+    <rect x="520" y="190" width="32" height="30" fill="#eeeeee"/><text x="536" y="210" fill="#999">×</text>
+    <!-- 行4 -->
+    <rect x="392" y="220" width="32" height="30" fill="#c8e6c9"/><text x="408" y="240" >●</text>
+    <rect x="424" y="220" width="32" height="30" fill="#c8e6c9"/><text x="440" y="240" >●</text>
+    <rect x="456" y="220" width="32" height="30" fill="#c8e6c9"/><text x="472" y="240" >●</text>
+    <rect x="488" y="220" width="32" height="30" fill="#c8e6c9"/><text x="504" y="240" >●</text>
+    <rect x="520" y="220" width="32" height="30" fill="#c8e6c9"/><text x="536" y="240" >●</text>
+  </g>
+  <text x="396" y="262" font-size="11" fill="#555">绿=有效(j≤i)　灰×=掩码(j>i, −∞)</text>
+
+  <text x="24" y="320" font-size="13" fill="#222">维度：[5,32] × [32,5] → [5,5]（中间维 32 对齐相消）</text>
+  <text x="24" y="344" font-size="13" fill="#222">scores[i][j] = (Σ_k Q'[i][k]·K'[j][k]) / √32　＝ 第 i 个 Query 对第 j 个 Key 的原始关注度</text>
+  <text x="24" y="368" font-size="12" fill="#888">÷√32 缩放：把高维点积方差拉回 ~1，防止 softmax 极端化、梯度消失。</text>
+</svg>

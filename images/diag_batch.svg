@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="340" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">整批并行，而非逐 token 循环</text>
+
+  <!-- 左：你的 BPNet -->
+  <rect x="24" y="60" width="300" height="180" rx="10" fill="#fbe9e7" stroke="#c62828" stroke-width="2"/>
+  <text x="40" y="88" font-size="14" font-weight="bold" fill="#b71c1c">你的 BPNet：逐样本循环</text>
+  <text x="40" y="116" font-size="13" fill="#222">for 每个 token:</text>
+  <text x="56" y="140" font-size="13" fill="#222">y = σ(W · x_i)</text>
+  <text x="40" y="170" font-size="13" fill="#222">一次喂 1 个向量</text>
+  <text x="40" y="198" font-size="13" fill="#222">循环 N 次，串行</text>
+  <text x="40" y="226" font-size="12" fill="#888">慢（三重 for 逐元素展开）</text>
+
+  <!-- 右：LLM -->
+  <rect x="356" y="60" width="300" height="180" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="372" y="88" font-size="14" font-weight="bold" fill="#1b5e20">LLM：整批矩阵乘（batched GEMM）</text>
+  <text x="372" y="116" font-size="13" fill="#222">[N,32] × W[32,32]</text>
+  <text x="372" y="140" font-size="13" fill="#222">→ [N,32]</text>
+  <text x="372" y="170" font-size="13" fill="#222">N 个 token 一次并行算完</text>
+  <text x="372" y="198" font-size="13" fill="#222">同一份 W 跨位置共享</text>
+  <text x="372" y="226" font-size="12" fill="#888">快（BLAS/GEMM 融合）</text>
+
+  <!-- 箭头 -->
+  <text x="290" y="160" font-size="28" fill="#444">→</text>
+
+  <text x="24" y="280" font-size="13" fill="#222">关键差异：不是"逐个向量进入第一层矩阵计算"，而是"整批 N 个向量共享同一权重矩阵，一次批矩阵乘并行通过"。</text>
+  <text x="24" y="304" font-size="13" fill="#222">唯一的"混序"步骤是 Attention：除它外，QKV 投影、FFN 都是每个 token 各自过同一 W、互不干扰。</text>
+  <text x="24" y="328" font-size="12" fill="#888">这正是你那版单样本三重 for 与现代框架最根本的算力代差。</text>
+</svg>

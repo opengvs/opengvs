@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="420" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">训练好的模型文件（checkpoint）由哪些张量组成</text>
+  <text x="24" y="54" font-size="13" fill="#666">玩具模型：vocab=12, hidden=32, layers=3</text>
+
+  <!-- 全局表 -->
+  <rect x="24" y="80" width="300" height="90" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="40" y="106" font-size="14" font-weight="bold" fill="#1b5e20">全局（所有层共用）</text>
+  <text x="40" y="128" font-size="13" fill="#222">E  嵌入表       [12, 32]</text>
+  <text x="40" y="150" font-size="13" fill="#222">lm_head 输出投影 [32, 12]（常共享）</text>
+
+  <!-- 每层 -->
+  <rect x="24" y="190" width="300" height="150" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="40" y="216" font-size="14" font-weight="bold" fill="#0d47a1">每层独立（Layer 1/2/3 各一套）</text>
+  <text x="40" y="240" font-size="13" fill="#222">注意力：Wq Wk Wv  各 [32,32]</text>
+  <text x="40" y="262" font-size="13" fill="#222">FFN   ：W1 W2     各 [32,32]</text>
+  <text x="40" y="284" font-size="13" fill="#222">Norm  ：γ β  ×2处  各 32 向量</text>
+  <text x="40" y="312" font-size="12" fill="#555">→ 单层 5 个矩阵 + 4 个向量</text>
+
+  <!-- RoPE 无参数 -->
+  <rect x="360" y="80" width="296" height="90" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="376" y="106" font-size="14" font-weight="bold" fill="#e65100">RoPE 位置编码</text>
+  <text x="376" y="128" font-size="13" fill="#222">零可学习参数！</text>
+  <text x="376" y="150" font-size="12" fill="#555">仅用 cos/sin 按位置算</text>
+  <text x="376" y="168" font-size="12" fill="#555">超参 base=10000, dim=32</text>
+
+  <!-- 参数量 -->
+  <rect x="360" y="190" width="296" height="150" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="376" y="216" font-size="14" font-weight="bold" fill="#4a148c">玩具模型总参数量 ≈ 16512</text>
+  <text x="376" y="242" font-size="13" fill="#222">E = 384</text>
+  <text x="376" y="264" font-size="13" fill="#222">单层 = 5×1024 + 128 = 5248</text>
+  <text x="376" y="286" font-size="13" fill="#222">3 层 = 15744</text>
+  <text x="376" y="308" font-size="13" fill="#222">lm_head = 384（共享则省）</text>
+  <text x="376" y="330" font-size="12" fill="#555">对比 LLaMA-7B = 70 亿（同骨架）</text>
+
+  <!-- 箭头：全局+每层 → 文件 -->
+  <text x="24" y="382" font-size="13" fill="#333">模型文件 = 嵌入表 + 3层×(Wq/Wk/Wv/W1/W2 + 2×Norm) + lm_head（RoPE 不占空间）</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">vocab_size 的物理意义</text>
+
+  <!-- 词表 -->
+  <rect x="24" y="60" width="320" height="200" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="40" y="88" font-size="14" font-weight="bold" fill="#0d47a1">词表（vocab，不重复 token 类型）</text>
+  <text x="40" y="116" font-size="12" fill="#222">row 0  : ▁我</text>
+  <text x="40" y="136" font-size="12" fill="#222">row 1  : 需要</text>
+  <text x="40" y="156" font-size="12" fill="#222">row 2  : 购买</text>
+  <text x="40" y="176" font-size="12" fill="#222">row 3  : 苹果</text>
+  <text x="40" y="196" font-size="12" fill="#222">… 共 32000 种（LLaMA-7B）</text>
+  <text x="40" y="226" font-size="12" fill="#555">= 嵌入矩阵行数 [vocab, 4096]</text>
+  <text x="40" y="248" font-size="12" fill="#555">想多收录一类 token → vocab +1</text>
+
+  <!-- 两个 token 数 -->
+  <rect x="364" y="60" width="292" height="200" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="380" y="88" font-size="14" font-weight="bold" fill="#333">两个易混的"token 数"</text>
+  <text x="380" y="118" font-size="13" fill="#222">vocab_size：不重复类型数</text>
+  <text x="380" y="140" font-size="13" fill="#222">  → 32000 / 128000（LLaMA-3）</text>
+  <text x="380" y="172" font-size="13" fill="#222">语料总 token 数：万亿级</text>
+  <text x="380" y="194" font-size="13" fill="#222">  → 含大量重复（"的"出现亿次）</text>
+  <text x="380" y="226" font-size="12.5" fill="#c62828">vocab 只数"字典字数"，不数"文章字数"</text>
+  <text x="380" y="250" font-size="12" fill="#555">vocab 越大：token 信息量高、序列短；</text>
+  <text x="380" y="268" font-size="12" fill="#555">但参数/显存/推理代价也升，非越大越好</text>
+
+  <text x="24" y="300" font-size="13" fill="#222">代价：词表参数 ≈ 2 × vocab_size × hidden； vocab 翻倍这部分翻倍，且每次生成要对 vocab 个候选算分。</text>
+  <text x="24" y="324" font-size="13" fill="#222">vocab_size 是事先定好的超参；BPE/SentencePiece 在语料上跑合并，自动挑出最高频的 vocab 个子词片段。</text>
+  <text x="24" y="348" font-size="12" fill="#888">LLaMA-3 把 vocab 从 32000 提到 128000，主要为多语言 + 省 token。</text>
+</svg>

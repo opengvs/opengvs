@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="320" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">单层计算的本质 = 矩阵乘法</text>
+
+  <!-- node weight -->
+  <rect x="24" y="70" width="300" height="120" rx="10" fill="#f1f8ff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="40" y="96" font-size="13" font-weight="bold" fill="#0d47a1">你的代码：NeuralNetNode</text>
+  <text x="40" y="122" font-size="13" fill="#222">node.weight = 矩阵 W 的一行</text>
+  <text x="40" y="146" font-size="13" fill="#222">out = Σⱼ preValue[j]·weight[j] + bias</text>
+  <text x="40" y="174" font-size="12" fill="#555">三重 for 逐元素展开（行分散在 node 里）</text>
+
+  <!-- 矩阵 -->
+  <rect x="356" y="70" width="300" height="120" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="372" y="96" font-size="13" font-weight="bold" fill="#1b5e20">教科书：W·x + b</text>
+  <text x="372" y="122" font-size="13" fill="#222">yᵢ = Σⱼ Wᵢⱼ·xⱼ + bᵢ</text>
+  <text x="372" y="146" font-size="13" fill="#222">W 是连续 [m][n] 二维矩阵</text>
+  <text x="372" y="174" font-size="12" fill="#555">一次 GEMM 批量算完</text>
+
+  <text x="24" y="240" font-size="13" fill="#222">结论：你的"数组套数组"和"一块连续二维矩阵"计算语义完全一样，区别只在内存布局。</text>
+  <text x="24" y="264" font-size="13" fill="#222">每一层推理 = 一次向量与权值矩阵的乘法；大模型把 W 存成连续张量，用 BLAS/GEMM 一次算完（含整条序列）。</text>
+  <text x="24" y="292" font-size="12" fill="#888">对应你 hideLayers_Nodes 规定每层宽度 = 现代网络的"宽度配置"概念，方向没错。</text>
+</svg>

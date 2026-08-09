@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">"1+2+3" 迷你大模型推理全流程</text>
+
+  <!-- 分词 -->
+  <rect x="24" y="70" width="110" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="34" y="96" font-size="13" fill="#222">"1+2+3"</text>
+  <text x="34" y="116" font-size="13" fill="#222">→ [1,10,2,10,3]</text>
+
+  <!-- 嵌入 -->
+  <rect x="160" y="70" width="120" height="60" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="170" y="96" font-size="13" fill="#222">嵌入查表 E</text>
+  <text x="170" y="116" font-size="13" font-weight="bold" fill="#1b5e20">[5, 32]</text>
+
+  <!-- 3层 -->
+  <rect x="310" y="60" width="120" height="80" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="320" y="86" font-size="13" fill="#222">3× Transformer</text>
+  <text x="320" y="106" font-size="13" fill="#222">Block</text>
+  <text x="320" y="128" font-size="13" font-weight="bold" fill="#e65100">[5, 32]</text>
+
+  <!-- 取最后 -->
+  <rect x="460" y="70" width="90" height="60" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="470" y="96" font-size="13" fill="#222">取最后位</text>
+  <text x="470" y="116" font-size="13" font-weight="bold" fill="#4a148c">[1,32]</text>
+
+  <!-- lm_head -->
+  <rect x="575" y="70" width="90" height="60" rx="8" fill="#e0f7fa" stroke="#00838f" stroke-width="2"/>
+  <text x="583" y="96" font-size="13" fill="#222">lm_head</text>
+  <text x="583" y="116" font-size="13" font-weight="bold" fill="#006064">[1,12]</text>
+
+  <!-- 箭头 -->
+  <g stroke="#444" stroke-width="2" marker-end="url(#ar)">
+    <line x1="134" y1="100" x2="158" y2="100"/>
+    <line x1="280" y1="100" x2="308" y2="100"/>
+    <line x1="430" y1="100" x2="458" y2="100"/>
+    <line x1="550" y1="100" x2="573" y2="100"/>
+  </g>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 自回归 -->
+  <rect x="160" y="200" width="500" height="120" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="176" y="226" font-size="14" font-weight="bold" fill="#333">自回归循环（序列这样长出来）</text>
+  <text x="176" y="252" font-size="13" fill="#222">输入 "1+2+3"        → 前向 → 预测 '='      （拼回）</text>
+  <text x="176" y="276" font-size="13" fill="#222">输入 "1+2+3="       → 前向 → 预测 '6'      （拼回）</text>
+  <text x="176" y="300" font-size="13" fill="#222">输入 "1+2+3=6"      → 前向 → 预测 结束符  → 停止</text>
+
+  <text x="24" y="345" font-size="12" fill="#888">注：权重训练好后固定；随机初始化模型吐出的 '='/'6' 纯属巧合，需海量 a+b=c 训练才会真算。</text>
+</svg>

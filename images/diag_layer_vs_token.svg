@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">"层"指模型层，不是 [N,4096] 里的某个向量</text>
+
+  <!-- 两个维度 -->
+  <rect x="24" y="60" width="316" height="220" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="40" y="88" font-size="14" font-weight="bold" fill="#0d47a1">维度一：模型层（Layer）</text>
+  <text x="40" y="116" font-size="13" fill="#222">LLaMA：32 个 Transformer block</text>
+  <text x="40" y="138" font-size="13" fill="#222">Layer 1, 2, … 32</text>
+  <text x="40" y="166" font-size="13" fill="#222">每个 block 有独立 Wq/Wk/Wv</text>
+  <text x="40" y="194" font-size="13" fill="#222">→ "每层注意力里只转 Q、K"</text>
+  <text x="40" y="216" font-size="13" fill="#222">  的"层"指这 32 个 block</text>
+  <text x="40" y="248" font-size="12.5" fill="#555">RoPE 重复做 32 次</text>
+  <text x="40" y="270" font-size="12.5" fill="#555">（每进一层对该层 Q、K 重旋）</text>
+
+  <rect x="356" y="60" width="300" height="220" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="372" y="88" font-size="14" font-weight="bold" fill="#1b5e20">维度二：token 位置（pos）</text>
+  <text x="372" y="116" font-size="13" fill="#222">[N,4096] 里的每个 4096 向量</text>
+  <text x="372" y="138" font-size="13" fill="#222">pos 0, 1, 2, … N-1</text>
+  <text x="372" y="166" font-size="13" fill="#222">某层注意力内，N 个 Q 全转、</text>
+  <text x="372" y="188" font-size="13" fill="#222">K 全转（按各自位置 m）</text>
+  <text x="372" y="220" font-size="12.5" fill="#555">"每个 4096 向量都被转了"</text>
+  <text x="372" y="242" font-size="12.5" fill="#555">描述的是位置维度的全部 token，</text>
+  <text x="372" y="264" font-size="12.5" fill="#555">不是"层=向量"</text>
+
+  <!-- 交叉表 -->
+  <rect x="24" y="296" width="632" height="50" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="40" y="324" font-size="13" fill="#222">两个维度交叉：旋转总次数 = 32（层）× N（token）；对象永远是 Q、K（V 和 x 不转）。</text>
+</svg>

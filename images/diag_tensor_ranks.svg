@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="380" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">张量阶数在现代网络中的真实用途</text>
+
+  <!-- 阶数映射表 -->
+  <g font-size="13" fill="#222">
+    <rect x="24" y="60" width="320" height="40" rx="6" fill="#eceff1" stroke="#607d8b"/>
+    <text x="36" y="85" >0 阶 标量：loss、概率值</text>
+    <rect x="24" y="106" width="320" height="40" rx="6" fill="#e3f2fd" stroke="#1565c0"/>
+    <text x="36" y="131" >1 阶 向量 Vector：单 token 特征 x[in]</text>
+    <rect x="24" y="152" width="320" height="40" rx="6" fill="#e8f5e9" stroke="#2e7d32"/>
+    <text x="36" y="177" >2 阶 矩阵 Matrix：权重 W[out,in]（你的类√）</text>
+    <rect x="24" y="198" width="320" height="40" rx="6" fill="#fff3e0" stroke="#ef6c00"/>
+    <text x="36" y="223" >3 阶 Tensor3：激活 [batch,seq,hidden]（你的类√）</text>
+    <rect x="24" y="244" width="320" height="40" rx="6" fill="#f3e5f5" stroke="#7b1fa2"/>
+    <text x="36" y="269" >4 阶 Tensor4：卷积核 / 注意力分数 [N,heads,seq,seq]</text>
+  </g>
+
+  <!-- 关键澄清 -->
+  <rect x="364" y="60" width="292" height="224" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="380" y="88" font-size="14" font-weight="bold" fill="#333">秩（阶）由"数据形状"决定</text>
+  <text x="380" y="116" font-size="13" fill="#222">彩色图：单张 [H,W,3] = 3 阶</text>
+  <text x="380" y="138" font-size="13" fill="#222">卷积核：[out,in,kH,kW] = 4 阶</text>
+  <text x="380" y="166" font-size="13" fill="#222">LLM 权重：仍是 2 阶 Matrix</text>
+  <text x="380" y="188" font-size="13" fill="#222">LLM 激活：3 阶 [N,seq,hidden]</text>
+  <text x="380" y="216" font-size="13" fill="#c62828">不是"把一层升阶"！</text>
+  <text x="380" y="242" font-size="12.5" fill="#555">层本身不是张量；层=计算+参数张量。</text>
+  <text x="380" y="266" font-size="12.5" fill="#555">你的 Vector/Matrix/Tensor3/Tensor4</text>
+  <text x="380" y="284" font-size="12.5" fill="#555">梯度和 ggml 式存储已站在正确线。</text>
+
+  <text x="24" y="328" font-size="13" fill="#222">你的直觉："每层计算是向量×矩阵"对（指权重）；"现代要扩成 3 阶"只对一半——3 阶/4 阶出现在激活与卷积核上，权重在 LLM 仍是 2 阶。</text>
+  <text x="24" y="356" font-size="12" fill="#888">GGML_MAX_DIMS=4 的上限足够；真实框架绝大多数张量不超过 4 维。</text>
+</svg>

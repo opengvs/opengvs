@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="400" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">分数矩阵如何参与下一步（跨 token 混合真正发生处）</text>
+
+  <!-- scores -->
+  <rect x="24" y="70" width="150" height="60" rx="6" fill="#fff" stroke="#444" stroke-width="1.5"/>
+  <text x="40" y="96" font-size="13" font-weight="bold" fill="#222">scores [5,5]</text>
+  <text x="40" y="116" font-size="11" fill="#555">含因果掩码</text>
+
+  <!-- softmax -->
+  <rect x="200" y="70" width="150" height="60" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="216" y="96" font-size="13" font-weight="bold" fill="#0d47a1">softmax</text>
+  <text x="216" y="116" font-size="11" fill="#555">按行归一 →</text>
+
+  <!-- weights -->
+  <rect x="376" y="70" width="150" height="60" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="392" y="96" font-size="13" font-weight="bold" fill="#1b5e20">weights [5,5]</text>
+  <text x="392" y="116" font-size="11" fill="#555">每行和为1</text>
+
+  <!-- V -->
+  <rect x="552" y="70" width="110" height="60" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="568" y="96" font-size="13" font-weight="bold" fill="#4a148c">V [5,32]</text>
+  <text x="568" y="116" font-size="11" fill="#555">(未旋转)</text>
+
+  <!-- 箭头 -->
+  <g stroke="#444" stroke-width="2" marker-end="url(#ar)">
+    <line x1="174" y1="100" x2="198" y2="100"/>
+    <line x1="350" y1="100" x2="374" y2="100"/>
+  </g>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#444"/></marker></defs>
+
+  <!-- weights × V -->
+  <rect x="220" y="180" width="200" height="50" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="236" y="210" font-size="13" fill="#222">ctx = weights · V  →  [5,32]</text>
+
+  <!-- 残差 -->
+  <rect x="24" y="270" width="620" height="50" rx="8" fill="#f1f8e9" stroke="#558b2f" stroke-width="1.5"/>
+  <text x="40" y="300" font-size="13" fill="#222">残差相加：out = x + ctx  →  仍是 [5,32]，直接流进 Layer 2</text>
+
+  <!-- 数值示例 -->
+  <rect x="24" y="340" width="620" height="48" rx="6" fill="#fafafa" stroke="#bbb" stroke-width="1"/>
+  <text x="40" y="364" font-size="12.5" fill="#222">pos4('3') 行权重 ≈ [0.04, 0.08, 0.32, 0.06, 0.50] → 最关注自己(0.50)与 '2'(0.32)</text>
+  <text x="40" y="382" font-size="12.5" fill="#222">ctx[4] = 0.04·V[0]+0.08·V[1]+0.32·V[2]+0.06·V[3]+0.50·V[4]（已揉进 1+2+ 全部信息）</text>
+</svg>

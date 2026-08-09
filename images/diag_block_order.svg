@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 460" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="460" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">一个 Transformer Block 内的真实顺序（Layer 1 为例）</text>
+
+  <!-- 输入 x -->
+  <rect x="270" y="50" width="140" height="38" rx="6" fill="#eceff1" stroke="#607d8b" stroke-width="1.5"/>
+  <text x="290" y="74" font-size="13" fill="#222">输入 x [5,32]</text>
+
+  <!-- 注意力子层 -->
+  <rect x="40" y="110" width="600" height="150" rx="10" fill="#f1f8ff" stroke="#1565c0" stroke-width="2"/>
+  <text x="56" y="134" font-size="14" font-weight="bold" fill="#0d47a1">注意力子层</text>
+
+  <rect x="56" y="146" width="100" height="36" rx="6" fill="#bbdefb" stroke="#1565c0"/>
+  <text x="64" y="169" font-size="12" fill="#222">LayerNorm</text>
+
+  <rect x="176" y="146" width="120" height="36" rx="6" fill="#bbdefb" stroke="#1565c0"/>
+  <text x="184" y="169" font-size="12" fill="#222">Q=x·Wq K=x·Wk</text>
+  <rect x="176" y="190" width="120" height="36" rx="6" fill="#bbdefb" stroke="#1565c0"/>
+  <text x="196" y="213" font-size="12" fill="#222">V=x·Wv</text>
+
+  <rect x="316" y="168" width="110" height="40" rx="6" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="326" y="193" font-size="12" fill="#222">RoPE 旋转 Q,K</text>
+
+  <rect x="446" y="146" width="180" height="74" rx="6" fill="#e1bee7" stroke="#7b1fa2"/>
+  <text x="456" y="170" font-size="12" fill="#222">scores=Q'·K'ᵀ/√32</text>
+  <text x="456" y="190" font-size="12" fill="#222">→ 因果掩码 → softmax</text>
+  <text x="456" y="210" font-size="12" fill="#222">→ ctx=weights·V [5,32]</text>
+
+  <!-- 残差 注意力 -->
+  <rect x="40" y="276" width="600" height="44" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="56" y="303" font-size="13" fill="#222">残差相加：out = x + Attention_out  → 仍是 [5,32]</text>
+
+  <!-- FFN 子层 -->
+  <rect x="40" y="340" width="600" height="90" rx="10" fill="#f9fbe7" stroke="#827717" stroke-width="2"/>
+  <text x="56" y="364" font-size="14" font-weight="bold" fill="#555b00">FFN 子层</text>
+  <text x="56" y="388" font-size="12" fill="#222">LayerNorm → h=x·W1 → a=激活(h) → FFN_out=a·W2 → out = x + FFN_out</text>
+  <text x="56" y="414" font-size="12" fill="#555">（FFN 逐 token 独立，与注意力跨 token 混合互补）</text>
+
+  <text x="24" y="448" font-size="12" fill="#888">蓝色=矩阵乘（逐 token 独立）　紫色=注意力（跨 token）　琥珀=残差　绿色=旋转</text>
+</svg>

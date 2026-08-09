@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">大模型每层节点数是否一致？</text>
+
+  <!-- 主干等宽 -->
+  <rect x="24" y="60" width="632" height="70" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="40" y="88" font-size="14" font-weight="bold" fill="#1b5e20">残差流（主干）：接口宽度恒定 = 4096</text>
+  <text x="40" y="114" font-size="13" fill="#222">第 1 层进 → 第 32 层出，宽度全程不变（被残差连接"锁死"：output = x + Block(x) 必须等宽）</text>
+
+  <!-- 层内膨胀 -->
+  <rect x="24" y="150" width="632" height="120" rx="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="40" y="178" font-size="14" font-weight="bold" fill="#e65100">层内部：宽度会临时膨胀再收缩</text>
+  <text x="40" y="206" font-size="13" fill="#222">Attention：4096 切 32 头×128 → 算完拼回 4096（头是分流，不是加宽）</text>
+  <text x="40" y="234" font-size="13" fill="#222">FFN：4096 → 11008 → 4096（中间膨胀约 2.7×，支路内部临时形状，加回前收缩回 4096）</text>
+
+  <!-- 所有 block 同构 -->
+  <rect x="24" y="286" width="632" height="54" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="40" y="312" font-size="13" fill="#222">所有 Block 配置复刻同一套（hidden=4096, heads=32, ffn=11008, 32 层）；变体只在 MoE 专家数 / 少数 head 数。</text>
+  <text x="40" y="332" font-size="12.5" fill="#555">你的 hideLayers_Nodes（每层宽度可配）正好建模 FFN 膨胀层；标准 LLM 主干统一等宽。</text>
+</svg>

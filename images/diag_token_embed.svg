@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">分词 → 嵌入查表 → [N, 32]</text>
+
+  <!-- token id -->
+  <text x="24" y="70" font-size="14" font-weight="bold" fill="#333">第 0 步：分词</text>
+  <rect x="24" y="82" width="240" height="40" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="34" y="107" font-size="13" fill="#222">"1+2+3" → ["1","+","2","+","3"] → id [1,10,2,10,3]</text>
+
+  <!-- 嵌入表 E -->
+  <text x="24" y="160" font-size="14" font-weight="bold" fill="#333">第 1 步：嵌入查表（gather，非矩阵乘）</text>
+  <rect x="24" y="172" width="180" height="150" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="34" y="196" font-size="13" font-weight="bold" fill="#e65100">E [12, 32]</text>
+  <text x="34" y="218" font-size="12" fill="#222">row 0 : …………</text>
+  <text x="34" y="238" font-size="12" fill="#222">row 1 : 1 的向量</text>
+  <text x="34" y="258" font-size="12" fill="#222">row 2 : 2 的向量</text>
+  <text x="34" y="278" font-size="12" fill="#222">…</text>
+  <text x="34" y="298" font-size="12" fill="#222">row 10: + 的向量</text>
+  <text x="34" y="318" font-size="12" fill="#222">…</text>
+
+  <!-- 箭头 gather -->
+  <g stroke="#444" stroke-width="2" marker-end="url(#ar)">
+    <line x1="204" y1="200" x2="262" y2="200"/>
+    <line x1="204" y1="248" x2="262" y2="248"/>
+    <line x1="204" y1="288" x2="262" y2="288"/>
+  </g>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 结果 [5,32] -->
+  <rect x="270" y="172" width="386" height="150" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="282" y="196" font-size="13" font-weight="bold" fill="#1b5e20">残差流 x  [5, 32]（N=5 个 token，各 32 维）</text>
+  <text x="282" y="220" font-size="12" fill="#222">h[0] = E[1]    ← "1"      ∈ R^32</text>
+  <text x="282" y="242" font-size="12" fill="#222">h[1] = E[10]   ← "+"      ∈ R^32</text>
+  <text x="282" y="264" font-size="12" fill="#222">h[2] = E[2]    ← "2"      ∈ R^32</text>
+  <text x="282" y="286" font-size="12" fill="#222">h[3] = E[10]   ← "+"      ∈ R^32（与 h[1] 同取第10行）</text>
+  <text x="282" y="308" font-size="12" fill="#222">h[4] = E[3]    ← "3"      ∈ R^32</text>
+
+  <text x="24" y="345" font-size="12" fill="#888">此时 5 个 token 各自孤立，彼此不知道对方存在；位置信息尚未进入，将在每层注意力里由 RoPE 注入。</text>
+</svg>

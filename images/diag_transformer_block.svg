@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="680" height="380" fill="#ffffff"/>
+  <text x="24" y="32" font-size="20" font-weight="bold" fill="#1a1a1a">Transformer 块的计算构成</text>
+
+  <!-- 线性层=矩阵乘 -->
+  <rect x="24" y="60" width="320" height="90" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="40" y="86" font-size="14" font-weight="bold" fill="#0d47a1">线性层（矩阵乘，同构于你的代码）</text>
+  <text x="40" y="112" font-size="13" fill="#222">Q=x·Wq  K=x·Wk  V=x·Wv</text>
+  <text x="40" y="134" font-size="13" fill="#222">输出投影、FFN 升/降维：W·x+b</text>
+
+  <!-- 非矩阵 -->
+  <rect x="356" y="60" width="300" height="90" rx="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="372" y="86" font-size="14" font-weight="bold" fill="#e65100">非矩阵运算（夹层里）</text>
+  <text x="372" y="112" font-size="13" fill="#222">Attention(softmax) · LayerNorm/RMSNorm</text>
+  <text x="372" y="134" font-size="13" fill="#222">激活 GELU/SiLU · 残差+ · Embedding查表 · RoPE</text>
+
+  <!-- 堆叠 -->
+  <rect x="24" y="180" width="632" height="160" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="40" y="206" font-size="14" font-weight="bold" fill="#333">一个 Transformer Block（堆叠 N 次）</text>
+  <text x="40" y="234" font-size="13" fill="#222">x → LayerNorm → (QKV投影 → RoPE → Attention) → +残差</text>
+  <text x="40" y="260" font-size="13" fill="#222">  → LayerNorm → FFN(W1→激活→W2) → +残差 → 输出（形状不变）</text>
+  <text x="40" y="294" font-size="13" fill="#222">LLaMA-7B：把此 block 堆 32 层；参数量从你的 ~13 个涨到 70 亿</text>
+  <text x="40" y="322" font-size="12.5" fill="#555">每个 token 的数学动作仍是"一串矩阵乘 + 少量逐元素/注意力运算"。"智能"来自规模+注意力+数据。</text>
+
+  <text x="24" y="368" font-size="12" fill="#888">蓝色=矩阵乘　琥珀=非矩阵运算。骨架是矩阵乘，外面夹着 Attention/Norm/激活/残差/RoPE/Embedding。</text>
+</svg>
