@@ -1,0 +1,1041 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-mermaid">:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+.privacy { display: none; }
+
+</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-codemirror">.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+</style>
+<style type='text/css'  id="style-base_user_css">
+/* 修改代码块的背景颜色和边框颜色 */
+.code-theme-light .code-block-wrapper {
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ddd; /* 边框色 */
+}
+ 
+/* 修改代码块内代码的字体颜色和背景色 */
+.code-theme-light .code-block-wrapper code {
+    color: #333; /* 代码字体颜色 */
+    background-color: #f8f8f8; /* 代码背景色 */
+}
+
+ 
+.CodeMirror-line .cm-number{color:#7f6bff} /*数字，蓝色*/
+.CodeMirror-line .cm-property {
+    color: #f08d49;
+}
+.CodeMirror-line .cm-variable-3{color:#ffed6b} /*返回值、变量类型，int、void等，淡黄色*/
+.CodeMirror-line .cm-qualifier{color:#888}
+.CodeMirror-line .cm-variable-2 {
+    color: #888;
+} 
+.CodeMirror-line .cm-meta{ color:#BBFFFF}  /* 头文件、宏定义一整行 青色*/
+.CodeMirror-line .cm-atom { color:#f9ff00} /* true、false 黄色*/
+.CodeMirror-line .cm-keyword{    color: #ff1800;} /* if、return等关键字红色*/
+
+.CodeMirror-line .cm-def{ color:#00ff00  } /* 函数定义，绿色 */
+
+
+.CodeMirror-line .cm-variable { color: #90EE90; } /* 入参定义，亮绿色 */
+
+.CodeMirror-line .cm-builtin {
+    color: #82AAFF;
+}/* 蓝色 */
+.CodeMirror-line .cm-comment {
+    color: #888;
+} /* 灰色 */
+.CodeMirror-line .cm-string{ color: #82AAFF  } /* 字符串， 蓝色*/
+.CodeMirror-line .cm-string-2 { color: #888  }
+.CodeMirror-line .cm-operator {color: #ff1800}/* +=等操作符，红色*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #fff;
+    z-index: 3;
+}
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: #666 !important;
+}
+ 
+ 
+.CodeMirror-line .cm-tag{
+    color: #F07178;
+}
+.CodeMirror-line .cm-bracket{
+    color: #FFF;
+}
+.CodeMirror-line .cm-attribute{
+    color: #FFCB6B;
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3;
+    counter-increment: h2
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+/* 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h2) " "
+}
+*/
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "
+}
+ 
+#write {
+    counter-reset: h1
+}
+ 
+h1 {
+    counter-reset: h2
+}
+ 
+h2 {
+    counter-reset: h3
+}
+ 
+h3 {
+    counter-reset: h4
+}
+ 
+h4 {
+    counter-reset: h5
+}
+ 
+h5 {
+    counter-reset: h6
+}
+ 
+#write h1 {
+    text-align: center;
+}
+
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2) " ";
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) " ";
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) " ";
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " ";
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
+}
+ 
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+ 
+ 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+ 
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+ 
+.md-fences,
+code,
+tt {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 0.9em;
+}
+ 
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+ 
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+ 
+ 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+ 
+@media print {
+    html {
+ font-size: 13px;
+    }
+    table,
+    pre {
+ page-break-inside: avoid;
+    }
+    pre {
+ word-wrap: break-word;
+    }
+}
+ 
+.md-fences {
+    background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+ 
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+ 
+ 
+ 
+ 
+ 
+#write .md-fences:not([mermaid-type])  {
+    padding-top: 7px;
+    border-radius: 10px;
+    background-color: #282c34;
+    color: #eeeeee;
+}
+ 
+.code-tooltip .ty-input,
+.code-tooltip input {
+    color: #eee;
+}
+ 
+ 
+ 
+.CodeMirror-wrap .CodeMirror-scroll {
+    padding-top: 20px;
+}
+ 
+#write .md-fences:before {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #fa3534;
+}
+ 
+#write .CodeMirror-scroll:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    z-index: 999;
+    background-color: #ff9900;
+}
+#write .md-fences::after {
+    content: "";
+    z-index: 4;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 53px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: #19be6b;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>Tensor20_技术报告与使用说明</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='tensor20-张量类层次--技术报告与使用说明'><span>Tensor20 张量类层次 · 技术报告与使用说明</span></h1><blockquote><p><span>版本：2.0（与 ggml 同构的存储模型）　|　构建验证：</span><code>g++ -std=c++17 -Wall -Wextra -O2 -static</code><span>　|　组件：</span><code>tensor/Tensor20.h</code><span> + 13 套测试</span></p><p><span>适用读者：需要使用本张量库做推理计算、量化权重对接（llama.cpp / ggml）、自定义算子的 C++ 开发者。</span></p></blockquote><hr /><h2 id='1-摘要'><span>1. 摘要</span></h2><p><code>Tensor20.h</code><span> 实现了一套面向</span><strong><span>大模型推理</span></strong><span>的 C++ 张量类层次，核心目标是与 </span><code>ggml_tensor</code><span> 的存储布局同构，从而可无缝对接 llama.cpp 的量化权重与 KV 缓存。</span></p><p><span>关键特性：</span></p><ul><li><p><strong><span>ggml 同构存储</span></strong><span>：</span><code>void* data_</code><span> 原始字节缓冲 + </span><code>nb_[]</code><span> 字节步长（非元素步长），</span><code>type_</code><span> 标记存储数据类型（F32 / F16 / 标量整型 / 6 种量化类型 Q4_0/Q4_1/Q8_0/Q8_1/Q1_0/Q2_0）。</span></p></li><li><p><strong><span>访问层零虚面（设计红线）</span></strong><span>：</span><code>get/set/offset/readElem/writeElem/fill</code><span> 一律</span><strong><span>非虚、仅基类、函数体纯算术零虚调用</span></strong><span>。最热的元素访问路径可被内联、可被 AVX2/AVX-512/GPU 后端整体特化。</span></p></li><li><p><strong><span>运行时多态 + 零拷贝视图</span></strong><span>：</span><code>permute/transpose</code><span> 等轴交换在</span><strong><span>构造时重排 </span><code>nb_</code><span> 字节步长</span></strong><span>，不拷贝数据；</span><code>gather</code><span> 等非等距重排在</span><strong><span>构造时一次性物化</span></strong><span>独立缓冲。两条路径严格区分。</span></p></li><li><p><strong><span>量化融合内核</span></strong><span>：量化权重的矩阵乘走 </span><code>vec_dot</code><span> 融合点积，在寄存器/栈内现场 dequant 累加，</span><strong><span>绝不物化整张 F32 权重矩阵</span></strong><span>（呼应省内存目标）。</span></p></li><li><p><strong><span>算子集 A~D</span></strong><span>：A 逐元素（一元/二元/标量辅助）、B 归约、C 矩阵乘（matvec/matmul）、D 三/四阶 + 量化桥（bmm/gather/dequantize/quantizeTo）。中间结果一律 F32，仅 </span><code>quantizeTo</code><span> / KV cache 显式回量化。</span></p></li></ul><hr /><h2 id='2-类层次结构'><span>2. 类层次结构</span></h2><h3 id='21-类图mermaid'><span>2.1 类图（Mermaid）</span></h3><div class="md-diagram-panel md-fences-adv-panel" lang="mermaid"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="classDiagram mermaid-svg" style="max-width: 1383.7943115234375px;" viewBox="0.0000152587890625 0 1383.7943115234375 908" role="graphics-document document" aria-roledescription="class"><style>#mermaidChart0{font-family:sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaidChart0 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaidChart0 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:1px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 p{margin:0;}#mermaidChart0 g.classGroup text{fill:#9370DB;stroke:none;font-family:sans-serif;font-size:10px;}#mermaidChart0 g.classGroup text .title{font-weight:bolder;}#mermaidChart0 .nodeLabel,#mermaidChart0 .edgeLabel{color:#131300;}#mermaidChart0 .edgeLabel .label rect{fill:#ECECFF;}#mermaidChart0 .label text{fill:#131300;}#mermaidChart0 .labelBkg{background:#ECECFF;}#mermaidChart0 .edgeLabel .label span{background:#ECECFF;}#mermaidChart0 .classTitle{font-weight:bolder;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .divider{stroke:#9370DB;stroke-width:1;}#mermaidChart0 g.clickable{cursor:pointer;}#mermaidChart0 g.classGroup rect{fill:#ECECFF;stroke:#9370DB;}#mermaidChart0 g.classGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart0 .classLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#mermaidChart0 .classLabel .label{fill:#9370DB;font-size:10px;}#mermaidChart0 .relation{stroke:#333333;stroke-width:1;fill:none;}#mermaidChart0 .dashed-line{stroke-dasharray:3;}#mermaidChart0 .dotted-line{stroke-dasharray:1 2;}#mermaidChart0 #compositionStart,#mermaidChart0 .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #compositionEnd,#mermaidChart0 .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #dependencyStart,#mermaidChart0 .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #dependencyStart,#mermaidChart0 .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #extensionStart,#mermaidChart0 .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #extensionEnd,#mermaidChart0 .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #aggregationStart,#mermaidChart0 .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #aggregationEnd,#mermaidChart0 .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #lollipopStart,#mermaidChart0 .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #lollipopEnd,#mermaidChart0 .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 .edgeTerminals{font-size:11px;line-height:initial;}#mermaidChart0 .classTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaidChart0 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaidChart0 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><defs><marker id="mermaidChart0_class-aggregationStart" class="marker aggregation class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-aggregationEnd" class="marker aggregation class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-extensionStart" class="marker extension class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 1,7 L18,13 V 1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-extensionEnd" class="marker extension class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 1,1 V 13 L18,7 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-compositionStart" class="marker composition class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-compositionEnd" class="marker composition class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-dependencyStart" class="marker dependency class" refX="6" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 5,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-dependencyEnd" class="marker dependency class" refX="13" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><defs><marker id="mermaidChart0_class-lollipopStart" class="marker lollipop class" refX="13" refY="7" markerWidth="190" markerHeight="240" orient="auto"><circle stroke="currentColor" fill="transparent" cx="7" cy="7" r="6"></circle></marker></defs><defs><marker id="mermaidChart0_class-lollipopEnd" class="marker lollipop class" refX="1" refY="7" markerWidth="190" markerHeight="240" orient="auto"><circle stroke="currentColor" fill="transparent" cx="7" cy="7" r="6"></circle></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M301.183,411.308L260.794,438.257C220.404,465.205,139.625,519.103,99.236,555.218C58.846,591.333,58.846,609.667,58.846,618.833L58.846,628" id="id_Tensor_Scalar_1" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M302.907,462.425L282.867,480.854C262.828,499.283,222.749,536.142,202.709,563.737C182.669,591.333,182.669,609.667,182.669,618.833L182.669,628" id="id_Tensor_Vector_2" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M323.863,550.974L321.414,554.645C318.965,558.316,314.067,565.658,311.618,578.496C309.169,591.333,309.169,609.667,309.169,618.833L309.169,628" id="id_Tensor_Matrix_3" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M445.815,553.55L445.076,556.792C444.337,560.033,442.86,566.517,442.121,578.925C441.383,591.333,441.383,609.667,441.383,618.833L441.383,628" id="id_Tensor_Tensor3_4" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M574.128,553.55L574.867,556.792C575.605,560.033,577.083,566.517,577.821,578.925C578.56,591.333,578.56,609.667,578.56,618.833L578.56,628" id="id_Tensor_Tensor4_5" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M716.254,486.8L730.051,501.167C743.848,515.533,771.442,544.267,785.239,564.8C799.036,585.333,799.036,597.667,799.036,603.833L799.036,610" id="id_Tensor_PermuteView_6" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M719.855,377.968L784.236,410.473C848.617,442.979,977.379,507.989,1041.76,546.661C1106.141,585.333,1106.141,597.667,1106.141,603.833L1106.141,610" id="id_Tensor_TransposeView_7" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M182.669,730L182.669,734.167C182.669,738.333,182.669,746.667,182.669,755C182.669,763.333,182.669,771.667,182.669,775.833L182.669,780" id="id_Vector_VectorView_8" class=" edge-thickness-normal edge-pattern-solid relation" style="" marker-start="url(#mermaidChart0_class-extensionStart)"></path><path d="M709.42,345.114L813.029,383.095C916.638,421.076,1123.857,497.038,1227.466,544.186C1331.076,591.333,1331.076,609.667,1331.076,618.833L1331.076,628" id="id_Tensor_ElemRef_9" class=" edge-thickness-normal edge-pattern-dashed relation" style="" marker-start="url(#mermaidChart0_class-dependencyStart)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, -12)"><foreignObject width="0" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(1331.0755462646484, 573)"><g class="label" transform="translate(-32, -12)"><foreignObject width="64" height="24"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml" class="labelBkg"><span style=";display: inline-block" class="edgeLabel "><p>返回代理</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default " id="classId-Tensor-0" transform="translate(509.97135162353516, 272)"><g class="basic label-container"><path d="M-193.8151092529297 -264 L193.8151092529297 -264 L193.8151092529297 264 L-193.8151092529297 264" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-193.8151092529297 -264 C-107.38185376677934 -264, -20.948598280629 -264, 193.8151092529297 -264 M-193.8151092529297 -264 C-58.186448423250795 -264, 77.4422124064281 -264, 193.8151092529297 -264 M193.8151092529297 -264 C193.8151092529297 -131.32376143730363, 193.8151092529297 1.3524771253927383, 193.8151092529297 264 M193.8151092529297 -264 C193.8151092529297 -138.3066920035222, 193.8151092529297 -12.613384007044345, 193.8151092529297 264 M193.8151092529297 264 C66.64842212922427 264, -60.51826499448114 264, -193.8151092529297 264 M193.8151092529297 264 C55.104129519447184 264, -83.60685021403532 264, -193.8151092529297 264 M-193.8151092529297 264 C-193.8151092529297 69.45705497662038, -193.8151092529297 -125.08589004675923, -193.8151092529297 -264 M-193.8151092529297 264 C-193.8151092529297 131.33766462476362, -193.8151092529297 -1.3246707504727624, -193.8151092529297 -264" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(-39.578125, -240)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="79.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 129px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>«abstract»</p></span></div></foreignObject></g></g><g class="label-group text" transform="translate(-26.65625, -216)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="53.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 101px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Tensor</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-181.8151092529297, -168)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="138.125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 196px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+ggml_type type_</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,12)"><foreignObject width="97.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 156px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+void* data_</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,36)"><foreignObject width="155.46875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 214px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+shape_type shape_</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,60)"><foreignObject width="130.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 188px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+shape_type nb_</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,84)"><foreignObject width="109.39583587646484" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 168px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+size_t count_</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,108)"><foreignObject width="139.71875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 198px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+bool owns_data_</p></span></div></foreignObject></g></g><g class="methods-group text" transform="translate(-181.8151092529297, 0)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="247.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 305px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+compute_type get(idx) : // 非虚</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,12)"><foreignObject width="186.0104217529297" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 243px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+void set(idx, v) : // 非虚</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,36)"><foreignObject width="213.9479217529297" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 271px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+ElemRef operator()() : // 虚</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,60)"><foreignObject width="272.7708435058594" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 368px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; clone() : // 虚</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,84)"><foreignObject width="289.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 385px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; permute(perm)</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,108)"><foreignObject width="246.95834350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 343px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; matvec(x)</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,132)"><foreignObject width="252.59375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 348px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; matmul(B)</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,156)"><foreignObject width="233.89584350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 329px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; bmm(B)</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,180)"><foreignObject width="324.0520935058594" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 420px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; gather(indices, axis)</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,204)"><foreignObject width="268.9270935058594" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 364px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; dequantize()</p></span></div></foreignObject></g><g class="label" style="" transform="translate(0,228)"><foreignObject width="273.13543701171875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 369px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>+unique_ptr&lt;Tensor&gt; quantizeTo(t)</p></span></div></foreignObject></g></g><g class="divider" style=""><path d="M-193.8151092529297 -192 C-39.8442069591224 -192, 114.12669533468488 -192, 193.8151092529297 -192 M-193.8151092529297 -192 C-63.43920776241242 -192, 66.93669372810484 -192, 193.8151092529297 -192" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-193.8151092529297 -24 C-109.43931850426229 -24, -25.06352775559489 -24, 193.8151092529297 -24 M-193.8151092529297 -24 C-100.27253715149706 -24, -6.729965050064436 -24, 193.8151092529297 -24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-Scalar-1" transform="translate(58.84634780883789, 670)"><g class="basic label-container"><path d="M-35.94791793823242 -42 L35.94791793823242 -42 L35.94791793823242 42 L-35.94791793823242 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-35.94791793823242 -42 C-20.184801611227574 -42, -4.421685284222725 -42, 35.94791793823242 -42 M-35.94791793823242 -42 C-8.608780127422307 -42, 18.73035768338781 -42, 35.94791793823242 -42 M35.94791793823242 -42 C35.94791793823242 -15.620222819804912, 35.94791793823242 10.759554360390176, 35.94791793823242 42 M35.94791793823242 -42 C35.94791793823242 -22.4005197617661, 35.94791793823242 -2.8010395235321965, 35.94791793823242 42 M35.94791793823242 42 C17.305899151590584 42, -1.3361196350512543 42, -35.94791793823242 42 M35.94791793823242 42 C8.244108774491963 42, -19.459700389248496 42, -35.94791793823242 42 M-35.94791793823242 42 C-35.94791793823242 22.524181517155668, -35.94791793823242 3.048363034311336, -35.94791793823242 -42 M-35.94791793823242 42 C-35.94791793823242 14.607638561229003, -35.94791793823242 -12.784722877541995, -35.94791793823242 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-23.947917938232422, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="47.895835876464844" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 96px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Scalar</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-23.947917938232422, 30)"></g><g class="methods-group text" transform="translate(-23.947917938232422, 60)"></g><g class="divider" style=""><path d="M-35.94791793823242 6 C-15.437146598305926 6, 5.07362474162057 6, 35.94791793823242 6 M-35.94791793823242 6 C-19.58803182111101 6, -3.228145703989597 6, 35.94791793823242 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-35.94791793823242 24 C-19.5340660991598 24, -3.120214260087181 24, 35.94791793823242 24 M-35.94791793823242 24 C-7.517728607983326 24, 20.91246072226577 24, 35.94791793823242 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-Vector-2" transform="translate(182.6692657470703, 670)"><g class="basic label-container"><path d="M-37.875 -42 L37.875 -42 L37.875 42 L-37.875 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-37.875 -42 C-22.5926807523416 -42, -7.310361504683204 -42, 37.875 -42 M-37.875 -42 C-15.16244687115303 -42, 7.55010625769394 -42, 37.875 -42 M37.875 -42 C37.875 -10.596268374012947, 37.875 20.807463251974106, 37.875 42 M37.875 -42 C37.875 -9.087131403428863, 37.875 23.825737193142274, 37.875 42 M37.875 42 C15.160268856302316 42, -7.554462287395367 42, -37.875 42 M37.875 42 C22.590136791640393 42, 7.305273583280787 42, -37.875 42 M-37.875 42 C-37.875 8.547401013388793, -37.875 -24.905197973222414, -37.875 -42 M-37.875 42 C-37.875 23.411703355439457, -37.875 4.823406710878913, -37.875 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-25.875, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="51.75" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 100px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Vector</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-25.875, 30)"></g><g class="methods-group text" transform="translate(-25.875, 60)"></g><g class="divider" style=""><path d="M-37.875 6 C-18.795683222942127 6, 0.2836335541157453 6, 37.875 6 M-37.875 6 C-18.28208019507835 6, 1.310839609843299 6, 37.875 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-37.875 24 C-14.918584521065576 24, 8.037830957868849 24, 37.875 24 M-37.875 24 C-13.853556738218298 24, 10.167886523563404 24, 37.875 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-Matrix-3" transform="translate(309.1692657470703, 670)"><g class="basic label-container"><path d="M-38.625 -42 L38.625 -42 L38.625 42 L-38.625 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-38.625 -42 C-19.477273563201614 -42, -0.32954712640322725 -42, 38.625 -42 M-38.625 -42 C-16.27599965305831 -42, 6.07300069388338 -42, 38.625 -42 M38.625 -42 C38.625 -23.30206736161211, 38.625 -4.60413472322422, 38.625 42 M38.625 -42 C38.625 -21.13308513086956, 38.625 -0.26617026173911995, 38.625 42 M38.625 42 C21.463436056465547 42, 4.301872112931093 42, -38.625 42 M38.625 42 C12.179956206278671 42, -14.265087587442657 42, -38.625 42 M-38.625 42 C-38.625 22.57532554665981, -38.625 3.150651093319617, -38.625 -42 M-38.625 42 C-38.625 13.465551331853323, -38.625 -15.068897336293354, -38.625 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-26.625, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="53.25" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 99px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Matrix</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-26.625, 30)"></g><g class="methods-group text" transform="translate(-26.625, 60)"></g><g class="divider" style=""><path d="M-38.625 6 C-16.870646091205465 6, 4.88370781758907 6, 38.625 6 M-38.625 6 C-13.987092760963101 6, 10.650814478073798 6, 38.625 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-38.625 24 C-19.22835117029168 24, 0.16829765941663766 24, 38.625 24 M-38.625 24 C-13.068277701804131 24, 12.488444596391737 24, 38.625 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-Tensor3-4" transform="translate(441.38280868530273, 670)"><g class="basic label-container"><path d="M-43.58854293823242 -42 L43.58854293823242 -42 L43.58854293823242 42 L-43.58854293823242 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-43.58854293823242 -42 C-10.8836925353326 -42, 21.821157867567223 -42, 43.58854293823242 -42 M-43.58854293823242 -42 C-19.935164333506187 -42, 3.7182142712200488 -42, 43.58854293823242 -42 M43.58854293823242 -42 C43.58854293823242 -20.862922543876365, 43.58854293823242 0.27415491224726907, 43.58854293823242 42 M43.58854293823242 -42 C43.58854293823242 -14.836858656962107, 43.58854293823242 12.326282686075785, 43.58854293823242 42 M43.58854293823242 42 C13.906519848140729 42, -15.775503241950965 42, -43.58854293823242 42 M43.58854293823242 42 C13.678703226898687 42, -16.231136484435048 42, -43.58854293823242 42 M-43.58854293823242 42 C-43.58854293823242 8.777532873504626, -43.58854293823242 -24.44493425299075, -43.58854293823242 -42 M-43.58854293823242 42 C-43.58854293823242 19.38510959056745, -43.58854293823242 -3.229780818865102, -43.58854293823242 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-31.588542938232422, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="63.177085876464844" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 109px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Tensor3</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-31.588542938232422, 30)"></g><g class="methods-group text" transform="translate(-31.588542938232422, 60)"></g><g class="divider" style=""><path d="M-43.58854293823242 6 C-18.918575582822033 6, 5.751391772588356 6, 43.58854293823242 6 M-43.58854293823242 6 C-10.029698120693723 6, 23.529146696844975 6, 43.58854293823242 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-43.58854293823242 24 C-12.648230568818 24, 18.29208180059642 24, 43.58854293823242 24 M-43.58854293823242 24 C-17.775806006474735 24, 8.036930925282952 24, 43.58854293823242 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-Tensor4-5" transform="translate(578.5598945617676, 670)"><g class="basic label-container"><path d="M-43.58854293823242 -42 L43.58854293823242 -42 L43.58854293823242 42 L-43.58854293823242 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-43.58854293823242 -42 C-12.727583727926156 -42, 18.13337548238011 -42, 43.58854293823242 -42 M-43.58854293823242 -42 C-19.51021032198235 -42, 4.568122294267724 -42, 43.58854293823242 -42 M43.58854293823242 -42 C43.58854293823242 -9.500961931900186, 43.58854293823242 22.99807613619963, 43.58854293823242 42 M43.58854293823242 -42 C43.58854293823242 -23.432417102150247, 43.58854293823242 -4.864834204300493, 43.58854293823242 42 M43.58854293823242 42 C18.975977278639032 42, -5.6365883809543575 42, -43.58854293823242 42 M43.58854293823242 42 C21.67178943898865 42, -0.2449640602551213 42, -43.58854293823242 42 M-43.58854293823242 42 C-43.58854293823242 24.4520682831247, -43.58854293823242 6.904136566249399, -43.58854293823242 -42 M-43.58854293823242 42 C-43.58854293823242 22.549505780626003, -43.58854293823242 3.0990115612520057, -43.58854293823242 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-31.588542938232422, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="63.177085876464844" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 109px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>Tensor4</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-31.588542938232422, 30)"></g><g class="methods-group text" transform="translate(-31.588542938232422, 60)"></g><g class="divider" style=""><path d="M-43.58854293823242 6 C-21.7665599400845 6, 0.0554230580634254 6, 43.58854293823242 6 M-43.58854293823242 6 C-16.194398902760607 6, 11.199745132711207 6, 43.58854293823242 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-43.58854293823242 24 C-25.30898664493528 24, -7.0294303516381405 24, 43.58854293823242 24 M-43.58854293823242 24 C-25.597119531742962 24, -7.605696125253502 24, 43.58854293823242 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-PermuteView-6" transform="translate(799.0364608764648, 670)"><g class="basic label-container"><path d="M-126.88802337646484 -60 L126.88802337646484 -60 L126.88802337646484 60 L-126.88802337646484 60" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-126.88802337646484 -60 C-38.44878081140193 -60, 49.99046175366098 -60, 126.88802337646484 -60 M-126.88802337646484 -60 C-43.992338827158775 -60, 38.90334572214729 -60, 126.88802337646484 -60 M126.88802337646484 -60 C126.88802337646484 -33.79108291938665, 126.88802337646484 -7.5821658387732995, 126.88802337646484 60 M126.88802337646484 -60 C126.88802337646484 -12.884553388296489, 126.88802337646484 34.23089322340702, 126.88802337646484 60 M126.88802337646484 60 C40.28123082694721 60, -46.32556172257043 60, -126.88802337646484 60 M126.88802337646484 60 C54.461962190591194 60, -17.964098995282455 60, -126.88802337646484 60 M-126.88802337646484 60 C-126.88802337646484 14.119191846637385, -126.88802337646484 -31.76161630672523, -126.88802337646484 -60 M-126.88802337646484 60 C-126.88802337646484 23.65367417175254, -126.88802337646484 -12.692651656494917, -126.88802337646484 -60" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -36)"></g><g class="label-group text" transform="translate(-53.58854293823242, -36)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="107.17708587646484" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 151px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>PermuteView</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-114.88802337646484, 12)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="176.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 228px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>// 共享 data_，重排 nb_</p></span></div></foreignObject></g></g><g class="methods-group text" transform="translate(-114.88802337646484, 60)"></g><g class="divider" style=""><path d="M-126.88802337646484 -12 C-46.512496980018184 -12, 33.863029416428475 -12, 126.88802337646484 -12 M-126.88802337646484 -12 C-65.7840478538574 -12, -4.68007233124996 -12, 126.88802337646484 -12" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-126.88802337646484 36 C-35.58604576764304 36, 55.71593184117876 36, 126.88802337646484 36 M-126.88802337646484 36 C-58.09975722090219 36, 10.688508934660462 36, 126.88802337646484 36" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-TransposeView-7" transform="translate(1106.140640258789, 670)"><g class="basic label-container"><path d="M-130.21614837646484 -60 L130.21614837646484 -60 L130.21614837646484 60 L-130.21614837646484 60" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-130.21614837646484 -60 C-41.831118533968024 -60, 46.5539113085288 -60, 130.21614837646484 -60 M-130.21614837646484 -60 C-67.68238828775512 -60, -5.148628199045405 -60, 130.21614837646484 -60 M130.21614837646484 -60 C130.21614837646484 -34.20436375891692, 130.21614837646484 -8.408727517833839, 130.21614837646484 60 M130.21614837646484 -60 C130.21614837646484 -21.833309136838558, 130.21614837646484 16.333381726322884, 130.21614837646484 60 M130.21614837646484 60 C62.11140264062409 60, -5.993343095216659 60, -130.21614837646484 60 M130.21614837646484 60 C36.36789154897207 60, -57.48036527852071 60, -130.21614837646484 60 M-130.21614837646484 60 C-130.21614837646484 29.03078093886416, -130.21614837646484 -1.9384381222716769, -130.21614837646484 -60 M-130.21614837646484 60 C-130.21614837646484 29.63378038309648, -130.21614837646484 -0.7324392338070425, -130.21614837646484 -60" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -36)"></g><g class="label-group text" transform="translate(-60.234375, -36)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="120.46875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 164px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>TransposeView</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-118.21614837646484, 12)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="176.1979217529297" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 227px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>// 共享 data_，交换两轴</p></span></div></foreignObject></g></g><g class="methods-group text" transform="translate(-118.21614837646484, 60)"></g><g class="divider" style=""><path d="M-130.21615600585938 -12 C-44.73714832618249 -12, 40.74185935349439 -12, 130.21615600585938 -12 M-130.21615600585938 -12 C-46.36418530342861 -12, 37.48778539900215 -12, 130.21615600585938 -12" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-130.21615600585938 36 C-65.31202070025424 36, -0.40788539464909945 36, 130.21615600585938 36 M-130.21615600585938 36 C-34.48269656156852 36, 61.25076288272234 36, 130.21615600585938 36" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-VectorView-8" transform="translate(182.6692657470703, 840)"><g class="basic label-container"><path d="M-174.6692657470703 -60 L174.6692657470703 -60 L174.6692657470703 60 L-174.6692657470703 60" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-174.6692657470703 -60 C-93.37479434523976 -60, -12.080322943409215 -60, 174.6692657470703 -60 M-174.6692657470703 -60 C-54.06500841881126 -60, 66.53924890944779 -60, 174.6692657470703 -60 M174.6692657470703 -60 C174.6692657470703 -17.44044070486246, 174.6692657470703 25.11911859027508, 174.6692657470703 60 M174.6692657470703 -60 C174.6692657470703 -18.561184292140908, 174.6692657470703 22.877631415718184, 174.6692657470703 60 M174.6692657470703 60 C64.34612183874884 60, -45.97702206957263 60, -174.6692657470703 60 M174.6692657470703 60 C95.87977012445822 60, 17.090274501846125 60, -174.6692657470703 60 M-174.6692657470703 60 C-174.6692657470703 33.30926345362749, -174.6692657470703 6.618526907254974, -174.6692657470703 -60 M-174.6692657470703 60 C-174.6692657470703 20.067220934619023, -174.6692657470703 -19.865558130761954, -174.6692657470703 -60" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -36)"></g><g class="label-group text" transform="translate(-45.43229293823242, -36)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="90.86458587646484" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 136px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>VectorView</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-162.6692657470703, 12)"><g class="label" style="" transform="translate(0,-12)"><foreignObject width="279.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 330px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>owns_data_ = false  // 行别名，不拥有</p></span></div></foreignObject></g></g><g class="methods-group text" transform="translate(-162.6692657470703, 60)"></g><g class="divider" style=""><path d="M-174.6692657470703 -12 C-100.41313628500613 -12, -26.157006822941952 -12, 174.6692657470703 -12 M-174.6692657470703 -12 C-39.98912537767066 -12, 94.69101499172899 -12, 174.6692657470703 -12" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-174.6692657470703 36 C-41.732968784701654 36, 91.203328177667 36, 174.6692657470703 36 M-174.6692657470703 36 C-94.1276817153367 36, -13.5860976836031 36, 174.6692657470703 36" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g><g class="node default " id="classId-ElemRef-9" transform="translate(1331.0755462646484, 670)"><g class="basic label-container"><path d="M-44.71875 -42 L44.71875 -42 L44.71875 42 L-44.71875 42" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path><path d="M-44.71875 -42 C-21.679150316101587 -42, 1.360449367796825 -42, 44.71875 -42 M-44.71875 -42 C-20.85492630731846 -42, 3.0088973853630776 -42, 44.71875 -42 M44.71875 -42 C44.71875 -17.48619034415997, 44.71875 7.027619311680063, 44.71875 42 M44.71875 -42 C44.71875 -24.311363961546498, 44.71875 -6.622727923092995, 44.71875 42 M44.71875 42 C19.525358046105765 42, -5.66803390778847 42, -44.71875 42 M44.71875 42 C19.9197963394229 42, -4.879157321154203 42, -44.71875 42 M-44.71875 42 C-44.71875 24.180295619982505, -44.71875 6.360591239965011, -44.71875 -42 M-44.71875 42 C-44.71875 8.871675033696604, -44.71875 -24.25664993260679, -44.71875 -42" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="annotation-group text" transform="translate(0, -18)"></g><g class="label-group text" transform="translate(-32.71875, -18)"><g class="label" style="font-weight: bolder" transform="translate(0,-12)"><foreignObject width="65.4375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 112px; text-align: center;"><span class="nodeLabel markdown-node-label" style=""><p>ElemRef</p></span></div></foreignObject></g></g><g class="members-group text" transform="translate(-32.71875, 30)"></g><g class="methods-group text" transform="translate(-32.71875, 60)"></g><g class="divider" style=""><path d="M-44.71875 6 C-15.411830357036077 6, 13.895089285927845 6, 44.71875 6 M-44.71875 6 C-13.290119020093321 6, 18.138511959813357 6, 44.71875 6" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g><g class="divider" style=""><path d="M-44.71875 24 C-19.39267163966521 24, 5.933406720669581 24, 44.71875 24 M-44.71875 24 C-23.20738467281277 24, -1.6960193456255368 24, 44.71875 24" stroke="#9370DB" stroke-width="1.3" fill="none" style=""></path></g></g></g></g></g></svg></div><h3 id='22-ascii-层次'><span>2.2 ASCII 层次</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ┌──────────────────────────┐</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │ &nbsp; Tensor  (抽象基类) &nbsp; &nbsp;  │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │  data_:void* nb_[]:字节 &nbsp;  │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │  get/set/offset/readElem  │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │ &nbsp; writeElem/fill  ← 非虚 &nbsp; │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │  operator()/clone/permute │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │ &nbsp; /matvec/matmul/... 虚/ &nbsp; │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  └────────────┬─────────────┘</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ┌──────────┬──────────┼──────────┬──────────┬──────────┐</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Scalar &nbsp; &nbsp; Vector &nbsp; &nbsp;  Matrix &nbsp; &nbsp; Tensor3 &nbsp; &nbsp; Tensor4 &nbsp; PermuteView</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (0阶) &nbsp; &nbsp; (1阶) &nbsp; &nbsp;  (2阶) &nbsp; &nbsp;  (3阶) &nbsp; &nbsp; &nbsp; (4阶) &nbsp;  /TransposeView</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VectorView</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (Vector 子类, 行别名)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; 独立辅助类（非 Tensor 子类）：</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; ElemRef &nbsp; &nbsp; &nbsp; &nbsp;  —— operator() 返回的引用代理（F32 直连 float&amp; / 其余经 get/set）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; GatherMatrixView —— 仅供旧版 gather(vector&lt;size_t&gt;) 的惰性行视图</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; QuantTraits &nbsp; &nbsp;  —— 量化类型静态表（dequant/quant/vec_dot）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; makeDense() &nbsp; &nbsp;  —— 按 rank 构造具体稠密类型的工厂</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 461px;"></div><div class="CodeMirror-gutters" style="display: none; height: 461px;"></div></div></div></pre><blockquote><p><strong><span>要点</span></strong><span>：除 </span><code>VectorView</code><span>（为取行指针又不拥有数据而存在）外，所有具体张量类型都是 </span><code>Tensor</code><span> 的直接子类。</span><code>PermuteView</code><span> / </span><code>TransposeView</code><span> 是</span><strong><span>零拷贝视图</span></strong><span>（构造时重排 </span><code>nb_</code><span>，</span><code>owns_data_=false</code><span>，析构不释放共享缓冲）；</span><code>VectorView</code><span> 是</span><strong><span>行别名视图</span></strong><span>（指向矩阵某行的字节起点，</span><code>owns_data_=false</code><span>）。</span></p></blockquote><hr /><h2 id='3-存储模型与-ggml-同构'><span>3. 存储模型（与 ggml 同构）</span></h2><h3 id='31-核心成员'><span>3.1 核心成员</span></h3><figure class='table-figure'><table><thead><tr><th><span>成员</span></th><th><span>类型</span></th><th><span>含义</span></th></tr></thead><tbody><tr><td><code>data_</code></td><td><code>void*</code></td><td><span>原始字节缓冲，与 </span><code>ggml_tensor.data</code><span> 一致</span></td></tr><tr><td><code>type_</code></td><td><code>ggml_type</code></td><td><span>存储数据类型标签，驱动 </span><strong><span>type 感知访问</span></strong></td></tr><tr><td><code>shape_</code></td><td><code>vector&lt;size_t&gt;</code></td><td><span>各维尺寸，如 </span><code>[m, n]</code></td></tr><tr><td><code>nb_</code></td><td><code>vector&lt;size_t&gt;</code></td><td><span>各维</span><strong><span>字节步长</span></strong><span>（与 ggml 的 </span><code>nb[]</code><span> 完全一致，单位=字节）</span></td></tr><tr><td><code>count_</code></td><td><code>size_t</code></td><td><span>已分配元素个数</span></td></tr><tr><td><code>owns_data_</code></td><td><code>bool</code></td><td><span>视图/别名置 </span><code>false</code><span>，析构不释放共享缓冲</span></td></tr></tbody></table></figure><h3 id='32-字节步长与偏移计算'><span>3.2 字节步长与偏移计算</span></h3><p><span>元素定位走一条</span><strong><span>纯算术直线路径</span></strong><span>（这是红线得以成立的前提）：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">offset(idx) = Σ_k  idx[k] * nb_[k] &nbsp; &nbsp; &nbsp; &nbsp;  →  字节偏移</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">elemBytes &nbsp; = QuantTraits::blck_bytes(标量) / blck_size(量化)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">readElem(byteOffset) &nbsp; →  按 type_ 解释字节，F32 快路径，其余/量化转 float</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">writeElem(byteOffset,v) →  按 type_ 写回</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><p><code>nb_</code><span> 由 </span><code>makeNb(shape, type)</code><span> 计算：元素步长（</span><code>makeStrides</code><span> 给出的行主序 </span><code>{d1*d2, d2, 1}</code><span>）乘以</span><strong><span>每&quot;虚拟元素&quot;字节数</span></strong><span>。对量化类型，该虚拟字节数为 </span><code>blck_bytes</code><span>（而非 </span><code>blck_size * sizeof(float)</code><span>），从而保证 </span><code>offset</code><span> 恒为 </span><code>blck_bytes</code><span> 整数倍，可被 </span><code>readElem/writeElem</code><span> 直接定位到&quot;块号 + 块内序号&quot;。</span></p><h3 id='33-内存布局图ascii'><span>3.3 内存布局图（ASCII）</span></h3><p><strong><span>稠密 F32 矩阵 </span><code>[M=2, N=3]</code></strong><span>（每元素 4 字节，</span><code>nb_ = {12, 4, 1}</code><span>）：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  col0 &nbsp; &nbsp;  col1 &nbsp; &nbsp;  col2</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">row0  [ f00 ][ f01 ][ f02 ] &nbsp; ← 行连续：nb_[0]=12 字节</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">row1  [ f10 ][ f11 ][ f12 ]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">data_  →  f00 f01 f02 f10 f11 f12 &nbsp; (24 字节，行主序连续)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 115px;"></div><div class="CodeMirror-gutters" style="display: none; height: 115px;"></div></div></div></pre><p><strong><span>量化 Q8_0 矩阵 </span><code>[M=2, N=4]</code></strong><span>（每块 32 元素，每块 34 字节：2 字节 scale(d) + 32 字节 int8）：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  col0..col31 (在一行里按 32 元素/块打包)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">row0  [ scale:d (fp16, 2B) ][ q0 q1 ... q31 (int8, 32B) ]  ← 块连续</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">row1  [ scale:d (fp16, 2B) ][ q0 q1 ... q31 (int8, 32B) ]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">data_ →  ←—— 行字节数 = bufferBytes(N, Q8_0) = (N/32)*34 ——→</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;  （注意：行的"真实字节"用 bufferBytes 算，而非 nb_[0] 的虚拟步长）</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 138px;"></div><div class="CodeMirror-gutters" style="display: none; height: 138px;"></div></div></div></pre><blockquote><p><strong><span>关键坑</span></strong><span>：量化行别名的真实字节偏移 = </span><code>bufferBytes(cols, type)</code><span>（按块数 × </span><code>blck_bytes</code><span>），</span><strong><span>不是</span></strong><span> </span><code>nb_[0]</code><span>（</span><code>nb_[0]</code><span> 是为了让 </span><code>offset</code><span> 全局对齐而设的&quot;虚拟行步长&quot;）。</span><code>VectorView::row</code><span> 取行指针时必须用 </span><code>bufferBytes</code><span>，否则行错位。</span></p></blockquote><hr /><h2 id='4-访问层红线零虚面设计'><span>4. 访问层红线：零虚面设计</span></h2><h3 id='41-红线内容'><span>4.1 红线内容</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">get / set / offset / readElem / writeElem / fill</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; └─ 一律非 virtual</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; └─ 仅基类 Tensor 提供</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; └─ 函数体内不得出现任何虚调用（含索引映射钩子）</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><h3 id='42-为什么设计动机'><span>4.2 为什么（设计动机）</span></h3><p><code>get/set</code><span> 是</span><strong><span>整个推理最热的元素访问路径</span></strong><span>（matvec/matmul/softmax/归一化每步都在调）。一旦在其内部夹带虚分发（例如&quot;在 get 里插一次 </span><code>mapIndex()</code><span> 虚钩子做索引重排&quot;），既无法内联，也无法被 AVX2/AVX-512/GPU 后端整体特化编译 —— 性能上等价于甚至劣于把 </span><code>get/set</code><span> 直接做成虚函数。</span></p><h3 id='43-两条正确的索引重排路径'><span>4.3 两条正确的索引重排路径</span></h3><figure class='table-figure'><table><thead><tr><th><span>重排类型</span></th><th><span>例子</span></th><th><span>正确实现</span></th><th><span>是否拷贝</span></th></tr></thead><tbody><tr><td><strong><span>等距重排</span></strong></td><td><span>转置、permute、swapaxes</span></td><td><span>视图类</span><strong><span>构造时重排 </span><code>nb_</code><span> 字节步长</span></strong><span>，继承的 </span><code>offset</code><span> 自动正确</span></td><td><span>零拷贝</span></td></tr><tr><td><strong><span>非等距重排</span></strong></td><td><span>gather / Embedding 查表</span></td><td><strong><span>构造时一次性物化</span></strong><span>为独立缓冲（与 </span><code>ggml_get_rows</code><span> 同为算子非 view）</span></td><td><span>拷贝一次</span></td></tr></tbody></table></figure><blockquote><p><span>红线禁止的，正是&quot;非等距重排却用 view + 在 get/set 里插虚映射钩子&quot;的做法。本库选择</span><strong><span>物化</span></strong><span>换取热路径纯净与后续访存连续（对 AVX2/GPU 更友好）。</span></p></blockquote><h3 id='44-operator-与-elemref'><span>4.4 </span><code>operator()</code><span> 与 </span><code>ElemRef</code></h3><p><code>operator()</code><span> </span><strong><span>是 virtual</span></strong><span>（返回 </span><code>ElemRef</code><span> 代理），用于</span><strong><span>非热路径</span></strong><span>的多维下标读写（如初始化、调试）。</span><code>ElemRef</code><span> 对 F32 直连真实 </span><code>float&amp;</code><span>（零开销），其余标量类型与量化类型经代理的 </span><code>get/set</code><span> 透明读写。</span></p><hr /><h2 id='5-类型系统与量化内核'><span>5. 类型系统与量化内核</span></h2><h3 id='51-ggmltype-适配范围'><span>5.1 </span><code>ggml_type</code><span> 适配范围</span></h3><figure class='table-figure'><table><thead><tr><th><span>类别</span></th><th><span>类型</span></th><th><span>状态</span></th></tr></thead><tbody><tr><td><span>标量 float</span></td><td><code>GGML_TYPE_F32</code></td><td><span>全功能</span></td></tr><tr><td><span>标量非 F32</span></td><td><code>F16 / BF16 / I8 / I16 / I32 / I64 / F64</code></td><td><span>全功能（经 </span><code>ElemRef</code><span> 代理读写）</span></td></tr><tr><td><span>量化</span></td><td><code>Q4_0 / Q4_1 / Q8_0 / Q8_1 / Q1_0 / Q2_0</code></td><td><span>已适配（见下表）</span></td></tr><tr><td><span>其他量化</span></td><td><code>Q2_K~Q8_K / IQ* / MXFP4 / NVFP4 / TQ*</code><span> 等</span></td><td><span>未适配，构造即抛 </span><code>traitsOf: 未适配的 ggml_type</code></td></tr></tbody></table></figure><h3 id='52-quanttraits-静态表'><span>5.2 </span><code>QuantTraits</code><span> 静态表</span></h3><p><span>每个已适配类型登记：</span><code>blck_size</code><span>（每块元素数）、</span><code>blck_bytes</code><span>（每块字节数）、</span><code>dequant</code><span>（块→F32 解包）、</span><code>quant</code><span>（F32→块打包）、</span><code>vec_dot</code><span>（融合点积，标量类型为 </span><code>nullptr</code><span>）。</span></p><figure class='table-figure'><table><thead><tr><th><span>类型</span></th><th><span>blck_size</span></th><th><span>blck_bytes</span></th><th><span>块内容</span></th><th><span>vec_dot</span></th></tr></thead><tbody><tr><td><span>F32</span></td><td><span>1</span></td><td><span>4</span></td><td><span>—</span></td><td><span>nullptr</span></td></tr><tr><td><span>F16</span></td><td><span>1</span></td><td><span>2</span></td><td><span>—</span></td><td><span>nullptr</span></td></tr><tr><td><span>Q4_0</span></td><td><span>32</span></td><td><span>18</span></td><td><span>d(fp16,2B)+16×nibble</span></td><td><span>✅</span></td></tr><tr><td><span>Q4_1</span></td><td><span>32</span></td><td><span>20</span></td><td><span>d,m(fp16,4B)+16×nibble</span></td><td><span>✅</span></td></tr><tr><td><span>Q8_0</span></td><td><span>32</span></td><td><span>34</span></td><td><span>d(fp16,2B)+32×int8</span></td><td><span>✅</span></td></tr><tr><td><span>Q8_1</span></td><td><span>32</span></td><td><span>36</span></td><td><span>d,m(fp16,4B)+32×uint8</span></td><td><span>✅</span></td></tr><tr><td><span>Q1_0</span></td><td><span>128</span></td><td><span>18</span></td><td><span>d(fp16,2B)+16×bit</span></td><td><span>✅</span></td></tr><tr><td><span>Q2_0</span></td><td><span>64</span></td><td><span>18</span></td><td><span>d(fp16,2B)+16×2bit</span></td><td><span>✅</span></td></tr></tbody></table></figure><h3 id='53-融合点积-vecdot省内存核心'><span>5.3 融合点积 </span><code>vec_dot</code><span>（省内存核心）</span></h3><div class="md-diagram-panel md-fences-adv-panel" lang="mermaid"><svg id="mermaidChart1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart mermaid-svg" style="max-width: 1425.8126220703125px;" viewBox="0.00000762939453125 0 1425.8126220703125 174" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaidChart1{font-family:sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaidChart1 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaidChart1 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaidChart1 .error-icon{fill:#552222;}#mermaidChart1 .error-text{fill:#552222;stroke:#552222;}#mermaidChart1 .edge-thickness-normal{stroke-width:1px;}#mermaidChart1 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart1 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart1 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaidChart1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart1 .marker{fill:#333333;stroke:#333333;}#mermaidChart1 .marker.cross{stroke:#333333;}#mermaidChart1 svg{font-family:sans-serif;font-size:16px;}#mermaidChart1 p{margin:0;}#mermaidChart1 .label{font-family:sans-serif;color:#333;}#mermaidChart1 .cluster-label text{fill:#333;}#mermaidChart1 .cluster-label span{color:#333;}#mermaidChart1 .cluster-label span p{background-color:transparent;}#mermaidChart1 .label text,#mermaidChart1 span{fill:#333;color:#333;}#mermaidChart1 .node rect,#mermaidChart1 .node circle,#mermaidChart1 .node ellipse,#mermaidChart1 .node polygon,#mermaidChart1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart1 .rough-node .label text,#mermaidChart1 .node .label text,#mermaidChart1 .image-shape .label,#mermaidChart1 .icon-shape .label{text-anchor:middle;}#mermaidChart1 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaidChart1 .rough-node .label,#mermaidChart1 .node .label,#mermaidChart1 .image-shape .label,#mermaidChart1 .icon-shape .label{text-align:center;}#mermaidChart1 .node.clickable{cursor:pointer;}#mermaidChart1 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaidChart1 .arrowheadPath{fill:#333333;}#mermaidChart1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart1 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart1 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaidChart1 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaidChart1 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaidChart1 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaidChart1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart1 .cluster text{fill:#333;}#mermaidChart1 .cluster span{color:#333;}#mermaidChart1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart1 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaidChart1 rect.text{fill:none;stroke-width:0;}#mermaidChart1 .icon-shape,#mermaidChart1 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaidChart1 .icon-shape p,#mermaidChart1 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaidChart1 .icon-shape rect,#mermaidChart1 .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaidChart1 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaidChart1 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaidChart1 :root{--mermaid-alt-font-family:sans-serif;}</style><g><marker id="mermaidChart1_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart1_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart1_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart1_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart1_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart1_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M211.802,35L236.802,35L286.278,58.296" id="L_A_B_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart1_flowchart-v2-pointEnd)"></path><path d="M187.536,139L236.802,139L286.278,115.704" id="L_X_B_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart1_flowchart-v2-pointEnd)"></path><path d="M432.677,87L457.677,87L478.677,87" id="L_B_C_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart1_flowchart-v2-pointEnd)"></path><path d="M839.927,87L864.927,87L885.927,87" id="L_C_D_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart1_flowchart-v2-pointEnd)"></path><path d="M1104.667,87L1129.667,87L1150.667,87" id="L_D_E_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart1_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default  " id="flowchart-A-0" transform="translate(109.90103912353516, 35)"><rect class="basic label-container" style="" x="-101.90104675292969" y="-27" width="203.80209350585938" height="54"></rect><g class="label" style="" transform="translate(-71.90104675292969, -12)"><rect></rect><foreignObject width="143.80209350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>量化权重行 q: void*</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-B-1" transform="translate(347.2395782470703, 87)"><rect class="basic label-container" style="" x="-85.4375" y="-27" width="170.875" height="54"></rect><g class="label" style="" transform="translate(-55.4375, -12)"><rect></rect><foreignObject width="110.875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>vec_dot_quant</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-X-2" transform="translate(109.90103912353516, 139)"><rect class="basic label-container" style="" x="-77.63541793823242" y="-27" width="155.27083587646484" height="54"></rect><g class="label" style="" transform="translate(-47.63541793823242, -12)"><rect></rect><foreignObject width="95.27083587646484" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>输入 x: float*</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-C-5" transform="translate(661.3020782470703, 87)"><rect class="basic label-container" style="" x="-178.625" y="-27" width="357.25" height="54"></rect><g class="label" style="" transform="translate(-148.625, -12)"><rect></rect><foreignObject width="297.25" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel "><p>按块解包到栈缓冲 buf=blck_size 个 float</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-D-7" transform="translate(997.2968673706055, 87)"><rect class="basic label-container" style="" x="-107.36979675292969" y="-27" width="214.73959350585938" height="54"></rect><g class="label" style="" transform="translate(-77.36979675292969, -12)"><rect></rect><foreignObject width="154.73959350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>逐块累加 Σ buf·x_sub</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-E-9" transform="translate(1286.2395782470703, 87)"><rect class="basic label-container" style="" x="-131.5729217529297" y="-27" width="263.1458435058594" height="54"></rect><g class="label" style="" transform="translate(-101.57292175292969, -12)"><rect></rect><foreignObject width="203.14584350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel "><p>返回 float, 绝不物化整张F32</p></span></div></foreignObject></g></g></g></g></g></svg></div><p><code>vec_dot_quant</code><span> 只在</span><strong><span>寄存器/栈内</span></strong><span>解包当前块（栈缓冲大小 = </span><code>blck_size</code><span>，常量、不随 N 增长），累加完即丢弃，立即推进到下一物理块。这样量化权重永远以原始二进制驻留内存，matvec/matmul/bmm 全程不展开成 F32 大矩阵。</span></p><hr /><h2 id='6-算子-apia~d-四类'><span>6. 算子 API（A~D 四类）</span></h2><blockquote><p><span>约定：除 </span><code>reduceAll</code><span> 返回 </span><code>compute_type</code><span> 标量、标量与视图工厂外，</span><strong><span>所有返回一个张量的算子都返回 </span><code>std::unique_ptr&lt;Tensor&gt;</code></strong><span>（因为 </span><code>Tensor</code><span> 是抽象基类，不能按值返回&quot;一个张量&quot;）。中间结果一律 </span><strong><span>F32</span></strong><span>，仅 </span><code>quantizeTo</code><span>/KV cache 显式回量化。</span></p></blockquote><h3 id='61-a1-一元逐元素运算'><span>6.1 A.1 一元逐元素运算</span></h3><p><span>每个运算提供</span><strong><span>两种形式</span></strong><span>：返回新张量（</span><code>const</code><span>）+ 改写自身（</span><code>InPlace</code><span>）。</span></p><figure class='table-figure'><table><thead><tr><th><span>函数</span></th><th><span>公式</span></th><th><span>用途</span></th></tr></thead><tbody><tr><td><code>exp / expInPlace</code></td><td><code>e^x</code></td><td><span>softmax 分母、注意力指数</span></td></tr><tr><td><code>rsqrt / rsqrtInPlace</code></td><td><code>1/√x</code></td><td><strong><span>RMSNorm</span></strong><span> 归一化因子</span></td></tr><tr><td><code>sigmoid / sigmoidInPlace</code></td><td><code>1/(1+e^-x)</code></td><td><span>门控、概率</span></td></tr><tr><td><code>silu / siluInPlace</code></td><td><code>x·sigmoid(x)</code></td><td><strong><span>LLaMA FFN</span></strong><span> gate 分支</span></td></tr><tr><td><code>tanh / tanhInPlace</code></td><td><code>tanh(x)</code></td><td><span>LSTM / 旧式注意力</span></td></tr><tr><td><code>relu / reluInPlace</code></td><td><code>max(0,x)</code></td><td><span>Vision / MLP</span></td></tr><tr><td><code>abs / absInPlace</code></td><td><code>|x|</code></td><td><span>距离/误差</span></td></tr><tr><td><code>negate / negateInPlace</code></td><td><code>-x</code></td><td><span>符号反转、RoPE 负频</span></td></tr><tr><td><code>log / logInPlace</code></td><td><code>ln(x)</code></td><td><span>log_softmax、交叉熵</span></td></tr><tr><td><code>reciprocal / reciprocalInPlace</code></td><td><code>1/x</code></td><td><span>归一化除法</span></td></tr><tr><td><code>clamp / clampInPlace(lo,hi)</code></td><td><code>max(lo,min(hi,x))</code></td><td><span>logits 裁剪、数值稳定</span></td></tr></tbody></table></figure><h3 id='62-a2-二元逐元素运算含-numpy-式广播'><span>6.2 A.2 二元逐元素运算（含 NumPy 式广播）</span></h3><ul><li><p><code>applyBinary(const Tensor&amp; b, BinaryOp op)</code><span> 统一入口。</span></p></li><li><p><strong><span>张量形式</span></strong><span>（b 经广播对齐）：</span><code>add / sub / mul / div / pow / max / min</code><span>。</span></p></li><li><p><strong><span>标量重载</span></strong><span>（走 </span><code>unaryMap</code><span> 单操作数更快）：</span><code>add(s) / sub(s) / mul(s) / div(s) / pow(s) / max(s) / min(s)</code><span>。</span></p></li><li><p><span>广播规则：形状</span><strong><span>右对齐</span></strong><span>比较，某维为 1 或&quot;缺失&quot;（低阶一方视为前导 1）可拉伸；两维不等且均 &gt;1 抛 </span><code>invalid_argument</code><span>。</span></p></li><li><p><span>任一操作数为 Q 类型时，</span><code>get</code><span> 自动 dequant 到 float 再算。</span></p></li></ul><h3 id='63-a3-标量辅助'><span>6.3 A.3 标量辅助</span></h3><figure class='table-figure'><table><thead><tr><th><span>函数</span></th><th><span>语义</span></th><th><span>形式</span></th></tr></thead><tbody><tr><td><code>scale(float s)</code></td><td><code>y_i = x_i * s</code></td><td><span>in-place</span></td></tr><tr><td><code>scaled(float s) const</code></td><td><span>同上，返回新建 F32</span></td><td><span>新建</span></td></tr><tr><td><code>addScalar(float s)</code></td><td><code>y_i = x_i + s</code></td><td><span>in-place</span></td></tr><tr><td><code>addBias(const Tensor&amp; b)</code></td><td><span>把 </span><code>b[out_dim]</code><span> 沿</span><strong><span>最后维</span></strong><span>广播加到自身：</span><code>y[idx]=x[idx]+b[idx.back()]</code></td><td><span>in-place</span></td></tr><tr><td><code>withBias(const Tensor&amp; b) const</code></td><td><span>同上，返回新建 F32</span></td><td><span>新建</span></td></tr></tbody></table></figure><p><code>b</code><span> 须为 1 维且长度 == 本张量最后维尺寸，否则抛 </span><code>invalid_argument</code><span>。用于</span><strong><span>注意力输出投影 </span><code>y=x·W+bias</code></strong><span>、FFN 偏置加。</span></p><h3 id='64-b-类--归约'><span>6.4 B 类 · 归约</span></h3><figure class='table-figure'><table><thead><tr><th><span>函数</span></th><th><span>语义</span></th><th><span>输出</span></th></tr></thead><tbody><tr><td><code>reduceAll(ReductionOp)</code></td><td><span>整张→标量 </span><code>Sum/Mean/Max/Min/Prod/L2</code></td><td><code>compute_type</code></td></tr><tr><td><code>sum(int dim) / mean(int dim)</code></td><td><span>沿 dim 塌缩为 1</span></td><td><code>[…,1,…]</code><span> F32</span></td></tr><tr><td><code>max(int dim)</code></td><td><span>沿 dim 取最值</span></td><td><code>[…,1,…]</code><span> F32</span></td></tr><tr><td><code>norm(int dim)</code></td><td><span>L2 范数 </span><code>√(Σx²)</code></td><td><code>[…,1,…]</code><span> F32</span></td></tr><tr><td><code>var(int dim)</code></td><td><span>总体方差 </span><code>(1/N)Σ(x-μ)²</code></td><td><code>[…,1,…]</code><span> F32</span></td></tr><tr><td><code>argmax(int dim)</code></td><td><span>沿 dim 取最大值</span><strong><span>索引</span></strong><span>（float 承载整数下标）</span></td><td><code>[…,1,…]</code><span> F32</span></td></tr><tr><td><code>softmax(int dim)</code></td><td><span>数值稳定归一化 </span><code>exp(x-max)/Σexp(x-max)</code></td><td><strong><span>同形不塌缩</span></strong><span> F32</span></td></tr></tbody></table></figure><p><code>dim</code><span> 越界（</span><code>&lt;0</code><span> 或 </span><code>&gt;=rank</code><span>）抛 </span><code>invalid_argument</code><span>。输入为 Q/标量类型时先经 </span><code>get</code><span> 自动 dequant 再归约。</span></p><h3 id='65-c1-matvec--------向量-×-矩阵最高频'><span>6.5 C.1 </span><code>matvec</code><span> —— 向量 × 矩阵（最高频）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">matvec</span>(<span class="cm-keyword">const</span> <span class="cm-variable">Tensor</span><span class="cm-operator">&amp;</span> <span class="cm-variable">x</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// y = W·x, W:[M,N] x:[N] → [M]</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><ul><li><p><strong><span>F32 路径</span></strong><span>：行连续（</span><code>nb_[0]==行字节</code><span>）走 </span><code>float*</code><span> 行指针 + x 浮点指针累加快路径。</span></p></li><li><p><strong><span>量化融合路径</span></strong><span>：</span><code>this-&gt;type_</code><span> 为 Q 类型时，每行块调 </span><code>traitsOf(type_).vec_dot(rowBlock, xF32, N)</code><span> 现场 dequant 累加，不物化 F32 权重矩阵。</span></p></li><li><p><strong><span>通用兜底</span></strong><span>：非连续视图退化为逐元素 </span><code>get</code><span>（视图安全）。</span></p></li><li><p><strong><span>校验</span></strong><span>：</span><code>this</code><span> 须 2 阶 </span><code>[M,N]</code><span>；</span><code>x</code><span> 须 1 阶且长度 == N；量化权重要求 N 为 </span><code>blck_size</code><span> 整数倍；违反抛 </span><code>invalid_argument</code><span>。</span></p></li><li><p><strong><span>用途</span></strong><span>：QKV 投影、输出投影、FFN 的三个 matvec 全部走它。</span></p></li></ul><h3 id='66-c2-matmul--------矩阵-×-矩阵'><span>6.6 C.2 </span><code>matmul</code><span> —— 矩阵 × 矩阵</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">matmul</span>(<span class="cm-keyword">const</span> <span class="cm-variable">Tensor</span><span class="cm-operator">&amp;</span> <span class="cm-variable">B</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// C=A·B, A:[M,K] B:[K,N] → [M,N]</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><ul><li><p><strong><span>F32 直算</span></strong><span>：A、B 均稠密 F32 且行连续时三循环（</span><code>i</code><span> 外/</span><code>k</code><span> 中/</span><code>j</code><span> 内，cache 友好）。</span></p></li><li><p><strong><span>量化融合路径</span></strong><span>：A 为 Q 类型时拆成 N 次 GEMV —— 逐输出列 j 取 B 第 j 列（F32）作 x，对 A 每行块调 </span><code>vec_dot</code><span> 累加。</span></p></li><li><p><strong><span>通用兜底</span></strong><span>：标量非 F32 / 非连续视图 / B 量化，退化为逐元素 </span><code>get</code><span> 三循环。</span></p></li><li><p><strong><span>校验</span></strong><span>：A、B 均 2 阶；A 列(K)==B 行(K)；量化 A 要求 K 为 </span><code>blck_size</code><span> 整数倍。</span></p></li><li><p><strong><span>用途</span></strong><span>：FFN 的 </span><code>W₂·(silu(W₁x)⊙...)</code><span>、部分层、bmm 退化。</span></p></li></ul><h3 id='67-d1-bmm--------批矩阵乘多头注意力核心'><span>6.7 D.1 </span><code>bmm</code><span> —— 批矩阵乘（多头注意力核心）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">bmm</span>(<span class="cm-keyword">const</span> <span class="cm-variable">Tensor</span><span class="cm-operator">&amp;</span> <span class="cm-variable">B</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// A:[B,M,K] × B:[B,K,N] → [B,M,N]</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><ul><li><p><span>对批维度（轴 0）每个切片独立做 </span><code>matmul</code><span>；量化 A 同样走 </span><code>vec_dot</code><span> 融合。</span></p></li><li><p><strong><span>连续判定加强为&quot;完全连续&quot;</span></strong><span>（</span><code>nb_[0]==M×行字节 &amp;&amp; nb_[1]==行字节</code><span>），避免被 permute 成 </span><code>{2,1,0}</code><span> 形后误判 batch 步长。</span></p></li><li><p><strong><span>校验</span></strong><span>：A、B 均 3 阶；A 轴0(B)==B 轴0(B)；A 轴2(K)==B 轴1(K)；量化 A 要求 K 为 </span><code>blck_size</code><span> 整数倍。</span></p></li></ul><h3 id='68-d2-gather--------索引取片embedding-查表原语'><span>6.8 D.2 </span><code>gather</code><span> —— 索引取片（Embedding 查表原语）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">gather</span>(<span class="cm-keyword">const</span> <span class="cm-variable">Tensor</span><span class="cm-operator">&amp;</span> <span class="cm-variable">indices</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">axis</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// 通用 N-D</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Matrix</span><span class="cm-operator">&gt;</span> <span class="cm-def">gather</span>(<span class="cm-keyword">const</span> <span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">size_t</span><span class="cm-operator">&gt;&amp;</span> <span class="cm-variable">ids</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">axis</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// 二阶 Embedding 专用, 返回可写 Matrix</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><ul><li><p><strong><span>语义（与 </span><code>tf.gather</code><span> 一致）</span></strong><span>：输出形状 = </span><code>this.shape[0..axis-1] ++ indices.shape ++ this.shape[axis+1..]</code><span>；输出 </span><code>(o_prefix, i_idx, o_suffix) = this(o_prefix, g, o_suffix)</code><span>，其中 </span><code>g = indices[i_idx]</code><span>（整数下标）。</span></p></li><li><p><span>例：</span><code>weight[vocab,dim] + indices[seq] → [seq,dim]</code><span>；</span><code>indices[batch,seq] → [batch,seq,dim]</code><span>。</span></p></li><li><p><strong><span>实现</span></strong><span>：一次性</span><strong><span>物化</span></strong><span>为独立缓冲（与 </span><code>ggml_get_rows</code><span> 同为算子非 view；非等距重排故物化，不进 get/set 热路径）。输出沿用源 </span><code>type_</code><span>（量化表仍按块拷贝）。</span><code>indices</code><span> 越界抛 </span><code>out_of_range</code><span>。</span></p></li><li><p><span>两重载共存：旧 </span><code>vector&lt;size_t&gt;</code><span> 版专供二阶 Embedding 权重表、返回</span><strong><span>可写</span></strong><span> </span><code>Matrix</code><span>；新 </span><code>Tensor</code><span> 版为通用原语。</span></p></li></ul><h3 id='69-d3-dequantize--d4-quantizeto--------量化桥'><span>6.9 D.3 </span><code>dequantize</code><span> / D.4 </span><code>quantizeTo</code><span> —— 量化桥</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">dequantize</span>() <span class="cm-keyword">const</span>; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// Q → 新建 F32 张量（整张解量化）</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::unique_ptr</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tensor</span><span class="cm-operator">&gt;</span> <span class="cm-def">quantizeTo</span>(<span class="cm-variable">ggml_type</span> <span class="cm-variable">t</span>) <span class="cm-keyword">const</span>; &nbsp;<span class="cm-comment">// F32/任意 → 目标 Q 类型（逐块量化）</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 46px;"></div><div class="CodeMirror-gutters" style="display: none; height: 46px;"></div></div></div></pre><ul><li><p><code>dequantize</code><span>：逐元素经非虚 </span><code>get</code><span>（Q 自动 dequant）拷入新建 F32 稠密张量；对视图/别名也正确。</span><strong><span>用于调试或少数需 F32 精度的路径</span></strong><span>；普通推理不必调（matvec 已融合省内存）。</span></p></li><li><p><code>quantizeTo</code><span>：新建目标类型 </span><code>t</code><span> 的稠密张量，逐块（每 </span><code>blck_size</code><span> 元素、按元素序）调 </span><code>QuantTraits::quant</code><span> 写入；对视图/别名输入也正确（</span><code>get</code><span> 把任意布局归一到元素序）。</span></p></li><li><p><strong><span>校验</span></strong><span>：</span><code>t</code><span> 须为已适配量化类型，否则 </span><code>traitsOf</code><span> 抛&quot;未适配的 ggml_type&quot;；元素数须为 </span><code>t.blck_size</code><span> 整数倍，否则抛 </span><code>invalid_argument</code><span>。</span></p></li><li><p><strong><span>用途</span></strong><span>：</span><code>quantizeTo</code><span> 用于 </span><strong><span>KV cache 写入</span></strong><span>、权重加载后格式转换；与 </span><code>dequantize</code><span> 共成&quot;量化桥&quot;。</span></p></li></ul><hr /><h2 id='7-视图与别名策略'><span>7. 视图与别名策略</span></h2><div class="md-diagram-panel md-fences-adv-panel" lang="mermaid"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart mermaid-svg" style="max-width: 611.4375px;" viewBox="0 0 611.4375 445.72918701171875" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaidChart2{font-family:sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaidChart2 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaidChart2 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaidChart2 .error-icon{fill:#552222;}#mermaidChart2 .error-text{fill:#552222;stroke:#552222;}#mermaidChart2 .edge-thickness-normal{stroke-width:1px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#333333;stroke:#333333;}#mermaidChart2 .marker.cross{stroke:#333333;}#mermaidChart2 svg{font-family:sans-serif;font-size:16px;}#mermaidChart2 p{margin:0;}#mermaidChart2 .label{font-family:sans-serif;color:#333;}#mermaidChart2 .cluster-label text{fill:#333;}#mermaidChart2 .cluster-label span{color:#333;}#mermaidChart2 .cluster-label span p{background-color:transparent;}#mermaidChart2 .label text,#mermaidChart2 span{fill:#333;color:#333;}#mermaidChart2 .node rect,#mermaidChart2 .node circle,#mermaidChart2 .node ellipse,#mermaidChart2 .node polygon,#mermaidChart2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart2 .rough-node .label text,#mermaidChart2 .node .label text,#mermaidChart2 .image-shape .label,#mermaidChart2 .icon-shape .label{text-anchor:middle;}#mermaidChart2 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaidChart2 .rough-node .label,#mermaidChart2 .node .label,#mermaidChart2 .image-shape .label,#mermaidChart2 .icon-shape .label{text-align:center;}#mermaidChart2 .node.clickable{cursor:pointer;}#mermaidChart2 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaidChart2 .arrowheadPath{fill:#333333;}#mermaidChart2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart2 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart2 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaidChart2 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaidChart2 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaidChart2 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaidChart2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart2 .cluster text{fill:#333;}#mermaidChart2 .cluster span{color:#333;}#mermaidChart2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart2 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaidChart2 rect.text{fill:none;stroke-width:0;}#mermaidChart2 .icon-shape,#mermaidChart2 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaidChart2 .icon-shape p,#mermaidChart2 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaidChart2 .icon-shape rect,#mermaidChart2 .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaidChart2 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaidChart2 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaidChart2 :root{--mermaid-alt-font-family:sans-serif;}</style><g><marker id="mermaidChart2_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart2_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart2_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart2_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart2_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart2_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M310.198,62L310.198,87L310.62,108.501" id="L_R_Q_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart2_flowchart-v2-pointEnd)"></path><path d="M279.861,175.392L148.839,242.729L148.839,275.729" id="L_Q_Z_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart2_flowchart-v2-pointEnd)"></path><path d="M341.535,175.392L471.557,242.729L471.557,275.729" id="L_Q_M_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart2_flowchart-v2-pointEnd)"></path><path d="M148.839,333.729L148.839,358.729L148.839,379.729" id="L_Z_N_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart2_flowchart-v2-pointEnd)"></path><path d="M471.557,333.729L471.557,358.729L471.557,379.729" id="L_M_O_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart2_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(148.8385467529297, 242.7291717529297)"><g class="label" transform="translate(-65.328125, -12)"><foreignObject width="130.65625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>是(转置/permute)</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(471.5572967529297, 242.7291717529297)"><g class="label" transform="translate(-38.38541793823242, -12)"><foreignObject width="76.77083587646484" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>否(gather)</p></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default  " id="flowchart-R-0" transform="translate(310.1979217529297, 35)"><rect class="basic label-container" style="" x="-78" y="-27" width="156" height="54"></rect><g class="label" style="" transform="translate(-48, -12)"><rect></rect><foreignObject width="96" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>索引重排需求</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-Q-1" transform="translate(310.1979217529297, 158.86458587646484)"><polygon points="46.86458396911621,0 93.72916793823242,-46.86458396911621 46.86458396911621,-93.72916793823242 0,-46.86458396911621" class="label-container" transform="translate(-46.86458396911621,46.86458396911621)"></polygon><g class="label" style="" transform="translate(-19.86458396911621, -12)"><rect></rect><foreignObject width="39.72916793823242" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>等距?</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-Z-3" transform="translate(148.8385467529297, 306.7291717529297)"><rect class="basic label-container" style="" x="-130.28646087646484" y="-27" width="260.5729217529297" height="54"></rect><g class="label" style="" transform="translate(-100.28646087646484, -12)"><rect></rect><foreignObject width="200.5729217529297" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel "><p>零拷贝视图: 构造时重排 nb_</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-M-5" transform="translate(471.5572967529297, 306.7291717529297)"><rect class="basic label-container" style="" x="-122.296875" y="-27" width="244.59375" height="54"></rect><g class="label" style="" transform="translate(-92.296875, -12)"><rect></rect><foreignObject width="184.59375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>构造时物化独立缓冲: 算子</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-N-7" transform="translate(148.8385467529297, 410.7291717529297)"><rect class="basic label-container" style="" x="-140.8385467529297" y="-27" width="281.6770935058594" height="54"></rect><g class="label" style="" transform="translate(-110.83854675292969, -12)"><rect></rect><foreignObject width="221.67709350585938" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel "><p>owns_data_=false, 共享 data_</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-O-9" transform="translate(471.5572967529297, 410.7291717529297)"><rect class="basic label-container" style="" x="-131.88021087646484" y="-27" width="263.7604217529297" height="54"></rect><g class="label" style="" transform="translate(-101.88021087646484, -12)"><rect></rect><foreignObject width="203.7604217529297" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel "><p>owns_data_=true, 独立缓冲</p></span></div></foreignObject></g></g></g></g></g></svg></div><figure class='table-figure'><table><thead><tr><th><span>类型</span></th><th><span>基类</span></th><th><span>数据共享</span></th><th><span>用途</span></th></tr></thead><tbody><tr><td><code>PermuteView</code></td><td><code>Tensor</code></td><td><span>共享（</span><code>owns_data_=false</code><span>）</span></td><td><span>任意轴重排、转置</span></td></tr><tr><td><code>TransposeView</code></td><td><code>Tensor</code></td><td><span>共享</span></td><td><span>矩阵两轴交换（快速路径）</span></td></tr><tr><td><code>VectorView</code></td><td><code>Vector</code></td><td><span>共享（</span><code>owns_data_=false</code><span>）</span></td><td><span>矩阵行指针别名（不删除源、不写穿）</span></td></tr><tr><td><code>GatherMatrixView</code></td><td><span>独立类</span></td><td><span>共享（惰性）</span></td><td><span>旧版 </span><code>gather(vector&lt;size_t&gt;)</code><span> 行视图</span></td></tr></tbody></table></figure><blockquote><p><strong><code>VectorView</code><span> 的设计动因</span></strong><span>：大模型词表矩阵行长常是 32 整数倍、行不交叉，需要&quot;取行向量指针但不删除其所指数据&quot;。</span><code>VectorView</code><span> 构造强制 </span><code>owns_data_=false</code><span>，既拿到合格行数据，又避免别名 </span><code>Vector</code><span> 写穿/误释放共享缓冲。</span></p></blockquote><hr /><h2 id='8-使用示例'><span>8. 使用示例</span></h2><h3 id='81-构造与访问'><span>8.1 构造与访问</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "Tensor20.h"</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-keyword">namespace</span> <span class="cm-def">wb</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 稠密 F32 张量（工厂按 rank 自动选 Scalar/Vector/Matrix/Tensor3/Tensor4）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-number">2</span>, <span class="cm-number">3</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp; <span class="cm-comment">// 2x3 矩阵</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">m</span><span class="cm-operator">-&gt;</span><span class="cm-variable">set</span>({<span class="cm-number">0</span>, <span class="cm-number">0</span>}, <span class="cm-number">1.0f</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 多索引 set（非虚、纯算术定位）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">float</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-variable">m</span><span class="cm-operator">-&gt;</span><span class="cm-variable">get</span>(<span class="cm-number">0</span>, <span class="cm-number">1</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 按个数重载 get(i,j)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 量化权重构造（不传参默认 F32；此处显式指定 Q8_0）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">w</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-number">4</span>, <span class="cm-number">32</span>}, <span class="cm-variable">GGML_TYPE_Q8_0</span>); &nbsp;<span class="cm-comment">// 4x32 矩阵，每块 32 元素 → 1 块/行</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">w</span><span class="cm-operator">-&gt;</span><span class="cm-variable">set</span>({<span class="cm-number">0</span>, <span class="cm-number">5</span>}, <span class="cm-number">0.7f</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 经 QuantTraits::quant 透明写回块</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">float</span> <span class="cm-variable">qv</span> <span class="cm-operator">=</span> <span class="cm-variable">w</span><span class="cm-operator">-&gt;</span><span class="cm-variable">get</span>(<span class="cm-number">0</span>, <span class="cm-number">5</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 经 dequant 读回 float，调用方无感</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 276px;"></div><div class="CodeMirror-gutters" style="display: none; height: 276px;"></div></div></div></pre><h3 id='82-逐元素--广播swiglu-门控雏形'><span>8.2 逐元素 + 广播（SwiGLU 门控雏形）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-number">1</span>, <span class="cm-number">8</span>}, <span class="cm-variable">GGML_TYPE_F32</span>);</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">b</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-number">1</span>, <span class="cm-number">8</span>}, <span class="cm-variable">GGML_TYPE_F32</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// silu(a) ⊙ b  （SwiGLU 的 gate*up）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">gate</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span><span class="cm-operator">-&gt;</span><span class="cm-variable">silu</span>(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 返回新 F32 张量</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">swiglu</span> <span class="cm-operator">=</span> <span class="cm-variable">gate</span><span class="cm-operator">-&gt;</span><span class="cm-variable">mul</span>(<span class="cm-operator">*</span><span class="cm-variable">b</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 逐元素乘，广播对齐</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// RMSNorm 的 1/√(mean(x²)+eps)：</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">sq</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable">a</span><span class="cm-operator">-&gt;</span><span class="cm-variable">mul</span>(<span class="cm-operator">*</span><span class="cm-variable">a</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// x²</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">ms</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable">sq</span><span class="cm-operator">-&gt;</span><span class="cm-variable">mean</span>(<span class="cm-number">1</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 沿最后一维均值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">rms</span> <span class="cm-operator">=</span> <span class="cm-variable">ms</span><span class="cm-operator">-&gt;</span><span class="cm-variable">add</span>(<span class="cm-number">1e</span><span class="cm-operator">-</span><span class="cm-number">5f</span>)<span class="cm-operator">-&gt;</span><span class="cm-variable">rsqrt</span>(); &nbsp; &nbsp;<span class="cm-comment">// (mean+eps)^(-1/2)</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 207px;"></div><div class="CodeMirror-gutters" style="display: none; height: 207px;"></div></div></div></pre><h3 id='83-矩阵乘qkv-投影matvec-最高频'><span>8.3 矩阵乘（QKV 投影：matvec 最高频）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">Wq</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">M</span>, <span class="cm-variable">N</span>}, <span class="cm-variable">GGML_TYPE_Q8_0</span>); &nbsp;<span class="cm-comment">// 量化权重（省内存）</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">x</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">N</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 输入向量</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">y</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable">Wq</span><span class="cm-operator">-&gt;</span><span class="cm-variable">matvec</span>(<span class="cm-operator">*</span><span class="cm-variable">x</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// y = Wq·x，[M] F32</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 内部 vec_dot 融合，不物化 F32 Wq</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><h3 id='84-批矩阵乘多头注意力-scoresv'><span>8.4 批矩阵乘（多头注意力 scores·V）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">Q</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">B</span>, <span class="cm-variable">M</span>, <span class="cm-variable">K</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp; <span class="cm-comment">// [batch, heads/seq, dim]</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">K</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">B</span>, <span class="cm-variable">K</span>, <span class="cm-variable">N</span>}, <span class="cm-variable">GGML_TYPE_F32</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">scoresV</span> <span class="cm-operator">=</span> <span class="cm-variable">Q</span><span class="cm-operator">-&gt;</span><span class="cm-variable">bmm</span>(<span class="cm-operator">*</span><span class="cm-variable">K</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// [B, M, N] F32</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><h3 id='85-embedding-查表gather'><span>8.5 Embedding 查表（gather）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">embed</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">vocab</span>, <span class="cm-variable">dim</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp;<span class="cm-comment">// 词向量表</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 方法一：二阶专用，返回可写 Matrix</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">size_t</span><span class="cm-operator">&gt;</span> <span class="cm-variable">ids</span> <span class="cm-operator">=</span> {<span class="cm-number">7</span>, <span class="cm-number">1</span>, <span class="cm-number">4</span>};</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">outM</span> <span class="cm-operator">=</span> <span class="cm-variable">embed</span><span class="cm-operator">-&gt;</span><span class="cm-variable">gather</span>(<span class="cm-variable">ids</span>, <span class="cm-number">0</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// [3, dim]，可继续写</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 方法二：通用 N-D 原语（tf.gather 语义）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">idxT</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-number">2</span>, <span class="cm-number">3</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 形如 [[7,1,4],[0,6,2]]</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// ... 填充 idxT ...</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">outT</span> <span class="cm-operator">=</span> <span class="cm-variable">embed</span><span class="cm-operator">-&gt;</span><span class="cm-variable">gather</span>(<span class="cm-operator">*</span><span class="cm-variable">idxT</span>, <span class="cm-number">0</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// [2, 3, dim]</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 207px;"></div><div class="CodeMirror-gutters" style="display: none; height: 207px;"></div></div></div></pre><h3 id='86-量化桥kv-cache-写入'><span>8.6 量化桥（KV cache 写入）</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">kF32</span> <span class="cm-operator">=</span> <span class="cm-variable">makeDense</span>({<span class="cm-variable">seq</span>, <span class="cm-variable">dim</span>}, <span class="cm-variable">GGML_TYPE_F32</span>); &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 新算出的 K（F32 激活）</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 写入 KV cache 前转成量化以省显存：</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">kQ</span> &nbsp; <span class="cm-operator">=</span> <span class="cm-variable">kF32</span><span class="cm-operator">-&gt;</span><span class="cm-variable">quantizeTo</span>(<span class="cm-variable">GGML_TYPE_Q8_0</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// [seq, dim] Q8_0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 需要时再解量化（调试或特殊路径）：</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">auto</span> <span class="cm-variable">kBack</span> <span class="cm-operator">=</span> <span class="cm-variable">kQ</span><span class="cm-operator">-&gt;</span><span class="cm-variable">dequantize</span>(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 回到 F32（普通推理不必）</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 115px;"></div><div class="CodeMirror-gutters" style="display: none; height: 115px;"></div></div></div></pre><hr /><h2 id='9-测试结果'><span>9. 测试结果</span></h2><p><span>全部测试以 </span><code>g++ -std=c++17 -Wall -Wextra -O2 -static</code><span> 编译（含 </span><code>-I.</code><span> 引入 </span><code>Tensor20.h</code><span>），</span><strong><span>零告警</span></strong><span>，运行全部通过：</span></p><figure class='table-figure'><table><thead><tr><th><span>测试套件</span></th><th><span>用例数</span></th><th><span>结果</span></th><th><span>覆盖重点</span></th></tr></thead><tbody><tr><td><code>main</code></td><td><span>—</span></td><td><span>✅</span></td><td><span>视图/轴交换演示、四阶重排验证</span></td></tr><tr><td><code>unary_test</code></td><td><span>全过</span></td><td><span>✅</span></td><td><span>A.1 一元逐元素（含 in-place）</span></td></tr><tr><td><code>binary_test</code></td><td><span>23</span></td><td><span>✅</span></td><td><span>A.2 二元 + 广播</span></td></tr><tr><td><code>scalar_test</code></td><td><span>20</span></td><td><span>✅</span></td><td><span>A.3 标量辅助 / 偏置加</span></td></tr><tr><td><code>reduction_test</code></td><td><span>37</span></td><td><span>✅</span></td><td><span>B 归约 / softmax / argmax</span></td></tr><tr><td><code>matvec_test</code></td><td><span>21</span></td><td><span>✅</span></td><td><span>C.1（F32 + Q8_0 融合）</span></td></tr><tr><td><code>matmul_test</code></td><td><span>20</span></td><td><span>✅</span></td><td><span>C.2（F32 + Q 融合）</span></td></tr><tr><td><code>bmm_test</code></td><td><span>11</span></td><td><span>✅</span></td><td><span>D.1（F32 + Q8_0 + 形状校验）</span></td></tr><tr><td><code>gather_test</code></td><td><span>10</span></td><td><span>✅</span></td><td><span>旧 </span><code>gather(vector)</code><span> 仍正确</span></td></tr><tr><td><code>gather_view_test</code></td><td><span>319</span></td><td><span>✅</span></td><td><span>GatherMatrixView 行视图</span></td></tr><tr><td><code>gather_nd_test</code></td><td><span>15</span></td><td><span>✅</span></td><td><span>D.2 新 </span><code>gather(Tensor)</code><span> 多 axis</span></td></tr><tr><td><code>quant_test</code></td><td><span>全过</span></td><td><span>✅</span></td><td><span>量化 dequant/quant 正确性</span></td></tr><tr><td><code>quant_bridge_test</code></td><td><span>12</span></td><td><span>✅</span></td><td><span>D.3/D.4 解量化/量化桥/KV 式</span></td></tr></tbody></table></figure><p><strong><span>构建命令（Qt MinGW g++ 13.1.0）</span></strong><span>：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="bash"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="bash"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.5156px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">GPP</span><span class="cm-operator">=</span>/c/Qt/Tools/mingw1310_64/bin/g<span class="cm-operator">++</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">$GPP</span> <span class="cm-attribute">-std</span><span class="cm-operator">=</span>c<span class="cm-operator">++</span><span class="cm-number">17</span> <span class="cm-attribute">-Wall</span> <span class="cm-attribute">-Wextra</span> <span class="cm-attribute">-O2</span> <span class="cm-attribute">-static</span> <span class="cm-attribute">-I</span>. &lt;test&gt;.cpp <span class="cm-attribute">-o</span> &lt;test&gt;.exe</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">./&lt;test&gt;.exe</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><blockquote><p><span>测试跑完</span><strong><span>清理 </span><code>.exe</code><span> 与临时 </span><code>warn_*.txt</code></strong><span>（沙箱 </span><code>rm</code><span> 被安全钩子拦截，改走 PowerShell </span><code>Remove-Item</code><span>）。</span></p></blockquote><hr /><h2 id='10-设计约束与扩展指引'><span>10. 设计约束与扩展指引</span></h2><h3 id='101-不可触碰的红线'><span>10.1 不可触碰的红线</span></h3><ul><li><p><strong><code>get()/set()/offset()/readElem()/writeElem()/fill()</code><span> 不得改为虚函数</span></strong><span>，不得在函数体内插入任何虚调用（含索引映射钩子）。</span></p></li><li><p><strong><code>operator()</code><span> 对只读对象必须走 </span><code>ElemRef</code><span> 代理</span></strong><span>；F32 直连 </span><code>float*</code><span> 会绕过 </span><code>writable_</code><span> 只读保护。</span></p></li><li><p><span>中间运算结果一律 F32，除 </span><code>quantizeTo</code><span> / KV cache 更新外不回量化。</span></p></li></ul><h3 id='102-如何新增一个量化类型如-q50'><span>10.2 如何新增一个量化类型（如 Q5_0）</span></h3><ol start='' ><li><p><span>在 </span><code>ggml_type</code><span> 枚举加 </span><code>GGML_TYPE_Q5_0</code><span>；</span></p></li><li><p><span>写 </span><code>dequant_q5_0</code><span> / </span><code>quant_q5_0</code><span>（与现有公式同风格），以及 </span><code>vec_dot_q5_0</code><span>；</span></p></li><li><p><span>在 </span><code>QuantTraits traitsOf</code><span> 静态表追加一项 </span><code>{GGML_TYPE_Q5_0, blck_size, blck_bytes, dequant_q5_0, quant_q5_0, vec_dot_q5_0}</code><span>；</span></p></li><li><p><span>确认 </span><code>blck_size</code><span> 与块对齐约束（</span><code>makeNb</code><span>/</span><code>bufferBytes</code><span> 已通用，无需改）。</span></p></li></ol><h3 id='103-如何新增算子'><span>10.3 如何新增算子</span></h3><ul><li><p><strong><span>逐元素</span></strong><span>：仿 A.1 直接命名成员函数 + </span><code>unaryMap</code><span> 内核（已在文件末尾定义）。</span></p></li><li><p><strong><span>归约</span></strong><span>：仿 B 用 </span><code>reduceDimTo&lt;Acc,Comb,Final&gt;</code><span> 模板。</span></p></li><li><p><strong><span>矩阵类</span></strong><span>：仿 C/D 的三路径（量化融合 / F32 快路径 / 通用兜底），结果 </span><code>makeDense(... , GGML_TYPE_F32)</code><span>。</span></p></li><li><p><strong><span>结构型算子（RMSNorm/RoPE/Attention/SwiGLU/KV cache）</span></strong><span>：按设计约定放在推理计算层的</span><strong><span>自由函数</span></strong><span>，不进 </span><code>Tensor</code><span> 类（类只管数值 + 形状 + 类型）。</span></p></li></ul><h3 id='104-对接-ggml'><span>10.4 对接 ggml</span></h3><p><code>data_</code><span> 是 </span><code>void*</code><span> 字节缓冲、</span><code>nb_</code><span> 是字节步长、</span><code>type_</code><span> 是 </span><code>ggml_type</code><span> —— 三者与 </span><code>ggml_tensor</code><span> 同构。将 </span><code>data_</code><span> 直接指向 </span><code>ggml_tensor.data</code><span>、用 </span><code>ggml_tensor.nb[]</code><span> 初始化 </span><code>nb_</code><span>，即可零拷贝复用本库算子读写 ggml 的量化权重与 KV 缓存。</span></p><hr /><h2 id='11-附录api-速查表'><span>11. 附录：API 速查表</span></h2><figure class='table-figure'><table><thead><tr><th><span>分类</span></th><th><span>接口</span></th><th><span>返回</span></th></tr></thead><tbody><tr><td><span>访问</span></td><td><code>get(idx)</code><span> / </span><code>get(i,j,k,l)</code><span> / </span><code>set(...)</code><span> / </span><code>operator()</code></td><td><code>float</code><span> / </span><code>void</code><span> / </span><code>ElemRef</code></td></tr><tr><td><span>元数据</span></td><td><code>type()</code><span> / </span><code>rank()</code><span> / </span><code>dims()</code><span> / </span><code>size()</code><span> / </span><code>strides()</code><span>/</span><code>nb()</code><span> / </span><code>describe()</code></td><td><span>标量/向量/字符串</span></td></tr><tr><td><span>视图</span></td><td><code>permute(perm)</code><span> / </span><code>view()</code><span> / </span><code>transpose()</code><span>（Matrix）</span></td><td><code>unique_ptr&lt;Tensor&gt;</code></td></tr><tr><td><span>A.1</span></td><td><code>exp/rsqrt/sigmoid/silu/tanh/relu/abs/negate/log/reciprocal/clamp</code><span> (+</span><code>InPlace</code><span>)</span></td><td><code>unique_ptr&lt;Tensor&gt;</code><span> / </span><code>void</code></td></tr><tr><td><span>A.2</span></td><td><code>add/sub/mul/div/pow/max/min</code><span> (Tensor&amp; 与 float 重载) / </span><code>applyBinary</code></td><td><code>unique_ptr&lt;Tensor&gt;</code></td></tr><tr><td><span>A.3</span></td><td><code>scale</code><span> / </span><code>scaled</code><span> / </span><code>addScalar</code><span> / </span><code>addBias</code><span> / </span><code>withBias</code></td><td><code>void</code><span> / </span><code>unique_ptr&lt;Tensor&gt;</code></td></tr><tr><td><span>B</span></td><td><code>reduceAll</code><span> / </span><code>sum/mean/max/norm/var/argmax/softmax(int dim)</code></td><td><code>float</code><span> / </span><code>unique_ptr&lt;Tensor&gt;</code></td></tr><tr><td><span>C.1</span></td><td><code>matvec(x)</code></td><td><code>unique_ptr&lt;Tensor&gt;</code><span> </span><code>[M]</code></td></tr><tr><td><span>C.2</span></td><td><code>matmul(B)</code></td><td><code>unique_ptr&lt;Tensor&gt;</code><span> </span><code>[M,N]</code></td></tr><tr><td><span>D.1</span></td><td><code>bmm(B)</code></td><td><code>unique_ptr&lt;Tensor&gt;</code><span> </span><code>[B,M,N]</code></td></tr><tr><td><span>D.2</span></td><td><code>gather(indices, axis)</code><span> / </span><code>gather(ids, axis)</code></td><td><code>unique_ptr&lt;Tensor&gt;</code><span> / </span><code>unique_ptr&lt;Matrix&gt;</code></td></tr><tr><td><span>D.3/4</span></td><td><code>dequantize()</code><span> / </span><code>quantizeTo(t)</code></td><td><code>unique_ptr&lt;Tensor&gt;</code></td></tr><tr><td><span>原始</span></td><td><code>raw()</code><span> / </span><code>data()</code><span> / </span><code>capacity()</code></td><td><code>void*</code><span> / </span><code>size_t</code></td></tr></tbody></table></figure><hr /><p><em><span>文档基于 </span><code>tensor/Tensor20.h</code><span>（约 2300 行）、</span><code>tensor/开发过程笔记.md</code><span>、13 套测试及其运行结果整理。所有接口签名与代码逐字一致。</span></em></p></div></div>
+</body>
+</html>
