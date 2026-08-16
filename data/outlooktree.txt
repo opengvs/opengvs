@@ -86,7 +86,8 @@
 	{id: "APCnn", text: "形象化和抽象化的理解卷积计算", url:"形象化和抽象化的理解卷积计算.html",pid: "otherBase"},
     {id: "LLAMACPP", text: "LLAMA_CPP命令行可视化工具", url:"LLAMA_CPP命令行可视化软件.html",pid: "otherBase"},
     {id: "STUDYLLAM", text: "大模型推理过程学习笔记", url:"大模型推理过程学习笔记.html",pid: "otherBase"},
-    {id: "Tentor", text: "Tensor20_技术报告与使用说明", url:"Tensor20_技术报告与使用说明.html",pid: "otherBase"},	
+    {id: "Tentor", text: "Tensor20_技术报告与使用说明", url:"Tensor20_技术报告与使用说明.html",pid: "otherBase"},
+    {id: "Transformer", text: "极简大模型推理过程Transformer设计", url:"极简大模型推理过程Transformer设计.html",pid: "otherBase"},	
 ]
 
 
