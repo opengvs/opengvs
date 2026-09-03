@@ -1,0 +1,28 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches:
+      - main
+  # 允许在 GitHub 网页手动触发（首次同步或补同步时用）
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Mirror main branch to Gitee
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          # 必须拉取完整历史，否则推送到空仓库时会缺提交
+          fetch-depth: 0
+
+      - name: Force push to Gitee
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          git config user.name "opengvs"
+          git config user.email "1687707388@qq.com"
+          git remote add gitee "https://opengvs:${GITEE_TOKEN}@gitee.com/opengvs/${{ github.event.repository.name }}.git"
+          git push --force gitee main
